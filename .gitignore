@@ -1,3 +1,9 @@
+# GRASS files
+grassdata
+
+# GIS files
+gisdata
+
 # History files
 .Rhistory
 .Rapp.history
@@ -15,6 +21,7 @@
 /*.Rcheck/
 
 # RStudio files
+menabe.Rproj
 .Rproj.user/
 
 # produced vignettes
@@ -31,3 +38,4 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+.Rproj.user
