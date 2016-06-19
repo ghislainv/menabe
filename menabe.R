@@ -6,38 +6,39 @@
 
 ##= Libraries
 library(sp)
-library(raster)
 library(rgdal)
-library(rgrass7)
-
-## GRASS GIS 7.x.x is needed to run this script
-## https://grass.osgeo.org/
+library(raster)
 
 ## Create some directories
-dir.create("gisdata") ## To save GIS data
+dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
 
 ## Download forest cover
 f <- c("for1990","for2000","for2010","for2014","forest2050")
 for (i in 1:length(f)) {
   d <- paste0("http://bioscenemada.net/FileTransfer/",f[i],".tif")
-  download.file(url=d,destfile=paste0("gisdata/",f[i],".tif"),method="wget",quiet=TRUE)
+  download.file(url=d,destfile=paste0("gisdata/rast_raw",f[i],".tif"),method="wget",quiet=TRUE)
 }
 
-## Create new grass location in UTM 38S
-dir.create("grassdata")
-system("grass70 -c epsg:32738 grassdata/menabe")
-## Connect R to grass location
-initGRASS(gisBase="/usr/local/grass-7.0.1",home=tempdir(), 
-          gisDbase="grassdata",
-          location="menabe",mapset="PERMANENT",
-          override=TRUE)
-## Import rasters in grass
+##========================================
+## Prepare rasters for the two study areas
+
+## Set region for Kirindy-Mitea National Park
+Extent.KMNP <- "365000 7640000 430010 7730000"
+
+## gdalwrap
 for (i in 1:length(f)) {
-   system(paste0("r.in.gdal input=gisdata/",f[i],".tif output=",f[i]))
+  system(paste0("gdalwarp -overwrite -ot Byte \\
+          -r near -tr 30 30 -te ",Extent.KMNP," -of GTiff \\
+          -co 'compress=lzw' -co 'predictor=2' \\
+          gisdata/rast_raw/",f[i],".tif \\
+          gisdata/rast/",f[i],"_KMNP.tif"))
 }
 
-## Set region for Kirindy-Mitea National Park and Menabe-Antimena NAP
-Extent.KMNP <- c(365000,7640000,430000,7730000)
+# Import into R
+for1990 <- raster("gisdata/rast/for1990_KMNP.tif")
+plot(for1990)
+
+## Set region for Menabe-Antimena NAP
 Extent.MENAP <- c(419600,7750744,478890,7834872) # A voir
 ## system("g.region rast= -ap")
 
