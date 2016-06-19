@@ -15,7 +15,6 @@ library(rgrass7)
 
 ## Create some directories
 dir.create("gisdata") ## To save GIS data
-dir.create("temp") ## Temporary folder
 
 ## Download forest cover
 f <- c("for1990","for2000","for2010","for2014","forest2050")

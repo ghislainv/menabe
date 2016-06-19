@@ -1,0 +1,166 @@
+---
+title: "What to do to stop the inceasing deforestation in western Madagascar dry forests?"
+output: html_document
+bibliography: bib/biblio.bib
+csl: bib/elsevier-harvard.csl
+---
+
+#### Ghislain Vieilledent<sup>*,1,2</sup>, Clovis Grinand<sup>3</sup>, Miguel Pedrono<sup>2</sup>, Tsiky Rabetrano<sup>4</sup>, Bruno Rakotoarivelo<sup>5</sup>, Fety A. Rakotomalala<sup>3</sup> and Dimby Razafimpahanana<sup>4</sup>
+
+(*) /Email: ghislain.vieilledent@cirad.fr, /Phone: +39.329.457.2273
+
+1. Joint Research Center of the European Commission, Institute for Environment and Sustainability, I-21027 Ispra (VA), ITALY
+2. Cirad, UPR Forêts et Sociétés, F-34398 Montpellier, FRANCE
+3. ETC Terra, F-75016 Paris, FRANCE
+4. Wildlife Conservation Society, 101 Antananarivo, MADAGASCAR
+5. Office National de l'Environnement, 101 Antananarivo, MADAGASCAR
+
+## Context
+
+### Field mission to central Menabe
+
+- Projects: Roadless Forests (JRC) and BioSceneMada (Cirad)
+- Sites: Kirindy-Mitea national park (KMNP) and Menabe-Antanimena new protected area (MANAP)
+- Dates: from 4th to 12th of June 2016
+- Participants: Clovis Grinand (1), Miguel Pedrono (2), Tsiky Rabetrano (3), Bruno Rakotoarivelo (4), Fety A. Rakotomalala (1), Dimby Razafimpahanana (3) and Ghislain Vieilledent (2,5)
+- E-mails: c.grinand@etcterra.org, miguel.pedrono@cirad.fr, tsikyrabetrano@gmail.com, rbruno@pnae.mg, f.rakotomalala@etcterra.org, dimby@wcs.org, ghislain.vieilledent@cirad.fr
+- Institutions: (1) ETC Terra, (2) Cirad, (3) Wildlife Conservation Society, (4) Office National de l'Environnement, (5) Joint Research Center of the European Commission
+
+### Program
+
+- Saturday 04th: Antananarivo -- Morondava
+- Sunday 05th: Morondava -- Belo-sur-Mer. Contact with Stefan at Madagascar National Park (MNP)
+- Monday 06th: deforestation from cyclone and uncontrolled fires in KMNP and savannas
+- Thuesday 07th: visit to the dunes and lake in KMNP and illegal logging. Discussion with KMNP conservation director
+- Wednesday 08th: avorted trial to see the "Sentier des baobabs". Discussion at the Ecolodge du Menabe with Roland Eve from WWF
+- Thursday 09th: Belo-sur-Mer -- Morondava -- Marofandilia. Meeting with Direction Régionale des Eaux et Forêt (DREF) in Morondava
+- Friday 10th: deforestation from hatsake around Kirindy-Village and Lambokely. Contact with EPFL PhD student. Visit of de Haulme concession 
+- Saturday 11th: Naturalist observations around Bedo lake
+- Sunday 12th: Marofandilia -- Antananarivo
+
+### Contacts
+
+- Linjasoa Rakotomalala, linjanantenaina@yahoo.fr, PhD Student at ESSA-Forêt Antananarivo and EPFL Lausanne
+- Mamy Rakotobenandrasana, ratsimedmond@gmail.com, Chef du volet conservation recherche (CVCR) à MNP pour les parcs de Kirindy-Mitea et Menabe-Antimena
+- Roland Eve, reve@wwf.mg, Landscape Planning and Management advisor and Chief Technical advisor WWF MDCO
+- Mme Cynthia, Directrice par intérim, Direction Régionale des Eaux et Forêts, région Menabe
+- Rebecca Lewis, rjlewis@austin.utexas.edu, Associate Professor, Antrhopology, University of Texas, Director of the Ankoasikafa research station in KMNP. Study of Verreaux’s sifaka (_Propithecus verreauxi_)
+- Tahina Riniavo, tahinariniavo@gmail.com, NGO Fanamby, Responsable conservation Menabe-Antimena
+
+## 1. Introduction
+
+### 1.1 State of the art
+
+- Madagascar has long been recognized as a biodiversity hotspot highly threatened by deforestation
+- Many actions have been implemented to curb deforestation in the country
+    - Increase of the protected areas over 10% of the country total area
+    - Large investment in development programs (number of NGOs in Madagascar and amout of money for agricultural development and conservation)
+    - World Bank with the Environmental Program, USAID, AFD-FFEM, KFW
+
+### 1.2 Knowledge gap
+
+- Nonetheless, deforestation seems to remain very high in Madagascar and has recently increase in intensity despite all the conservation and development measures.
+- Why such initiatives are failing and what could be the solution to stop deforestation?
+- Is the recent deforestation attributable to external causes, independant of anthropogenic activities, such as climate change?
+- Is it really possible to stop deforestation in Madagascar?
+
+### 1.3 Objectives
+
+- To try to answer these questions, we studied the intensity and the causes of deforestation in two protected areas located in western Madagascar and aiming at protecting the dry forest and its unique biodiversity. 
+
+## 2. Materials and Methods
+
+### 2.1 Historical deforestation maps
+
+We derived 30m cloud-free forest maps for Madagascar for the years 1990, 2000, 2010 and 2014 combining the 1990 and 2000 forest maps by @Harper2007 and the 2000-2014 tree percent cover map by @Hansen2013. On Harper's map, ~200,000 ha clouds are present over the ~4.2 million ha moist forest ecoregion (4.8% of clouds). To remove these clouds, we used the 2000 cloud-free tree percent cover map provided by @Hansen2013 (also at 30~m resolution) and we chose a threshold of 75% of tree cover to decide whether to replace cloud pixels with forest or non-forest pixels [@Achard2014]. We thus obtained a cloud-free year 2000 forest map for Madagascar. From this map, using tree cover loss data from 2000 to 2014 by @Hansen2013, we obtained cloud-free forest maps in 2010 and 2014 at 30~m resolution. Finally, we corrected the cloudy 1990 Harper forest map assuming that if forest was present in 2000, it was also present in 1990. Doing so, all clouds were removed and we obtained a cloud-free 1990 forest map for Madagascar. These maps are freely available at http:/bioscenemada.net/forestmaps. We then used these national maps for our regional study around the Kirindy-Mitea National Park (E: W: N: S:) and the Menabe-Antimena New Protected Area (E: W: N: S). Field work was conducting during a ten days mission in June 2016 to verify the presence of the recent (2000-2010-2014) patches of deforestation in the two study areas. We validated the deforestation maps on this period and identified the main causes of deforestation in the two study areas. 
+
+### 2.2 Deforestation model
+
+### 2.3 Surveys
+
+- To identify the causes of the deforestation
+- To study the efficiency of the conservation measures
+
+| Id | Type              | Name | Institution     | Position                                        | Date | Duration |
+|----|-------------------|------|-----------------|-------------------------------------------------|------|----------|
+| 1 | Migrant and farmer | Farmer 1 | Kirindy village | Chief of a family with a woman and height children | 10/06 | 1h30 |
+| 2 | Woman | Woman 1 | Kirindy village | Woman of farmer living in the Kirindy village | 10/06 | 30min |
+| 4 | Migrants and farmers | Farmers 2 and 3 | Lambokely | Two family chiefs with women and children | 10/06 | 1h |
+| 5 | Administration | Chief 1 | Lambokely | Fokontany chief | 10/06  | 30min |
+| 8 | Government representative  |  Mme Cynthia | DREF Menabe | Acting director of the Direction Régionale des Eaux et Forêt | 09/06 | 1h |
+| 6 | National Parks | Mamy Rakotobenandrasana | MNP | Director of the conservation program for KMNP | 07/06 | 1h30 |
+| 7 | Environmental NGO | Roland Eve | WWF | Landscape Planning and Management advisor for KMNP | 08/06 | 1h |
+| 9 | Environmental NGO | Tahina Riniavo | Fanamby | Director of the conservation program for MANAP | 10/06 | 30min |
+
+Table 1: **List of surveys conducted among farmers and environmental stakeholders**. Surveys were conducted around the Kirindy-Mitea National Park and the Menabe-Antimena New Protected Area. The _"Fokontany"_ is a Malagasy term defining an administrative territory under the level of the township. In Madagascar, the management of the protected areas are under the responsability of Madagascar National Parks (MNP) or delegated to an environmental Non-Governmental Organisation (such as the NGO Fanamby for Menabe-Antimena New Protected Areas). 
+
+## 3. Results
+
+### 3.1 Historical deforestation
+
+### 3.2 Causes of deforestation
+
+#### 3.2.1 Slash-and-burn agriculture, uncontrolled fires and illegal logging
+
+We identified three causes of deforestation in the Kirindy-Mitea National Park (Fig. 1). Slash-and-burn agriculture (also know as _"hatsake"_) for corn crops was identified as the main cause of deforestation in several side the park (Fig. 1). 
+
+Climate-change could indirectly be identified as a cause of deforestation in the central Menabe region. It is now largely recognized that climate change can increase the number of extreme climatic events such as droughts, floods and cyclones (ref. X). In 2009, the cyclone names _"Fanela"_ impacted a large area of the forest in the Kirindy-Mitea National Park leaving a lot of wood fuel on the ground. This has allow uncontrolled fires to spread on large areas (~ 5000 ha) in 2013 (Fig. 1a). These fires were difficultly stopped with buckets of water and sand by the agents of the park with the help of the local people from the surrounding village. Severe droughts in southern Madagascar in the recent years (since 2010), that could be attributed to climate-change [@Vieilledent2016], has led to famine events and can explain the migration of thousand of people in the villages of Kirindy and Lambokely (Fig. 2).
+
+#### 3.2.2 No application of conservation measures
+
+- Political crisis in 2009, pays de non droit, état défaillant
+- No means for management of protected areas and application of the laws (Fanamby, MNP)
+- Conflicts of interest at the head of the state. Politics and military people have economic interests in not stopping deforestation (logging and precious wood exportation, corn crop for beer companies such as STAR, exportation of peanuts for peanut oil)  
+
+### 3.3 Projected deforestation
+
+![ **Historical and forecasted deforestation in the Kirindy-Mitea National Park.** The boundaries of the Kirindy-Mitea National Park (KMNP) are represented with black polygones (source: Rebioma project at http://rebioma.net). Main roads are represented with thin black lines (source: FTM BD500). Coast line is represented with a thin grey line. Belo-sur-Mer is the main village located near KMNP. **a)** Historical deforestation on the period 2000-2010-2014. Green: forest cover in 2014, orange: 2000-2010 deforestation, red: 2010-2014 deforestation (source: BioSceneMada project at http://bioscenemada.net). The main causes of the deforestation are (A) slash-and-burn agriculture (_"hatsake"_), (B) cyclones followed by uncontrolled fires and (C) illegal logging. **b)** Projected deforestation on the period 2010-2050. Green: projected forest cover in 2050, grey: 2010-2050 deforestation. Most of the 2010-2014 deforestation observed in figure a) is included in the 2010-2050 projections. Around 50% of the 2010 forest is predicted to disappear on the period 2010-2050. Most of the remaining forest will be inside the protected area.](figs/Kirindy-Mitea.png)
+
+![ **Historical and forecasted deforestation in the Menabe-Antimena new protected area.** The boundaries of the Menabe-Antimena new protected area (MANAP) are represented with black polygones (source: Rebioma project at http://rebioma.net). Main roads are represented with thin black lines (source: FTM BD500). Coast line is represented with a thin grey line. Morondava and Belo-sur-Tsiribihina are the main cities located near MANAP. **a)** Historical deforestation on the period 2000-2010-2014. Green: forest cover in 2014, orange: 2000-2010 deforestation, red: 2010-2014 deforestation (source: BioSceneMada project at http://bioscenemada.net). The main cause of the deforestation is the slash-and-burn agriculture (_"hatsake"_) for corn and peanut crops. Most of the 2000-2014 deforestation occured around the villages of Kirindy and Lambokely. **b)** Projected deforestation on the period 2010-2050. Green: projected forest cover in 2050, grey: 2010-2050 deforestation. Much of the deforestation predicted on the period 2010-2050 have already occured on the period 2010-2014.](figs/Menabe-Antimena.png)
+
+![**Slash-and-burn agriculture (_"hatsake"_) for peanut crop around Lambokely village, Menabe-Antimena New Protected Area.** Peanut (a) is cultivated as a cash crop. Peanut production is collected and bought by dealers (b). A part of the production is at the destination of the national market but most of it is exported outside Madagascar, mainly for the Chinese market. Peanut crop is obtained through slash-and-burn agriculture (also called _"hatsake"_) and leads to the deforestation of large areas of forest near the Lambokely village, inside the delimitation of the Menabe-Antimena New Protected Area (c).](figs/arachide/arachide.jpg)
+
+![**Slash-and-burn agriculture (_"hatsake"_) for corn crop.** Corn (a) is cultivated for auto-consumption and as a cash crop. Corn production is collected and bought by dealers (b). The production of corn is at the destination of the national market and is used in particular to brew beer. Corn crop is obtained through slash-and-burn agriculture (also called _"hatsake"_) and leads to the deforestation of large areas of forest in the periphery of the Kirindy-Mitea National Park (c).](figs/hatsake-mais/mais.jpg)
+
+## 4. Discussion
+
+### 4.1 Historical deforestation, projections and consequences (climate-change, biodiversity)
+
+### 4.2 Link between deforestation and climate-change
+
+- Drought -> spontaneous uncontrolled fires -> deforestation -> deforestation
+- Climate-change -> Extreme events (cyclone) -> more wood fuel -> large uncontrolled fires
+- Droughts -> starvation in southern Madagascar -> migration -> slash-and-burn agriculture -> deforestation
+
+### 4.3 Strategies to stop deforestation
+
+#### 4.3.1 Increasing sensibilisation
+
+- We know conserving forest is important at the global scale to avoid carbon emissions and mitigate climate and to conserve the biodiversity and related ecosystem services.
+- But we need to insist on the importance of dry forest at the local scale (effect on climate, desertification, on natural resources: wood and game, water availability)
+- Sensibilisation on the risk associated to the application of the law (fines and jail)
+- Women education and family planning
+
+#### 4.3.2 Increasing repressive mesures against deforestation
+
+- Won't be possible without a political will (_"volonté politique"_)
+- Reinforcement of the institutes in charge of the protected areas and applying the conservation measures
+- Application of the law banning deforestation (fines and jail)
+- Possibility for the guards to draw up a report
+- Help of the army
+- International pressure on Malagasy government, conditionality of the international help for development
+- Decreasing migration
+
+#### 4.3.3 Development of alternatives to deforestation
+
+- Agricultural development (compost) to increase land productivity
+- Other sources of income (tourism)
+- Tree plantations for wood energy and construction
+- REDD+
+- Most of these development approaches have failed in the past or obtained limited positive impacts. We believe that change in behaviors will be facilitated by the application of the law and the repressive measures. Population will adapt to the context of law reinforcment finding, developping and investing in new sources of income.
+
+## Aknowledgements
+
+This study took form during a field trip in the central Menabe (4-12th of June 2016) in the framework of the BioSceneMada project (http://bioscenemada.net). The BioSceneMada project is funded by FRB (Fondation pour la Recherche sur la Biodiversité) and the FFEM (Fond Français pour l'Environnement Mondial) under the project agreement AAP-SCEN-2013 I. We thank all the people who welcomed us and kindly provided us with useful information during our field trip, both institutional people (from DREF, MNP, WWF and Fanamby) and people from local communities (in Kirindy-Village and Lambokely particularly).
+
+## References
