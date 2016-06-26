@@ -8,6 +8,8 @@
 library(sp)
 library(rgdal)
 library(raster)
+library(ggplot2)
+library(rasterVis)
 
 ## Create some directories
 dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
@@ -34,9 +36,35 @@ for (i in 1:length(f)) {
           gisdata/rast/",f[i],"_KMNP.tif"))
 }
 
-# Import into R
-for1990 <- raster("gisdata/rast/for1990_KMNP.tif")
-plot(for1990)
+## Import into R
+for2000 <- raster("gisdata/rast/for2000_KMNP.tif")
+for2010 <- raster("gisdata/rast/for2010_KMNP.tif")
+for2014 <- raster("gisdata/rast/for2014_KMNP.tif")
+
+## One raster for deforestation
+defor_KMNP <- for2000
+defor_KMNP[defor_KMNP==1 & is.na(for2010)] <- 2
+defor_KMNP[defor_KMNP==1 & is.na(for2014)] <- 3
+
+## Plot raster with plot.raster
+plot(defor_KMNP,colNA="transparent")
+
+
+## Plot raster with ggplot
+df <- as.data.frame(defor_KMNP,xy=TRUE)
+names(df) <- c("Longitude","Latitude","cat")
+df$cat <- as.factor(df$cat)
+levels(df$cat)
+p <- ggplot(data=df,aes(x=Longitude,y=Latitude)) + 
+  geom_tile(aes(fill=cat)) +
+  scale_fill_manual(values = c("forestgreen","orange","red")) +
+  theme_bw() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        legend.position = "none") +
+  coord_equal()
+plot(p)
 
 ## Set region for Menabe-Antimena NAP
 Extent.MENAP <- c(419600,7750744,478890,7834872) # A voir
