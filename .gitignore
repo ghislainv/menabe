@@ -2,11 +2,8 @@
 menabe.html
 menabe.pdf
 
-# GRASS files
-grassdata
-
 # GIS files
-gisdata
+# gisdata
 
 # History files
 .Rhistory
