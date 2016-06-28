@@ -18,7 +18,7 @@ dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
 f <- c("for1990","for2000","for2010","for2014","forest2050")
 for (i in 1:length(f)) {
   d <- paste0("http://bioscenemada.net/FileTransfer/",f[i],".tif")
-  download.file(url=d,destfile=paste0("gisdata/rast_raw",f[i],".tif"),method="wget",quiet=TRUE)
+  download.file(url=d,destfile=paste0("gisdata/rast_raw/",f[i],".tif"),method="wget",quiet=TRUE)
 }
 
 ##========================================
@@ -46,25 +46,36 @@ defor_KMNP <- for2000
 defor_KMNP[defor_KMNP==1 & is.na(for2010)] <- 2
 defor_KMNP[defor_KMNP==1 & is.na(for2014)] <- 3
 
-## Plot raster with plot.raster
-plot(defor_KMNP,colNA="transparent")
+## Import shapefiles
+# SAPM ("système d'aires protégées à Madagascar")
+sapm <- readOGR(dsn="gisdata/vectors/sapm",layer="AP-NAP_38s")
+# Madagascar boundaries
+mada.latlong <- readOGR(dsn="gisdata/vectors/mada",layer="MAD_outline")
+proj4string(mada.latlong) <- "+init=epsg:4326"
+mada <- spTransform(mada.latlong,CRSobj=CRS("+init=epsg:32738"))
+# Field observations
+Belo <- readOGR(dsn="gisdata/vectors/additional_points",layer="Belo")
+Lambokely_Kirindy <- readOGR(dsn="gisdata/vectors/additional_points",layer="Lambokely_Kirindy_Village")
+Morondava_BeloTsi <- readOGR(dsn="gisdata/vectors/additional_points",layer="Morondava_BeloTsi")
+Obs <- readOGR(dsn="gisdata/vectors/additional_points",layer="Obs")
+# df for field observations
+Belo.df <- as.data.frame(Belo)
 
-
-## Plot raster with ggplot
-df <- as.data.frame(defor_KMNP,xy=TRUE)
-names(df) <- c("Longitude","Latitude","cat")
-df$cat <- as.factor(df$cat)
-levels(df$cat)
-p <- ggplot(data=df,aes(x=Longitude,y=Latitude)) + 
-  geom_tile(aes(fill=cat)) +
+## Plot raster with gplot() from rasterVis
+p <- gplot(defor_KMNP,maxpixels=10e4) + 
+  geom_tile(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
+  geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1, shape=16) +
+  geom_polygon(data=Belo.df, aes(x=x, y=y), color="black", size=1, shape=16) +
   theme_bw() +
   theme(line = element_blank(),
+        panel.border = element_blank(),
         axis.text = element_blank(),
         axis.title = element_blank(),
         legend.position = "none") +
   coord_equal()
 plot(p)
+ggsave(filename="figs/KMNP_defor.pdf",plot=p)
 
 ## Set region for Menabe-Antimena NAP
 Extent.MENAP <- c(419600,7750744,478890,7834872) # A voir
