@@ -8,12 +8,9 @@
 library(sp)
 library(rgdal)
 library(raster)
-## library(plyr)
 library(ggplot2)
 library(broom) ## to convert map into data-frame with tiny()
-## library(cowplot) ## for theme_nothing()
-library(gridExtra)
-## library(maptools) ## to plot vectors with ggplot2
+library(gridExtra) ## to combine several ggplots
 library(rasterVis) ## for gplot()
 
 ## Create some directories
@@ -206,4 +203,52 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=10e5) +
 # Grid plot
 plot.MANAP <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, ncol=2)
 ggsave(filename="figs/MANAP.png",plot=plot.MANAP,width=14,height=10,unit=c("cm"))
+
+##========================================
+## Forest cover evolution
+
+## Annual deforestation in percentage
+theta <- function(f2,f1,Y) {
+  return(1-(1-(f1-f2)/f1)^(1/Y)) 
+}
+## Table of results
+forest.cover <- data.frame(site=c("KMNP","MANAP"))
+forest.cover$area <- c(ncell(defor_KMNP),ncell(defor_MANAP))
+forest.cover$f2000 <- c(sum(values(defor_KMNP) %in% c(1:3),na.rm=TRUE),sum(values(defor_MANAP) %in% c(1:3),na.rm=TRUE))
+forest.cover$f2010 <- c(sum(values(defor_KMNP) %in% c(1,2),na.rm=TRUE),sum(values(defor_MANAP) %in% c(1,2),na.rm=TRUE))
+forest.cover$f2014 <- c(sum(values(defor_KMNP)==1,na.rm=TRUE),sum(values(defor_MANAP)==1,na.rm=TRUE))
+forest.cover$f2050 <- c(sum(values(proj_KMNP)==1,na.rm=TRUE),sum(values(proj_MANAP)==1,na.rm=TRUE))
+forest.cover$d0010.ha <- c(forest.cover$f2000-forest.cover$f2010)/10
+forest.cover$d1014.ha <- c(forest.cover$f2010-forest.cover$f2014)/4
+forest.cover$d1050.ha <- c(forest.cover$f2010-forest.cover$f2050)/40
+## Deforestation rates in %
+forest.cover$d0010.p <- round(theta(forest.cover$f2010,forest.cover$f2000,10)*100,2)
+forest.cover$d1014.p <- round(theta(forest.cover$f2014,forest.cover$f2010,4)*100,2)
+forest.cover$d1050.p <- round(theta(forest.cover$f2050,forest.cover$f2010,40)*100,2)
+## Transform pixels in ha
+forest.cover[,c(2:9)] <- round(forest.cover[,c(2:9)]*30*30/10000)
+
+## Save objects
+save(forest.cover,file="menabe.rda")
+
+##========================
+## Knit the document
+
+## Library
+library(knitr)
+library(rmarkdown)
+
+## Set knitr chunk default options
+opts_chunk$set(echo=FALSE, cache=FALSE,
+               results="hide", warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               tidy=FALSE)
+
+## Knit and translate to html and pdf
+render("menabe.Rmd",output_format=c("html_document","pdf_document"))
+
+##===========================================================================
+## End of script
+##===========================================================================
 
