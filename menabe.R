@@ -111,6 +111,7 @@ Belo.df <- as.data.frame(Belo)
 Obs.df <- as.data.frame(Obs)
 Lambokely_Kirindy.df <- as.data.frame(Lambokely_Kirindy)
 Morondava_BeloTsi.df <- as.data.frame(Morondava_BeloTsi)
+Morondava_BeloTsi.df$TOPONYME <- as.factor(c("Belo sur Tsiribihina","Morondava"))
 
 ##========================================
 ## Plot raster with gplot() from rasterVis
@@ -136,14 +137,14 @@ theme_defor <- function(plot.margin=unit(c(0,0,-0.5,-0.5),"line")) {
 ## KMNP
 # Build deforestation plot
 plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=10e5) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="(a)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
-  geom_line(data=roads.df, aes(x=long, y=lat, group=id), colour="black", size=0.2) +
+  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3500) +
+  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
   geom_point(data=Obs.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Obs.df, aes(label=Obs), size=3, hjust=1, nudge_x=-1000) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
@@ -152,14 +153,14 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=10e5) +
   theme_defor(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
 plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=10e5) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="(b)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
-  geom_line(data=roads.df, aes(x=long, y=lat, group=id), colour="black", size=0.2) +
+  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3500) +
+  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
@@ -170,31 +171,32 @@ ggsave(filename="figs/KMNP.png",plot=plot.KMNP,width=14,height=10,unit=c("cm"))
 
 ## MANAP
 # Build deforestation plot
-plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=5e4) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="(a)",hjust=0,vjust=1,size=4,fontface="bold") +
+plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=10e5) + 
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
-  geom_line(data=roads.df, aes(x=long, y=lat, group=id), colour="black", size=0.2) +
+  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morondava_BeloTsi.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Morondava_BeloTsi.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5) +
+  geom_text(data=Morondava_BeloTsi.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1500, hjust=0.5, nudge_x=3500) +
   geom_point(data=Lambokely_Kirindy.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Lambokely_Kirindy.df, aes(label=Name), size=3, vjust=0, nudge_y=1000, hjust=0.5) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
   theme_defor(plot.margin=unit(c(0,0.2,0,0),"cm"))
+plot.defor.MANAP
 # Build projection plot
-plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=5e4) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="(b)",hjust=0,vjust=1,size=4,fontface="bold") +
+plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=10e5) + 
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
-  geom_line(data=roads.df, aes(x=long, y=lat, group=id), colour="black", size=0.2) +
+  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morondava_BeloTsi.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Morondava_BeloTsi.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5) +
+  geom_text(data=Morondava_BeloTsi.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1500, hjust=0.5, nudge_x=3500) +
   geom_point(data=Lambokely_Kirindy.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Lambokely_Kirindy.df, aes(label=Name), size=3, vjust=0, nudge_y=1000, hjust=0.5) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
@@ -204,3 +206,4 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=5e4) +
 # Grid plot
 plot.MANAP <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, ncol=2)
 ggsave(filename="figs/MANAP.png",plot=plot.MANAP,width=14,height=10,unit=c("cm"))
+
