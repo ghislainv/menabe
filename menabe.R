@@ -30,11 +30,13 @@ for (i in 1:length(f)) {
 xmin.KMNP <- 365000; xmax.KMNP <- 430010
 ymin.KMNP <- 7640000; ymax.KMNP <- 7730000
 Extent.KMNP <- paste(xmin.KMNP,ymin.KMNP,xmax.KMNP,ymax.KMNP)
+e.KMNP <- extent(c(xmin.KMNP,xmax.KMNP,ymin.KMNP,ymax.KMNP))
 
 ## Set region for Menabe Antimena New Protected Area (MANAP)
 xmin.MANAP <- 419600; xmax.MANAP <- 478890
 ymin.MANAP <- 7750744; ymax.MANAP <- 7834872
 Extent.MANAP <- paste(xmin.MANAP,ymin.MANAP,xmax.MANAP,ymax.MANAP)
+e.MANAP <- extent(c(xmin.MANAP,xmax.MANAP,ymin.MANAP,ymax.MANAP))
 
 ## gdalwrap
 for (i in 1:length(f)) {
@@ -92,6 +94,13 @@ mada.latlong <- readOGR(dsn="gisdata/vectors/mada",layer="MAD_outline")
 proj4string(mada.latlong) <- "+init=epsg:4326"
 mada <- spTransform(mada.latlong,CRSobj=CRS("+init=epsg:32738"))
 mada.df <- tidy(mada)
+## Compute land area
+# KMNP
+land.KMNP <- crop(mada,e.KMNP)
+land_KMNP <- rasterize(land.KMNP,defor_KMNP,field=1)
+# MANAP
+land.MANAP <- crop(mada,e.MANAP)
+land_MANAP <- rasterize(land.MANAP,defor_MANAP,field=1)
 
 ## Roads
 roads.latlong <- readOGR(dsn="gisdata/vectors/roads",layer="tr_route_polyline")
@@ -213,7 +222,7 @@ theta <- function(f2,f1,Y) {
 }
 ## Table of results
 forest.cover <- data.frame(site=c("KMNP","MANAP"))
-forest.cover$area <- c(ncell(defor_KMNP),ncell(defor_MANAP))
+forest.cover$area <- c(sum(values(land_KMNP)==1,na.rm=TRUE),sum(values(land_MANAP)==1,na.rm=TRUE))
 forest.cover$f2000 <- c(sum(values(defor_KMNP) %in% c(1:3),na.rm=TRUE),sum(values(defor_MANAP) %in% c(1:3),na.rm=TRUE))
 forest.cover$f2010 <- c(sum(values(defor_KMNP) %in% c(1,2),na.rm=TRUE),sum(values(defor_MANAP) %in% c(1,2),na.rm=TRUE))
 forest.cover$f2014 <- c(sum(values(defor_KMNP)==1,na.rm=TRUE),sum(values(defor_MANAP)==1,na.rm=TRUE))
