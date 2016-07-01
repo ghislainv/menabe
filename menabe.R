@@ -12,6 +12,8 @@ library(ggplot2)
 library(broom) ## to convert map into data-frame with tiny()
 library(gridExtra) ## to combine several ggplots
 library(rasterVis) ## for gplot()
+library(knitr)
+library(rmarkdown) 
 
 ## Create some directories
 dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
@@ -31,12 +33,18 @@ xmin.KMNP <- 365000; xmax.KMNP <- 430010
 ymin.KMNP <- 7640000; ymax.KMNP <- 7730000
 Extent.KMNP <- paste(xmin.KMNP,ymin.KMNP,xmax.KMNP,ymax.KMNP)
 e.KMNP <- extent(c(xmin.KMNP,xmax.KMNP,ymin.KMNP,ymax.KMNP))
+r.KMNP <- raster(ext=e.KMNP,crs="+init=epsg:32738")
+r.KMNP.latlong <- projectRaster(r.KMNP,crs="+init=epsg:4326")
+e.KMNP.latlong <- extent(r.KMNP.latlong)
 
 ## Set region for Menabe Antimena New Protected Area (MANAP)
 xmin.MANAP <- 419600; xmax.MANAP <- 478890
 ymin.MANAP <- 7750744; ymax.MANAP <- 7834872
 Extent.MANAP <- paste(xmin.MANAP,ymin.MANAP,xmax.MANAP,ymax.MANAP)
 e.MANAP <- extent(c(xmin.MANAP,xmax.MANAP,ymin.MANAP,ymax.MANAP))
+r.MANAP <- raster(ext=e.MANAP,crs="+init=epsg:32738")
+r.MANAP.latlong <- projectRaster(r.MANAP,crs="+init=epsg:4326")
+e.MANAP.latlong <- extent(r.MANAP.latlong)
 
 ## gdalwrap
 for (i in 1:length(f)) {
@@ -238,14 +246,10 @@ forest.cover$d1050.p <- round(theta(forest.cover$f2050,forest.cover$f2010,40)*10
 forest.cover[,c(2:9)] <- round(forest.cover[,c(2:9)]*30*30/10000)
 
 ## Save objects
-save(forest.cover,file="menabe.rda")
+save(forest.cover,e.KMNP.latlong,e.MANAP.latlong,file="menabe.rda")
 
 ##========================
 ## Knit the document
-
-## Library
-library(knitr)
-library(rmarkdown)
 
 ## Set knitr chunk default options
 opts_chunk$set(echo=FALSE, cache=FALSE,
