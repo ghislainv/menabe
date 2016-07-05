@@ -24,7 +24,7 @@ load("menabe.rda")
 ### Field mission to central Menabe
 
 - Projects: Roadless Forests (JRC) and BioSceneMada (Cirad)
-- Sites: Kirindy-Mitea national park (KMNP) and Menabe-Antanimena new protected area (MANAP)
+- Sites: Kirindy-Mitea national park (KMNP) and Menabe-Antimena new protected area (MANAP)
 - Dates: from 4th to 12th of June 2016
 - Participants: Clovis Grinand (1), Miguel Pedrono (2), Tsiky Rabetrano (3), Bruno Rakotoarivelo (4), Fety A. Rakotomalala (1), Dimby Razafimpahanana (3) and Ghislain Vieilledent (2,5)
 - E-mails: c.grinand@etcterra.org, miguel.pedrono@cirad.fr, tsikyrabetrano@gmail.com, rbruno@pnae.mg, f.rakotomalala@etcterra.org, dimby@wcs.org, ghislain.vieilledent@cirad.fr
@@ -38,7 +38,7 @@ load("menabe.rda")
 - Thuesday 07th: visit to the dunes and lake in KMNP and illegal logging. Discussion with KMNP conservation director
 - Wednesday 08th: avorted trial to see the "Sentier des baobabs". Discussion at the Ecolodge du Menabe with Roland Eve from WWF
 - Thursday 09th: Belo-sur-Mer -- Morondava -- Marofandilia. Meeting with Direction Régionale des Eaux et Forêt (DREF) in Morondava
-- Friday 10th: deforestation from hatsake around Kirindy-Village and Lambokely. Contact with EPFL PhD student. Visit of de Haulme concession 
+- Friday 10th: deforestation from _"hatsake"_ around Kirindy-Village and Lambokely. Contact with EPFL PhD student. Visit of the de Haulme concession 
 - Saturday 11th: Naturalist observations around Bedo lake
 - Sunday 12th: Marofandilia -- Antananarivo
 
@@ -84,8 +84,7 @@ Following @Vieilledent2013, we considered two processes for modelling deforestat
 
 ### 2.3 Surveys
 
-- To identify the causes of the deforestation
-- To study the efficiency of the conservation measures
+During a ten days period in June 2016, we conducted surveys among farmers and environmental stakeholders (Table. 1) around the Kirindy-Mitea national park and the Menabe-Antimena new protected area. The objectives of the surveys were first to identify the causes of the deforestation and second to assess the efficiency of the conservation actions implemented by the institution in charge of the management of the protected area, either the non-governmental organisation _"Fanamby"_" for the Menabe-Antimena new protected area or Madagascar National Park for the Kirindy-Mitea national park. Surveys were qualitative and included non-directive questions (no "yes-or-no" questions).
 
 | Id | Type              | Name | Institution     | Position                                        | Date | Duration |
 |----|-------------------|------|-----------------|-------------------------------------------------|------|----------|
@@ -98,7 +97,7 @@ Following @Vieilledent2013, we considered two processes for modelling deforestat
 | 7 | Environmental NGO | Roland Eve | WWF | Landscape Planning and Management advisor for KMNP | 08/06 | 1h |
 | 9 | Environmental NGO | Tahina Riniavo | Fanamby | Director of the conservation program for MANAP | 10/06 | 30min |
 
-Table 1: **List of surveys conducted among farmers and environmental stakeholders**. Surveys were conducted around the Kirindy-Mitea National Park and the Menabe-Antimena New Protected Area. The _"Fokontany"_ is a Malagasy term defining an administrative territory under the level of the township. In Madagascar, the management of the protected areas are under the responsability of Madagascar National Parks (MNP) or delegated to an environmental Non-Governmental Organisation (such as the NGO Fanamby for Menabe-Antimena New Protected Areas). 
+Table 1: **List of surveys conducted among farmers and environmental stakeholders**. Surveys were conducted around the Kirindy-Mitea national park and the Menabe-Antimena new protected area. The _"Fokontany"_ is a Malagasy term defining an administrative territory under the level of the township. In Madagascar, the management of the protected areas are under the responsability of Madagascar National Parks (MNP) or delegated to an environmental Non-Governmental Organisation (such as the NGO Fanamby for Menabe-Antimena New Protected Areas). 
 
 ## 3. Results
 
@@ -108,7 +107,7 @@ Table 1: **List of surveys conducted among farmers and environmental stakeholder
 
 #### 3.2.1 Slash-and-burn agriculture, uncontrolled fires and illegal logging
 
-We identified three causes of deforestation in the Kirindy-Mitea National Park (Fig. 1). Slash-and-burn agriculture (also know as _"hatsake"_) for corn crops was identified as the main cause of deforestation in several side the park (Fig. 1). 
+We identified three causes of deforestation in the Kirindy-Mitea National Park (Fig. 1). Slash-and-burn agriculture (also know as _"hatsake"_) for corn crops was identified as the main cause of deforestation in several areas at the periphery of the protected area (Fig. 1-a)). 
 
 Climate-change could indirectly be identified as a cause of deforestation in the central Menabe region. It is now largely recognized that climate change can increase the number of extreme climatic events such as droughts, floods and cyclones (ref. X). In 2009, the cyclone names _"Fanela"_ impacted a large area of the forest in the Kirindy-Mitea National Park leaving a lot of wood fuel on the ground. This has allow uncontrolled fires to spread on large areas (~ 5000 ha) in 2013 (Fig. 1a). These fires were difficultly stopped with buckets of water and sand by the agents of the park with the help of the local people from the surrounding village. Severe droughts in southern Madagascar in the recent years (since 2010), that could be attributed to climate-change [@Vieilledent2016], has led to famine events and can explain the migration of thousand of people in the villages of Kirindy and Lambokely (Fig. 2).
 
@@ -130,9 +129,9 @@ kable(forest)
 
 Table 2: **Evolution of the forest cover with time in the Kirindy-Mitea national park (KMNP) and the Menabe-Antimena new protected area (MANAP).** _Area_: land area (in ha). _F2000_, _F2010_ and _F2014_: forest area (in ha) for the years 2000, 2010 and 2014, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2014`% of the forest have disappeared on the period 2000-2014 in the two sites and we predict the loss of around `r loss.2050`% of the forest on the period 2000-2050 for the two sites assuming a business-as-usual scenario.  
 
-![Figure 1: **Historical and forecasted deforestation in the Kirindy-Mitea National Park.** The boundaries of the Kirindy-Mitea National Park (KMNP) are represented with black polygones (source: Rebioma project at http://rebioma.net). Main roads are represented with thin black lines (source: FTM BD500). Coast line is represented with a thin grey line. Belo-sur-Mer is the main village located near KMNP. **a)** Historical deforestation on the period 2000-2010-2014. Green: forest cover in 2014, orange: 2000-2010 deforestation, red: 2010-2014 deforestation (source: BioSceneMada project at http://bioscenemada.net). The main causes of the deforestation are (A) slash-and-burn agriculture (_"hatsake"_), (B) cyclones followed by uncontrolled fires and (C) illegal logging. **b)** Projected deforestation on the period 2010-2050. Green: projected forest cover in 2050, grey: 2010-2050 deforestation. Most of the 2010-2014 deforestation observed in figure a) is included in the 2010-2050 projections. Around 50% of the 2010 forest is predicted to disappear on the period 2010-2050. Most of the remaining forest will be inside the protected area.](figs/KMNP.png)
+![Figure 1: **Historical and forecasted deforestation in the Kirindy-Mitea national park.** The boundaries of the Kirindy-Mitea national park (KMNP) are represented with black polygones (source: Rebioma project at http://rebioma.net). Main roads are represented with thin black lines (source: FTM BD500). Coast line is represented with a thin grey line. Belo-sur-Mer is the main village located near KMNP. **a)** Historical deforestation on the period 2000-2010-2014. Green: forest cover in 2014, orange: 2000-2010 deforestation, red: 2010-2014 deforestation (source: BioSceneMada project at http://bioscenemada.net). The main causes of the deforestation are (A) slash-and-burn agriculture (_"hatsake"_), (B) cyclones followed by uncontrolled fires and (C) illegal logging. At the bottom right, Madagascar map with the Kinrindy-Mitea study area (red rectangle) and the Menabe-Antimena study area at the north (black rectangle). **b)** Projected deforestation on the period 2010-2050. Green: projected forest cover in 2050, grey: 2010-2050 deforestation. Most of the 2010-2014 deforestation observed in figure a) is included in the 2010-2050 projections. Around 50% of the 2010 forest is predicted to disappear on the period 2010-2050. Most of the remaining forest will be inside the protected area.](figs/KMNP.png)
 
-![Figure 2: **Historical and forecasted deforestation in the Menabe-Antimena new protected area.** The boundaries of the Menabe-Antimena new protected area (MANAP) are represented with black polygones (source: Rebioma project at http://rebioma.net). Main roads are represented with thin black lines (source: FTM BD500). Coast line is represented with a thin grey line. Morondava and Belo-sur-Tsiribihina are the main cities located near MANAP. **a)** Historical deforestation on the period 2000-2010-2014. Green: forest cover in 2014, orange: 2000-2010 deforestation, red: 2010-2014 deforestation (source: BioSceneMada project at http://bioscenemada.net). The main cause of the deforestation is the slash-and-burn agriculture (_"hatsake"_) for corn and peanut crops. Most of the 2000-2014 deforestation occured around the villages of Kirindy and Lambokely. **b)** Projected deforestation on the period 2010-2050. Green: projected forest cover in 2050, grey: 2010-2050 deforestation. Much of the deforestation predicted on the period 2010-2050 have already occured on the period 2010-2014.](figs/MANAP.png)
+![Figure 2: **Historical and forecasted deforestation in the Menabe-Antimena new protected area.** The boundaries of the Menabe-Antimena new protected area (MANAP) are represented with black polygones (source: Rebioma project at http://rebioma.net). Main roads are represented with thin black lines (source: FTM BD500). Coast line is represented with a thin grey line. Morondava and Belo-sur-Tsiribihina are the main cities located near MANAP. **a)** Historical deforestation on the period 2000-2010-2014. Green: forest cover in 2014, orange: 2000-2010 deforestation, red: 2010-2014 deforestation (source: BioSceneMada project at http://bioscenemada.net). The main cause of the deforestation is the slash-and-burn agriculture (_"hatsake"_) for corn and peanut crops. Most of the 2000-2014 deforestation occured around the villages of Kirindy and Lambokely. At the middle left, Madagascar map with the Menabe-Antimena study area (red rectangle) and the Kinrindy-Mitea study area at the south (black rectangle). **b)** Projected deforestation on the period 2010-2050. Green: projected forest cover in 2050, grey: 2010-2050 deforestation. Much of the deforestation predicted on the period 2010-2050 have already occured on the period 2010-2014.](figs/MANAP.png)
 
 ```{r deforestation, results="asis"}
 defor <- forest.cover[,c(1,7:9)]
@@ -153,6 +152,9 @@ Table 3: **Evolution of the annual deforestation with time in the Kirindy-Mitea 
 ## 4. Discussion
 
 ### 4.1 Historical deforestation, projections and consequences (climate-change, biodiversity)
+
+In a study analyzing the deforestation patterns in Kirindy-Ambadira Forest
+Complex, @Zinner2014 found similar results to ours regarding the future deforestation. @Zinner2014 showed that half of the forest will have disappeared in 2043 in comparison to 1973 assuming a deforestation rate similar to the one over the period 1992-2010.
 
 ### 4.2 Link between deforestation and climate-change
 

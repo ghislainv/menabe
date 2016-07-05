@@ -130,27 +130,58 @@ Morondava_BeloTsi.df$TOPONYME <- as.factor(c("Belo sur Tsiribihina","Morondava")
 ##========================================
 ## Plot raster with gplot() from rasterVis
 
-## New theme for ggplot
-theme_defor <- function(plot.margin=unit(c(0,0,-0.5,-0.5),"line")) {
-  theme_bw() +
-    theme(axis.line=element_blank(),
-          axis.text.x=element_blank(),
-          axis.text.y=element_blank(),
-          axis.ticks=element_blank(),
-          axis.title.x=element_blank(),
-          axis.title.y=element_blank(),
-          legend.position="none",
-          panel.background=element_blank(),
-          panel.border=element_blank(),
-          panel.grid.major=element_blank(),
-          panel.grid.minor=element_blank(),
-          plot.background=element_blank(),
-          plot.margin=plot.margin)
-}
+## Setting theme for full plot
+theme_full <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
+                    axis.text.y=element_blank(),
+                    axis.ticks=element_blank(),axis.title.x=element_blank(),
+                    axis.title.y=element_blank(),
+                    legend.position="none",panel.background=element_blank(),
+                    panel.border=element_blank(),
+                    panel.grid.major=element_blank(),panel.grid.minor=element_blank(),
+                    plot.background=element_blank())
+
+## Setting theme for zoom plot
+theme_zoom <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
+                    axis.text.y=element_blank(),
+                    axis.ticks=element_blank(),axis.title.x=element_blank(),
+                    axis.title.y=element_blank(),
+                    legend.position="none",panel.grid.major=element_blank(),
+                    panel.grid.minor=element_blank(),
+                    panel.border=element_blank())
+
+##===========
+## Madagascar
+## KMNP
+plot.Mada.KMNP <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
+  geom_polygon(colour=grey(0.4),fill=grey(0.8),size=0.2) +
+  geom_rect(aes(xmin=xmin.KMNP,xmax=xmax.KMNP,ymin=ymin.KMNP,ymax=ymax.KMNP),
+            fill="transparent",colour="red",size=0.2) +
+  geom_rect(aes(xmin=xmin.MANAP,xmax=xmax.MANAP,ymin=ymin.MANAP,ymax=ymax.MANAP),
+            fill="transparent",colour="black",size=0.2) +
+  theme_bw() + theme_zoom + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
+  coord_equal()
+## Grob
+grob.Mada.KMNP <- ggplotGrob(plot.Mada.KMNP)
+
+## MANAP
+plot.Mada.MANAP <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
+  geom_polygon(colour=grey(0.4),fill=grey(0.8),size=0.2) +
+  geom_rect(aes(xmin=xmin.KMNP,xmax=xmax.KMNP,ymin=ymin.KMNP,ymax=ymax.KMNP),
+            fill="transparent",colour="black",size=0.2) +
+  geom_rect(aes(xmin=xmin.MANAP,xmax=xmax.MANAP,ymin=ymin.MANAP,ymax=ymax.MANAP),
+            fill="transparent",colour="red",size=0.2) +
+  theme_bw() + theme_zoom + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
+  coord_equal()
+## Grob
+grob.Mada.MANAP <- ggplotGrob(plot.Mada.MANAP)
+
+## Resolution of rasters
+high.res <- TRUE
+res.rast <- ifelse(high.res,10e5,10e3)
 
 ## KMNP
 # Build deforestation plot
-plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=10e5) + 
+plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) + 
   annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
@@ -164,9 +195,13 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=10e5) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_defor(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  annotation_custom(grob=grob.Mada.KMNP,xmin=xmax.KMNP-12500,xmax=xmax.KMNP,
+                    ymin=ymin.KMNP,ymax=ymin.KMNP+36000) +
+  theme_bw() +
+  theme_full +
+  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
-plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=10e5) + 
+plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) + 
   annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
@@ -178,17 +213,22 @@ plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=10e5) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_defor(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  theme_bw() +
+  theme_full +
+  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
 # Grid plot
 plot.KMNP <- grid.arrange(plot.defor.KMNP, plot.proj.KMNP, ncol=2)
 ggsave(filename="figs/KMNP.png",plot=plot.KMNP,width=14,height=10,unit=c("cm"))
 
 ## MANAP
 # Build deforestation plot
-plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=10e5) + 
+plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) + 
   annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
+  annotation_custom(grob=grob.Mada.MANAP,xmin=xmin.MANAP+4000,
+                    xmax=xmin.MANAP+4000+12500,
+                    ymin=ymin.MANAP+25000,ymax=ymin.MANAP+25000+36000) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
@@ -199,10 +239,12 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=10e5) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_defor(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  theme_bw() +
+  theme_full +
+  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 plot.defor.MANAP
 # Build projection plot
-plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=10e5) + 
+plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) + 
   annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
@@ -216,7 +258,9 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=10e5) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_defor(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  theme_bw() +
+  theme_full +
+  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
 # Grid plot
 plot.MANAP <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, ncol=2)
 ggsave(filename="figs/MANAP.png",plot=plot.MANAP,width=14,height=10,unit=c("cm"))
