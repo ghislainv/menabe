@@ -15,6 +15,17 @@ library(rasterVis) ## for gplot()
 library(knitr)
 library(rmarkdown) 
 
+##================================================
+## Household income in MGA on the period 2006-2012
+## Sources: The Gallup Organization and The World Bank
+
+household.income.usd <- 1013 ## The Gallup Organization
+rate <- c(2142.30,1873.88,1708.37,1956.21,2089.95,2025.12,2194.97)
+year <- c(2006,2007,2008,2009,2010,2011,2012)
+m.rate <- round(mean(rate))
+household.income.mga <- m.rate*household.income.usd
+
+##========================
 ## Create some directories
 dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
 
