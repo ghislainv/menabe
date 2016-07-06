@@ -1,8 +1,33 @@
 #!/bin/bash
-number=0
-letters="a)b)c)"
-for f in *.tif; do
-   label=${letters:number:1}
-   convert "$f" -gravity northwest -background gray90 label:"$label" -composite miff:-
-   ((number=number+2))
-done | montage -tile 2x - result.png
+
+# arachide
+dir="figs/photos/arachide/selected"
+f1="537_Menabe.jpg"
+f2="334_Menabe.jpg"
+f3="610_Menabe.jpg"
+convert "$dir/$f1" -resize 600 "$dir/f1.jpg"
+convert "$dir/$f2" -resize 600 "$dir/f2.jpg"
+convert "$dir/$f3" -resize 1200 "$dir/f3.jpg"
+montage -tile 2x1 -geometry +0+0 "$dir/f1.jpg" "$dir/f2.jpg" "$dir/m1.jpg"
+montage -tile 1x2 -geometry +0+0 "$dir/m1.jpg" "$dir/f3.jpg" "$dir/m2.jpg"
+convert -gravity NorthWest -annotate +10+10 "a)" -pointsize 48 "$dir/m2.jpg" "$dir/a1.jpg"
+convert -gravity NorthWest -annotate +610+10 "b)" -pointsize 48 "$dir/a1.jpg" "$dir/a2.jpg"
+convert -gravity NorthWest -annotate +10+407 "c)" -pointsize 48 "$dir/a2.jpg" "$dir/a3.jpg"
+mv "$dir/a3.jpg" "figs/arachide.jpg"
+rm "$dir/f1.jpg" "$dir/f2.jpg" "$dir/f3.jpg" "$dir/m1.jpg" "$dir/m2.jpg" "$dir/a1.jpg" "$dir/a2.jpg"
+
+# mais
+dir="figs/photos/mais/selected"
+f1="177_Menabe.jpg"
+f2="148_Menabe.jpg"
+f3="311_Menabe.jpg"
+convert "$dir/$f1" -resize 600 "$dir/f1.jpg"
+convert "$dir/$f2" -resize 600 "$dir/f2.jpg"
+convert "$dir/$f3" -resize 1200 "$dir/f3.jpg"
+montage -tile 2x1 -geometry +0+0 "$dir/f1.jpg" "$dir/f2.jpg" "$dir/m1.jpg"
+montage -tile 1x2 -geometry +0+0 "$dir/m1.jpg" "$dir/f3.jpg" "$dir/m2.jpg"
+convert -gravity NorthWest -annotate +10+10 "a)" -pointsize 48 "$dir/m2.jpg" "$dir/a1.jpg"
+convert -gravity NorthWest -annotate +610+10 "b)" -pointsize 48 "$dir/a1.jpg" "$dir/a2.jpg"
+convert -gravity NorthWest -annotate +10+407 "c)" -pointsize 48 "$dir/a2.jpg" "$dir/a3.jpg"
+mv "$dir/a3.jpg" "figs/mais.jpg"
+rm "$dir/f1.jpg" "$dir/f2.jpg" "$dir/f3.jpg" "$dir/m1.jpg" "$dir/m2.jpg" "$dir/a1.jpg" "$dir/a2.jpg"

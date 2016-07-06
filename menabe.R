@@ -306,6 +306,9 @@ save(forest.cover,e.KMNP.latlong,e.MANAP.latlong,file="menabe.rda")
 ##========================
 ## Knit the document
 
+## Assemble photos
+system("sh menabe.sh")
+
 ## Set knitr chunk default options
 opts_chunk$set(echo=FALSE, cache=FALSE,
                results="hide", warning=FALSE,
