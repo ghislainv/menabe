@@ -1,8 +1,10 @@
 ---
 title: "What to do to stop the inceasing deforestation in western Madagascar dry forests?"
-output: html_document
 bibliography: bib/biblio.bib
 csl: bib/elsevier-harvard.csl
+output: 
+  html_document:
+    fig_caption: yes
 ---
 
 ```{r load_data}
