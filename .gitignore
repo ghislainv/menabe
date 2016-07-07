@@ -3,7 +3,13 @@ menabe.html
 menabe.pdf
 
 # Photos
-figs/photos
+figs/photos/*
+!figs/photos/arachide
+!figs/photos/mais
+figs/photos/arachide/*
+figs/photos/mais/*
+!figs/photos/arachide/selected
+!figs/photos/mais/selected
 
 # History files
 .Rhistory
