@@ -6,10 +6,14 @@ menabe.pdf
 figs/photos/*
 !figs/photos/arachide
 !figs/photos/mais
+!figs/photos/biodiversity
 figs/photos/arachide/*
 figs/photos/mais/*
+figs/photos/biodiversity/*
 !figs/photos/arachide/selected
 !figs/photos/mais/selected
+!figs/photos/biodiversity/selected
+figs/photos/biodiversity/selected/dir_mogr
 
 # History files
 .Rhistory
