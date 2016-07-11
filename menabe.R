@@ -162,29 +162,16 @@ theme_zoom <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
 
 ##===========
 ## Madagascar
-## KMNP
-plot.Mada.KMNP <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
+plot.Mada <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
   geom_polygon(colour=grey(0.4),fill=grey(0.8),size=0.2) +
   geom_rect(aes(xmin=xmin.KMNP,xmax=xmax.KMNP,ymin=ymin.KMNP,ymax=ymax.KMNP),
-            fill="transparent",colour="red",size=0.2) +
+            fill="transparent",colour="black",size=0.2) +
   geom_rect(aes(xmin=xmin.MANAP,xmax=xmax.MANAP,ymin=ymin.MANAP,ymax=ymax.MANAP),
             fill="transparent",colour="black",size=0.2) +
   theme_bw() + theme_zoom + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
   coord_equal()
 ## Grob
-grob.Mada.KMNP <- ggplotGrob(plot.Mada.KMNP)
-
-## MANAP
-plot.Mada.MANAP <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
-  geom_polygon(colour=grey(0.4),fill=grey(0.8),size=0.2) +
-  geom_rect(aes(xmin=xmin.KMNP,xmax=xmax.KMNP,ymin=ymin.KMNP,ymax=ymax.KMNP),
-            fill="transparent",colour="black",size=0.2) +
-  geom_rect(aes(xmin=xmin.MANAP,xmax=xmax.MANAP,ymin=ymin.MANAP,ymax=ymax.MANAP),
-            fill="transparent",colour="red",size=0.2) +
-  theme_bw() + theme_zoom + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
-  coord_equal()
-## Grob
-grob.Mada.MANAP <- ggplotGrob(plot.Mada.MANAP)
+grob.Mada <- ggplotGrob(plot.Mada)
 
 ## Resolution of rasters
 high.res <- TRUE
@@ -206,8 +193,6 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  annotation_custom(grob=grob.Mada.KMNP,xmin=xmax.KMNP-12500,xmax=xmax.KMNP,
-                    ymin=ymin.KMNP,ymax=ymin.KMNP+36000) +
   theme_bw() +
   theme_full +
   theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
@@ -227,17 +212,14 @@ plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) +
   theme_bw() +
   theme_full +
   theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
-# Grid plot
-plot.KMNP <- grid.arrange(plot.defor.KMNP, plot.proj.KMNP, ncol=2)
-ggsave(filename="figs/KMNP.png",plot=plot.KMNP,width=14,height=10,unit=c("cm"))
 
 ## MANAP
 # Build deforestation plot
 plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="c)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
-  annotation_custom(grob=grob.Mada.MANAP,xmin=xmin.MANAP+4000,
+  annotation_custom(grob=grob.Mada,xmin=xmin.MANAP+4000,
                     xmax=xmin.MANAP+4000+12500,
                     ymin=ymin.MANAP+25000,ymax=ymin.MANAP+25000+36000) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -253,10 +235,9 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
   theme_bw() +
   theme_full +
   theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
-plot.defor.MANAP
 # Build projection plot
 plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="d)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -272,9 +253,10 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) +
   theme_bw() +
   theme_full +
   theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
-# Grid plot
-plot.MANAP <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, ncol=2)
-ggsave(filename="figs/MANAP.png",plot=plot.MANAP,width=14,height=10,unit=c("cm"))
+
+## Combine plots
+plot.defor <- grid.arrange(plot.defor.KMNP, plot.proj.KMNP, plot.defor.MANAP, plot.proj.MANAP, ncol=2)
+ggsave(filename="figs/defor.png",plot=plot.defor,width=14,height=10,unit=c("cm"))
 
 ##========================================
 ## Forest cover evolution

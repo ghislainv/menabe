@@ -100,7 +100,7 @@ During a ten days period in June 2016, we conducted surveys among farmers and en
 
 | Id | Type              | Name | Institution     | Position                                        | Date | Duration |
 |----|-------------------|------|-----------------|-------------------------------------------------|------|----------|
-| 1 | Migrant and farmer | Farmer 1 | Kirindy village | Chief of a family with a woman and height children | 10/06 | 1h30 |
+| 1 | Migrant and farmer | Farmer 1 | Kirindy village | Chief of a family with a woman and eight children | 10/06 | 1h30 |
 | 2 | Woman | Woman 1 | Kirindy village | Woman of farmer living in the Kirindy village | 10/06 | 30min |
 | 4 | Migrants and farmers | Farmers 2 and 3 | Lambokely | Two family chiefs with women and children | 10/06 | 1h |
 | 5 | Administration | Chief 1 | Lambokely | Fokontany chief | 10/06  | 30min |
