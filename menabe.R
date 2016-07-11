@@ -14,6 +14,7 @@ library(gridExtra) ## to combine several ggplots
 library(rasterVis) ## for gplot()
 library(knitr)
 library(rmarkdown) 
+library(rgeos) ## for crop()
 
 ##================================================
 ## Household income in MGA on the period 2006-2012
@@ -132,10 +133,10 @@ Lambokely_Kirindy <- readOGR(dsn="gisdata/vectors/additional_points",layer="Lamb
 Morondava_BeloTsi <- readOGR(dsn="gisdata/vectors/additional_points",layer="Morondava_BeloTsi")
 Obs <- readOGR(dsn="gisdata/vectors/additional_points",layer="Obs")
 ## df for localities and field observations
-Belo.df <- as.data.frame(Belo)
-Obs.df <- as.data.frame(Obs)
-Lambokely_Kirindy.df <- as.data.frame(Lambokely_Kirindy)
-Morondava_BeloTsi.df <- as.data.frame(Morondava_BeloTsi)
+Belo.df <- as.data.frame(Belo); names(Belo.df)[12:13] <- c("x","y")
+Obs.df <- as.data.frame(Obs); names(Obs.df)[3:4] <- c("x","y")
+Lambokely_Kirindy.df <- as.data.frame(Lambokely_Kirindy); names(Lambokely_Kirindy.df)[3:4] <- c("x","y")
+Morondava_BeloTsi.df <- as.data.frame(Morondava_BeloTsi); names(Morondava_BeloTsi.df)[12:13] <- c("x","y")
 Morondava_BeloTsi.df$TOPONYME <- as.factor(c("Belo sur Tsiribihina","Morondava"))
 
 ##========================================
