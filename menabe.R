@@ -181,7 +181,7 @@ res.rast <- ifelse(high.res,10e5,10e3)
 ## KMNP
 # Build deforestation plot
 plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="c)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -199,7 +199,7 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) +
   theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
 plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="d)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -217,7 +217,7 @@ plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) +
 ## MANAP
 # Build deforestation plot
 plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="c)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
   annotation_custom(grob=grob.Mada,xmin=xmin.MANAP+4000,
@@ -238,7 +238,7 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
   theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
 plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="d)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -256,8 +256,8 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) +
   theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
 
 ## Combine plots
-plot.defor <- grid.arrange(plot.defor.KMNP, plot.proj.KMNP, plot.defor.MANAP, plot.proj.MANAP, ncol=2)
-ggsave(filename="figs/defor.png",plot=plot.defor,width=14,height=10,unit=c("cm"))
+plot.defor <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, plot.defor.KMNP, plot.proj.KMNP, ncol=2)
+ggsave(filename="figs/deforestation.png",plot=plot.defor,width=14,height=20,unit=c("cm"))
 
 ##========================================
 ## Forest cover evolution
