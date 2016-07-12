@@ -4,15 +4,21 @@ menabe.pdf
 
 # Photos
 figs/photos/*
+!figs/photos/biodiversity
 !figs/photos/arachide
 !figs/photos/mais
-!figs/photos/biodiversity
+!figs/photos/bosake_cyclone
+!figs/photos/illegal_logging
+figs/photos/biodiversity/*
 figs/photos/arachide/*
 figs/photos/mais/*
-figs/photos/biodiversity/*
+figs/photos/bosake_cyclone/*
+figs/photos/illegal_logging/*
+!figs/photos/biodiversity/selected
 !figs/photos/arachide/selected
 !figs/photos/mais/selected
-!figs/photos/biodiversity/selected
+!figs/photos/bosake_cyclone/selected
+!figs/photos/illegal_logging/selected
 figs/photos/biodiversity/selected/dir_mogr
 
 # History files
