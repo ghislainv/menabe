@@ -178,46 +178,10 @@ grob.Mada <- ggplotGrob(plot.Mada)
 high.res <- TRUE
 res.rast <- ifelse(high.res,10e5,10e3)
 
-## KMNP
-# Build deforestation plot
-plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="c)",hjust=0,vjust=1,size=4,fontface="bold") +
-  geom_raster(aes(fill=factor(value))) +
-  scale_fill_manual(values = c("forestgreen","orange","red")) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
-  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
-  geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
-  geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
-  geom_point(data=Obs.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Obs.df, aes(label=Obs), size=3, hjust=1, nudge_x=-1000) +
-  coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
-  scale_x_continuous(expand=c(0,0)) +
-  scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
-# Build projection plot
-plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="d)",hjust=0,vjust=1,size=4,fontface="bold") +
-  geom_raster(aes(fill=factor(value))) +
-  scale_fill_manual(values = c("forestgreen",grey(0.5))) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
-  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
-  geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
-  geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
-  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
-  coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
-  scale_x_continuous(expand=c(0,0)) +
-  scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
-
 ## MANAP
 # Build deforestation plot
 plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen","orange","red")) +
   annotation_custom(grob=grob.Mada,xmin=xmin.MANAP+4000,
@@ -238,7 +202,7 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
   theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
 plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="b)",hjust=0,vjust=1,size=4,fontface="bold") +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="c",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values = c("forestgreen",grey(0.5))) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -249,6 +213,42 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) +
   geom_point(data=Lambokely_Kirindy.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Lambokely_Kirindy.df, aes(label=Name), size=3, vjust=0, nudge_y=1000, hjust=0.5) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0)) +
+  theme_bw() +
+  theme_full +
+  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+
+## KMNP
+# Build deforestation plot
+plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) + 
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b",hjust=0,vjust=1,size=4,fontface="bold") +
+  geom_raster(aes(fill=factor(value))) +
+  scale_fill_manual(values = c("forestgreen","orange","red")) +
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
+  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
+  geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
+  geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
+  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
+  geom_point(data=Obs.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
+  geom_text(data=Obs.df, aes(label=Obs), size=3, hjust=1, nudge_x=-1000) +
+  coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0)) +
+  theme_bw() +
+  theme_full +
+  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+# Build projection plot
+plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) + 
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="d",hjust=0,vjust=1,size=4,fontface="bold") +
+  geom_raster(aes(fill=factor(value))) +
+  scale_fill_manual(values = c("forestgreen",grey(0.5))) +
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
+  geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
+  geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
+  geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
+  geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
+  coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
   theme_bw() +

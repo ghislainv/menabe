@@ -70,15 +70,15 @@ montage -tile 1x3 -geometry +0+0 "figs/big_1.jpg" "figs/small.jpg" "figs/big_2.j
 
 ## Annotate with label
 # big
-convert -fill white -gravity NorthWest -annotate +5+5 "a)" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
-convert -fill white -gravity NorthWest -annotate +605+5 "c)" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
-convert -fill white -gravity NorthWest -annotate +5+605 "b)" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
-convert -fill white -gravity NorthWest -annotate +605+605 "d)" -pointsize $ts "figs/m4.jpg" "figs/m5.jpg"
+convert -fill white -gravity NorthWest -annotate +5+5 "a" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
+convert -fill white -gravity NorthWest -annotate +605+5 "c" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
+convert -fill white -gravity NorthWest -annotate +5+605 "b" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
+convert -fill white -gravity NorthWest -annotate +605+605 "d" -pointsize $ts "figs/m4.jpg" "figs/m5.jpg"
 # small
-convert -fill white -gravity NorthWest -annotate +5+405 "a')" -pointsize $(($ts/2)) "figs/m5.jpg" "figs/m6.jpg"
-convert -fill white -gravity NorthWest -annotate +305+405 "b')" -pointsize $(($ts/2)) "figs/m6.jpg" "figs/m7.jpg"
-convert -fill white -gravity NorthWest -annotate +605+405 "c')" -pointsize $(($ts/2)) "figs/m7.jpg" "figs/m8.jpg"
-convert -fill white -gravity NorthWest -annotate +905+405 "d')" -pointsize $(($ts/2)) "figs/m8.jpg" "figs/causes.jpg"
+convert -fill white -gravity NorthWest -annotate +5+405 "a'" -pointsize $(($ts-12)) "figs/m5.jpg" "figs/m6.jpg"
+convert -fill white -gravity NorthWest -annotate +305+405 "b'" -pointsize $(($ts-12)) "figs/m6.jpg" "figs/m7.jpg"
+convert -fill white -gravity NorthWest -annotate +605+405 "c'" -pointsize $(($ts-12)) "figs/m7.jpg" "figs/m8.jpg"
+convert -fill white -gravity NorthWest -annotate +905+405 "d'" -pointsize $(($ts-12)) "figs/m8.jpg" "figs/causes.jpg"
 
 ## Cleaning
 rm "figs/big_1.jpg" "figs/big_2.jpg" "figs/small.jpg" figs/m[1-8].jpg
@@ -105,10 +105,10 @@ convert "$dir/$f4" -resize 600x400^ -gravity center -extent 600x400 "$dir/f4.jpg
 # Montage
 montage -tile 2x2 -geometry +0+0 "$dir/f1.jpg" "$dir/f3.jpg" "$dir/f2.jpg" "$dir/f4.jpg" "figs/m1.jpg"
 # Annotate
-convert -gravity NorthWest -annotate +5+5 "a)" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
-convert -gravity NorthWest -annotate +605+5 "c)" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
-convert -gravity NorthWest -annotate +5+405 "b)" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
-convert -gravity NorthWest -annotate +605+405 "d)" -pointsize $ts "figs/m4.jpg" "figs/surveys.jpg"
+convert -gravity NorthWest -annotate +5+5 "a" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
+convert -gravity NorthWest -annotate +605+5 "c" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
+convert -gravity NorthWest -annotate +5+405 "b" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
+convert -gravity NorthWest -annotate +605+405 "d" -pointsize $ts "figs/m4.jpg" "figs/surveys.jpg"
 # Clean
 rm "$dir/f1.jpg" "$dir/f3.jpg" "$dir/f2.jpg" "$dir/f4.jpg"
 rm figs/m[1-4].jpg
