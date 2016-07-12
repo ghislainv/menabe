@@ -33,7 +33,7 @@ fbig="311_Menabe.jpg"
 convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
 convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
 
-## Cyclone and uncontrolled fires
+## Cyclone, grasslands and uncontrolled fires
 dir="figs/photos/bosake_cyclone/selected"
 fsmall="52_Menabe.jpg"
 fbig="491_Menabe.jpg"
@@ -83,5 +83,33 @@ convert -fill white -gravity NorthWest -annotate +905+405 "d')" -pointsize $(($t
 ## Cleaning
 rm "figs/big_1.jpg" "figs/big_2.jpg" "figs/small.jpg" figs/m[1-8].jpg
 
+##==================================
+## Household and stakeholder surveys
 
+## Text size
+init_pointsize=48
+init_figsize=800
+ts=$(($init_pointsize*600/$init_figsize))
+
+## Surveys
+dir="figs/photos/surveys/selected"
+f1="410_Menabe.jpg"
+f2="581_Menabe.jpg"
+f3="406_Menabe.jpg"
+f4="568_Menabe.jpg"
+# Resize
+convert "$dir/$f1" -resize 600x400^ -gravity center -extent 600x400 "$dir/f1.jpg"
+convert "$dir/$f2" -resize 600x400^ -gravity center -extent 600x400 "$dir/f2.jpg"
+convert "$dir/$f3" -resize 600x400^ -gravity center -extent 600x400 "$dir/f3.jpg"
+convert "$dir/$f4" -resize 600x400^ -gravity center -extent 600x400 "$dir/f4.jpg"
+# Montage
+montage -tile 2x2 -geometry +0+0 "$dir/f1.jpg" "$dir/f3.jpg" "$dir/f2.jpg" "$dir/f4.jpg" "figs/m1.jpg"
+# Annotate
+convert -gravity NorthWest -annotate +5+5 "a)" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
+convert -gravity NorthWest -annotate +605+5 "c)" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
+convert -gravity NorthWest -annotate +5+405 "b)" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
+convert -gravity NorthWest -annotate +605+405 "d)" -pointsize $ts "figs/m4.jpg" "figs/surveys.jpg"
+# Clean
+rm "$dir/f1.jpg" "$dir/f3.jpg" "$dir/f2.jpg" "$dir/f4.jpg"
+rm figs/m[1-4].jpg
 
