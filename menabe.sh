@@ -1,46 +1,87 @@
 #!/bin/bash
 
-# # sizes
-# $h_small=400
-# $w_small=600
-# $h_big=800
-# $w_big=1200
+## ImageMagick bash script to prepare figures
+## Ghislain Vieilledent <ghislain.vieilledent@cirad.fr>
+## July, 12th 2016
 
-# arachide
-dir="figs/photos/arachide/selected"
-f1="537_Menabe.jpg"
-f2="334_Menabe.jpg"
-f3="610_Menabe.jpg"
-convert "$dir/$f1" -resize 600x400^ -gravity center -extent 600x400 "$dir/f1.jpg"
-convert "$dir/$f2" -resize 600x400^ -gravity center -extent 600x400 "$dir/f2.jpg"
-convert "$dir/$f3" -resize 1200x800^ -gravity center -extent 1200x800 "$dir/f3.jpg"
-montage -tile 2x1 -geometry +0+0 "$dir/f1.jpg" "$dir/f2.jpg" "$dir/m1.jpg"
-montage -tile 1x2 -geometry +0+0 "$dir/m1.jpg" "$dir/f3.jpg" "$dir/m2.jpg"
-convert -gravity NorthWest -annotate +10+10 "a)" -pointsize 48 "$dir/m2.jpg" "$dir/a1.jpg"
-convert -gravity NorthWest -annotate +610+10 "b)" -pointsize 48 "$dir/a1.jpg" "$dir/a2.jpg"
-convert -gravity NorthWest -annotate +10+410 "c)" -pointsize 48 "$dir/a2.jpg" "$dir/a3.jpg"
-mv "$dir/a3.jpg" "figs/arachide.jpg"
-rm "$dir/f1.jpg" "$dir/f2.jpg" "$dir/f3.jpg" "$dir/m1.jpg" "$dir/m2.jpg" "$dir/a1.jpg" "$dir/a2.jpg"
-
-# mais
-dir="figs/photos/mais/selected"
-f1="177_Menabe.jpg"
-f2="148_Menabe.jpg"
-f3="311_Menabe.jpg"
-convert "$dir/$f1" -resize 600x400^ -gravity center -extent 600x400 "$dir/f1.jpg"
-convert "$dir/$f2" -resize 600x400^ -gravity center -extent 600x400 "$dir/f2.jpg"
-convert "$dir/$f3" -resize 1200x800^ -gravity center -extent 1200x800 "$dir/f3.jpg"
-montage -tile 2x1 -geometry +0+0 "$dir/f1.jpg" "$dir/f2.jpg" "$dir/m1.jpg"
-montage -tile 1x2 -geometry +0+0 "$dir/m1.jpg" "$dir/f3.jpg" "$dir/m2.jpg"
-convert -gravity NorthWest -annotate +10+10 "a)" -pointsize 48 "$dir/m2.jpg" "$dir/a1.jpg"
-convert -gravity NorthWest -annotate +610+10 "b)" -pointsize 48 "$dir/a1.jpg" "$dir/a2.jpg"
-convert -gravity NorthWest -annotate +10+410 "c)" -pointsize 48 "$dir/a2.jpg" "$dir/a3.jpg"
-mv "$dir/a3.jpg" "figs/mais.jpg"
-rm "$dir/f1.jpg" "$dir/f2.jpg" "$dir/f3.jpg" "$dir/m1.jpg" "$dir/m2.jpg" "$dir/a1.jpg" "$dir/a2.jpg"
-
-# biodiversity
+##=============
+## Biodiversity
 dir="figs/photos/biodiversity/selected"
-mkdir "$dir/dir_mogr"
+mkdir -p "$dir/dir_mogr"
 mogrify -path "$dir/dir_mogr" -resize 450x300^ -gravity center -extent 450x300 "$dir/*.jpg"
 montage "$dir/dir_mogr/*.jpg" -tile 4x4 -geometry +0+0 "figs/biodiversity.jpg"
+
+##========================
+## Causes of deforestation
+
+## Text size
+init_pointsize=48
+init_figsize=800
+ts=$(($init_pointsize*600/$init_figsize))
+
+## Slash-and-burn agriculture: arachide
+dir="figs/photos/arachide/selected"
+fsmall="537_Menabe.jpg"
+fbig="610_Menabe.jpg"
+convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
+convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
+
+## Slash-and-burn agriculture: mais
+dir="figs/photos/mais/selected"
+fsmall="177_Menabe.jpg"
+fbig="311_Menabe.jpg"
+convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
+convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
+
+## Cyclone and uncontrolled fires
+dir="figs/photos/bosake_cyclone/selected"
+fsmall="52_Menabe.jpg"
+fbig="491_Menabe.jpg"
+convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
+convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
+
+## Illegal logging
+dir="figs/photos/illegal_logging/selected"
+fsmall="37_Menabe.jpg"
+fbig="337_Menabe.jpg"
+convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
+convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
+
+## Montage
+# small
+fsmall_1="figs/photos/arachide/selected/fsmall.jpg"
+fsmall_2="figs/photos/mais/selected/fsmall.jpg"
+fsmall_3="figs/photos/bosake_cyclone/selected/fsmall.jpg"
+fsmall_4="figs/photos/illegal_logging/selected/fsmall.jpg"
+# big
+fbig_1="figs/photos/arachide/selected/fbig.jpg"
+fbig_2="figs/photos/mais/selected/fbig.jpg"
+fbig_3="figs/photos/bosake_cyclone/selected/fbig.jpg"
+fbig_4="figs/photos/illegal_logging/selected/fbig.jpg"
+# montage small
+montage -tile 4x1 -geometry +0+0 "$fsmall_1" "$fsmall_2" "$fsmall_3" "$fsmall_4" "figs/small.jpg"
+rm "$fsmall_1" "$fsmall_2" "$fsmall_3" "$fsmall_4"
+# montage big
+montage -tile 2x1 -geometry +0+0 "$fbig_1" "$fbig_3" "figs/big_1.jpg"
+montage -tile 2x1 -geometry +0+0 "$fbig_2" "$fbig_4" "figs/big_2.jpg"
+rm "$fbig_1" "$fbig_3" "$fbig_2" "$fbig_4"
+# montage big + small
+montage -tile 1x3 -geometry +0+0 "figs/big_1.jpg" "figs/small.jpg" "figs/big_2.jpg" "figs/m1.jpg"
+
+## Annotate with label
+# big
+convert -fill white -gravity NorthWest -annotate +5+5 "a)" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
+convert -fill white -gravity NorthWest -annotate +605+5 "c)" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
+convert -fill white -gravity NorthWest -annotate +5+605 "b)" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
+convert -fill white -gravity NorthWest -annotate +605+605 "d)" -pointsize $ts "figs/m4.jpg" "figs/m5.jpg"
+# small
+convert -fill white -gravity NorthWest -annotate +5+405 "a')" -pointsize $(($ts/2)) "figs/m5.jpg" "figs/m6.jpg"
+convert -fill white -gravity NorthWest -annotate +305+405 "b')" -pointsize $(($ts/2)) "figs/m6.jpg" "figs/m7.jpg"
+convert -fill white -gravity NorthWest -annotate +605+405 "c')" -pointsize $(($ts/2)) "figs/m7.jpg" "figs/m8.jpg"
+convert -fill white -gravity NorthWest -annotate +905+405 "d')" -pointsize $(($ts/2)) "figs/m8.jpg" "figs/causes.jpg"
+
+## Cleaning
+rm "figs/big_1.jpg" "figs/big_2.jpg" "figs/small.jpg" figs/m[1-8].jpg
+
+
 
