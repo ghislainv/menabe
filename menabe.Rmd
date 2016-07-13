@@ -1,5 +1,5 @@
 ---
-title: "Is there really a solution to stop deforestation in western Madagascar dry forests?"
+title: "Is there any solution to stop deforestation in Madagascar dry tropical forests?"
 bibliography: bib/biblio.bib
 csl: bib/elsevier-harvard.csl
 output: 
@@ -131,9 +131,13 @@ We identified three causes of deforestation in the study area around the Kirindy
 
 Climate-change could indirectly be identified as a cause of deforestation in the central Menabe region. It is now largely recognized that climate change can increase the number of extreme climatic events such as droughts, floods and cyclones (ref. X). In 2009, the cyclone names _"Fanela"_ impacted a large area of the forest in the Kirindy-Mitea National Park leaving a lot of wood fuel on the ground. This has allow uncontrolled fires to spread on large areas (~ 5000 ha) in 2013 (Fig. 3). These fires were difficultly stopped with buckets of water and sand by the agents of the park with the help of the local people from the surrounding villages. Severe droughts in southern Madagascar in the recent years (since 2010), that could be attributed to climate-change [@Vieilledent2016], has led to famine events and can explain the migration of thousand of people in the villages of Kirindy and Lambokely which has led to an increase of the deforestation associated to slash-and-burn agriculture (Fig. 2a). Moreover, the decrease of precipitation in the recent years (2010-2014), that can be associated to climate change, can have increase the frequency and magnitude of spontaneous or anthropogenic uncontrolled fires. 
 
-#### 3.2.2 Socio-economic causes of deforestation No application of conservation measures
+#### 3.2.2 Socio-economic causes of deforestation
 
-Population increase in central Menabe, associated to demographic growth and migration have accentuated the pressure on forest. The population of the Kirindy and Lambokely villages (Fig. 2a) have been roughly multiplied by 5 between 2010 and 2015 (from about 600 to 3000 inhabitants for Kirindy and from 1000 to 5000 for Lambokely). This was both due to demographic growth and migration. The demographic rate in Madagascar is close to 3%.yr<sup>-1</sup> [@Vieilledent2013] which means that population double each 25 years. In Lambokely and Kirindy villages, the family we surveyed had all more than six children. Field surveys have also reported that migration of people, coming particularly from the _"Androy"_ region in Southern Madagascar in the menabe, have also been important in the last years. The first _"Antandroy"_ people to settled in the region have been brought by the de Haulme family in the 1980 to work in the sisal (_Agave sisalana_ (Perrine, 1838)) plantations.
+##### Population growth
+
+Population increase in central Menabe, associated to demographic growth and migration have accentuated the pressure on forest. The population of the Kirindy and Lambokely villages (Fig. 2a) have been roughly multiplied by 5 between 2010 and 2015 (from about 600 to 3000 inhabitants for Kirindy and from 1000 to 5000 for Lambokely). This was both due to demographic growth and migration. The demographic rate in Madagascar is close to 3%.yr<sup>-1</sup> [@Vieilledent2013] which means that population double each 25 years. In Lambokely and Kirindy villages, the family we surveyed had all more than six children. Field surveys have also reported that migration, with people coming in particular from the _"Androy"_ region in Southern Madagascar, has been important in the last years. The first _"Antandroy"_ people to settled in the region have been brought by the de Haulme family in the 1960s to work in sisal (_Agave sisalana_ (Perrine, 1838)) plantations near the Beroboka village. The family was from the Reunion Island and emigrated to south Madagascar in 1928 were they started.
+
+##### No application of conservation measures
 
 - Political crisis in 2009, pays de non droit, état défaillant
 - No means for management of protected areas and application of the laws (Fanamby, MNP)
@@ -169,6 +173,8 @@ Table 3: **Evolution of the annual deforestation with time in the Kirindy-Mitea 
 ## 4. Discussion
 
 ### 4.1 Historical deforestation, projections and consequences (climate-change, biodiversity)
+
+Compare with @Scales2011.
 
 In a study analyzing the deforestation patterns in Kirindy-Ambadira Forest
 Complex, @Zinner2014 found similar results to ours regarding the future deforestation. @Zinner2014 showed that half of the forest will have disappeared in 2043 in comparison to 1973 assuming a deforestation rate similar to the one over the period 1992-2010.

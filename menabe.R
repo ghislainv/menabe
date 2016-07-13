@@ -289,7 +289,7 @@ save(forest.cover,e.KMNP.latlong,e.MANAP.latlong,file="menabe.rda")
 ##========================
 ## Knit the document
 
-## Assemble photos
+## Assemble photos (ImageMagick need to be installed, see at www.imagemagick.org)
 system("sh menabe.sh")
 
 ## Set knitr chunk default options
