@@ -206,31 +206,14 @@ Morondava_BeloTsi.df$TOPONYME <- as.factor(c("Belo sur Tsiribihina","Morondava")
 ##========================================
 ## Plot raster with gplot() from rasterVis
 
-## Setting theme for full plot
-theme_full <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
+## Setting basic theme options for plot with ggplot2
+theme_base <- theme(axis.line=element_blank(),
+                    axis.text.x=element_blank(),
                     axis.text.y=element_blank(),
-                    axis.ticks=element_blank(),axis.title.x=element_blank(),
+                    axis.ticks=element_blank(),
+                    axis.title.x=element_blank(),
                     axis.title.y=element_blank(),
-                    legend.position="none",panel.background=element_blank(),
-                    panel.border=element_blank(),
-                    panel.grid.major=element_blank(),panel.grid.minor=element_blank(),
-                    plot.background=element_blank())
-
-## Setting theme for zoom plot
-theme_zoom <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
-                    axis.text.y=element_blank(),
-                    axis.ticks=element_blank(),axis.title.x=element_blank(),
-                    axis.title.y=element_blank(),
-                    legend.position="none",panel.grid.major=element_blank(),
-                    panel.grid.minor=element_blank(),
-                    panel.border=element_blank())
-
-## Setting theme for spatial probability plot
-theme_proba <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
-                    axis.text.y=element_blank(),
-                    axis.ticks=element_blank(),axis.title.x=element_blank(),
-                    axis.title.y=element_blank(),
-                    legend.title=element_blank(),
+                    legend.position="none",
                     panel.grid.major=element_blank(),
                     panel.grid.minor=element_blank(),
                     panel.border=element_blank())
@@ -243,7 +226,7 @@ plot.Mada <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
             fill="transparent",colour="black",size=0.2) +
   geom_rect(aes(xmin=xmin.MANAP,xmax=xmax.MANAP,ymin=ymin.MANAP,ymax=ymax.MANAP),
             fill="transparent",colour="black",size=0.2) +
-  theme_bw() + theme_zoom + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
   coord_equal()
 ## Grob
 grob.Mada <- ggplotGrob(plot.Mada)
@@ -271,9 +254,7 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
 plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) + 
   annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="c",hjust=0,vjust=1,size=4,fontface="bold") +
@@ -289,9 +270,7 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
 
 ## KMNP
 # Build deforestation plot
@@ -309,9 +288,7 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 # Build projection plot
 plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) + 
   annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="d",hjust=0,vjust=1,size=4,fontface="bold") +
@@ -325,9 +302,7 @@ plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
 
 ## Combine plots
 plot.defor <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, plot.defor.KMNP, plot.proj.KMNP, ncol=2)
@@ -342,7 +317,6 @@ v <- quantile(c(values(theta_MANAP),values(theta_KMNP)),c(0.75,0.90),na.rm=TRUE)
 
 ## MANAP
 plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a",hjust=0,vjust=1,size=4,fontface="bold") +
   geom_raster(aes(fill=value)) +
   scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),values=c(0,v,1),limits=c(0,1)) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
@@ -355,13 +329,13 @@ plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_proba +
+  theme_bw() + theme_base + theme(legend.justification="left",legend.position=c(0,0.5)) +
+  theme(legend.key.width=unit(0.35,"cm"), legend.title=element_blank()) +
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a",hjust=0,vjust=1,size=4,fontface="bold") +
   theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
 ## KMNP
 plot.proba.KMNP <- gplot(theta_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b",hjust=0,vjust=1,size=4,fontface="bold") +
-  geom_raster(aes(fill=factor(value))) +
+  geom_raster(aes(fill=value)) +
   scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),values=c(0,v,1),limits=c(0,1)) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
@@ -373,9 +347,13 @@ plot.proba.KMNP <- gplot(theta_KMNP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() +
-  theme_full +
-  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  theme_bw() + theme_base + 
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b",hjust=0,vjust=1,size=4,fontface="bold") +
+  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+
+## Combine plots
+plot.proba <- grid.arrange(plot.proba.MANAP, plot.proba.KMNP, ncol=2)
+ggsave(filename="figs/probability.png",plot=plot.proba,width=15,height=10,unit="cm")
 
 ##========================================
 ## Forest cover evolution
