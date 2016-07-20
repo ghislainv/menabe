@@ -119,6 +119,22 @@ proj_KMNP <- for2010
 proj_KMNP[proj_KMNP==1 & is.na(for2050.S1)] <- 2
 proj_KMNP[proj_KMNP==1 & is.na(for2050.S2)] <- 3
 plot(proj_KMNP,col=c("forestgreen",grey(0.5),grey(0.3)))
+##===
+## Validation with S3: S3=2010-2014
+defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/4
+## Number of pixels to be deforested on the period 2010-2014
+pred.npix <- defor.npix*4
+pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
+## Probability threshold
+thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
+## Forest in 2014
+for2014.S3 <- for2010
+for2014.S3[values(theta_KMNP)>thres] <- NA 
+## Comparing observations and predictions TO BE DONE !!!
+n00 <- sum(is.na(values(for2014)) & is.na(values(for2014.S3)))
+n01 <- sum(is.na(values(for2014)) & values(for2014.S3)==1, na.rm=TRUE)
+n10 <- sum(values(for2014)==1 & is.na(values(for2014.S3)), na.rm=TRUE)
+n11 <- sum(values(for2014)==1 & values(for2014.S3)==1, na.rm=TRUE)
 
 ##=======================
 ## MANAP
