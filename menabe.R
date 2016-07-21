@@ -481,7 +481,7 @@ opts_chunk$set(echo=FALSE, cache=FALSE,
 
 ## Knit and translate to html and pdf
 render("menabe.Rmd") # html output
-render("menabe.Rmd",output_format=c("html_document","pdf_document","word_document"))
+#render("menabe.Rmd",output_format=c("html_document","pdf_document","word_document"))
 
 ##===========================================================================
 ## End of script
