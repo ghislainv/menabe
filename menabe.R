@@ -74,67 +74,6 @@ for (i in 1:length(f)) {
           gisdata/rast/",f[i],"_MANAP.tif"))
 }
 
-##=======================
-## KMNP
-## Import rasters
-for1990 <- raster("gisdata/rast/for1990_KMNP.tif")
-for1990_KMNP <- for1990
-for2000 <- raster("gisdata/rast/for2000_KMNP.tif")
-for2010 <- raster("gisdata/rast/for2010_KMNP.tif")
-for2014 <- raster("gisdata/rast/for2014_KMNP.tif")
-theta_KMNP <- raster("gisdata/rast_raw/theta_KMNP.tif")
-## One raster for deforestation
-defor_KMNP <- for2000
-defor_KMNP[defor_KMNP==1 & is.na(for2010)] <- 2
-defor_KMNP[defor_KMNP==1 & is.na(for2014)] <- 3
-## Mean annual deforestation on the period 1990-2010
-## Two scenarios: S1=1990-2010 or S2=1990-2010-2014
-##===
-## Conservative scenario: S1=1990-2010
-defor.npix <- (sum(values(for1990)==1,na.rm=TRUE)-sum(values(for2010)==1,na.rm=TRUE))/20
-defor.nha <- defor.npix*30*30/10000
-## Number of pixels to be deforested on the period 2010-2050
-pred.npix <- 40*defor.npix
-pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
-## Probability threshold
-thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
-## Forest in 2050
-for2050.S1 <- for2010
-for2050.S1[values(theta_KMNP)>thres] <- NA 
-##===
-## Worst-case scenario: S1=2000-2014
-defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
-defor.nha <- defor.npix*30*30/10000
-## Number of pixels to be deforested on the period 2010-2050
-pred.npix <- 40*defor.npix
-pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
-## Probability threshold
-thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
-## Forest in 2050
-for2050.S2 <- for2010
-for2050.S2[values(theta_KMNP)>thres] <- NA 
-##====
-## One raster for projections
-proj_KMNP <- for2010
-proj_KMNP[proj_KMNP==1 & is.na(for2050.S1)] <- 2
-proj_KMNP[proj_KMNP==1 & is.na(for2050.S2)] <- 3
-plot(proj_KMNP,col=c("forestgreen",grey(0.5),grey(0.3)))
-##===
-## Validation with S3: S3=2010-2014
-defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/4
-## Number of pixels to be deforested on the period 2010-2014
-pred.npix <- defor.npix*4
-pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
-## Probability threshold
-thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
-## Forest in 2014
-for2014.S3 <- for2010
-for2014.S3[values(theta_KMNP)>thres] <- NA 
-## Comparing observations and predictions TO BE DONE !!!
-n00 <- sum(is.na(values(for2014)) & is.na(values(for2014.S3)))
-n01 <- sum(is.na(values(for2014)) & values(for2014.S3)==1, na.rm=TRUE)
-n10 <- sum(values(for2014)==1 & is.na(values(for2014.S3)), na.rm=TRUE)
-n11 <- sum(values(for2014)==1 & values(for2014.S3)==1, na.rm=TRUE)
 
 ##=======================
 ## MANAP
@@ -180,7 +119,129 @@ for2050.S2[values(theta_MANAP)>thres] <- NA
 proj_MANAP <- for2010
 proj_MANAP[proj_MANAP==1 & is.na(for2050.S1)] <- 2
 proj_MANAP[proj_MANAP==1 & is.na(for2050.S2)] <- 3
-plot(proj_MANAP,col=c("forestgreen",grey(0.5),grey(0.3)))
+##===
+## Validation with S3: S3=2010-2014
+defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/4
+## Number of pixels to be deforested on the period 2010-2014
+pred.npix <- defor.npix*4
+pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
+## Probability threshold
+thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
+## Forest in 2014
+for2014.S3 <- for2010
+for2014.S3[values(theta_MANAP)>thres] <- NA 
+## Comparing observations and predictions (n_pred_obs)
+defor.1014 <- for2010 ; defor.1014[values(defor.1014)==1] <- 0 ; defor.1014[values(for2010)==1 & is.na(values(for2014))] <- 1
+defor.1014.S3 <- for2010 ; defor.1014.S3[values(defor.1014.S3)==1] <- 0 ; defor.1014.S3[values(for2010)==1 & is.na(values(for2014.S3))] <- 1
+n00 <- sum(values(defor.1014.S3)==0 & values(defor.1014)==0 , na.rm=TRUE)
+n10 <- sum(values(defor.1014.S3)==1 & values(defor.1014)==0 , na.rm=TRUE)
+n01 <- sum(values(defor.1014.S3)==0 & values(defor.1014)==1 , na.rm=TRUE)
+n11 <- sum(values(defor.1014.S3)==1 & values(defor.1014)==1 , na.rm=TRUE)
+## Performance indices
+OA_MANAP <- (n11+n00)/(n11+n10+n00+n01)
+FOM_MANAP <- n11/(n11+n10+n01)
+Sensitivity_MANAP <- n11/(n11+n01)
+Specificity_MANAP <- n00/(n00+n10)
+TSS <- Sensitivity_MANAP+Specificity_MANAP-1
+N <- n11+n10+n00+n01
+Observed.accuracy <- (n11+n00)/N
+Expected.accuracy <- ((n11+n10)*((n11+n01)/N) + (n00+n01)*((n00+n10)/N)) / N
+Kappa_MANAP <- (Observed.accuracy-Expected.accuracy)/(1-Expected.accuracy)
+##==
+## Percentage of 2010-2014 deforestation included in 2010-2050 deforestation
+defor.1050.S1 <- for2010 ; defor.1050.S1[values(defor.1050.S1)==1] <- 0 ; defor.1050.S1[values(for2010)==1 & is.na(values(for2050.S1))] <- 1
+defor.1050.S2 <- for2010 ; defor.1050.S2[values(defor.1050.S2)==1] <- 0 ; defor.1050.S2[values(for2010)==1 & is.na(values(for2050.S2))] <- 1
+perc_MANAP.S1 <- 100*(sum(values(defor.1014)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1014)==1,na.rm=TRUE))
+perc_MANAP.S2 <- 100*(sum(values(defor.1014)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1014)==1,na.rm=TRUE))
+
+##=======================
+## KMNP
+## Import rasters
+for1990 <- raster("gisdata/rast/for1990_KMNP.tif")
+for1990_KMNP <- for1990
+for2000 <- raster("gisdata/rast/for2000_KMNP.tif")
+for2010 <- raster("gisdata/rast/for2010_KMNP.tif")
+for2014 <- raster("gisdata/rast/for2014_KMNP.tif")
+theta_KMNP <- raster("gisdata/rast_raw/theta_KMNP.tif")
+## One raster for deforestation
+defor_KMNP <- for2000
+defor_KMNP[defor_KMNP==1 & is.na(for2010)] <- 2
+defor_KMNP[defor_KMNP==1 & is.na(for2014)] <- 3
+## Mean annual deforestation on the period 1990-2010
+## Two scenarios: S1=1990-2010 or S2=1990-2010-2014
+##===
+## Conservative scenario: S1=1990-2010
+defor.npix <- (sum(values(for1990)==1,na.rm=TRUE)-sum(values(for2010)==1,na.rm=TRUE))/20
+defor.nha <- defor.npix*30*30/10000
+## Number of pixels to be deforested on the period 2010-2050
+pred.npix <- 40*defor.npix
+pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
+## Probability threshold
+thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
+## Forest in 2050
+for2050.S1 <- for2010
+for2050.S1[values(theta_KMNP)>thres] <- NA 
+##===
+## Worst-case scenario: S1=2000-2014
+defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
+defor.nha <- defor.npix*30*30/10000
+## Number of pixels to be deforested on the period 2010-2050
+pred.npix <- 40*defor.npix
+pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
+## Probability threshold
+thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
+## Forest in 2050
+for2050.S2 <- for2010
+for2050.S2[values(theta_KMNP)>thres] <- NA 
+##====
+## One raster for projections
+proj_KMNP <- for2010
+proj_KMNP[proj_KMNP==1 & is.na(for2050.S1)] <- 2
+proj_KMNP[proj_KMNP==1 & is.na(for2050.S2)] <- 3
+##===
+## Validation with S3: S3=2010-2014
+defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/4
+## Number of pixels to be deforested on the period 2010-2014
+pred.npix <- defor.npix*4
+pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
+## Probability threshold
+thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
+## Forest in 2014
+for2014.S3 <- for2010
+for2014.S3[values(theta_KMNP)>thres] <- NA 
+## Comparing observations and predictions (n_pred_obs)
+defor.1014 <- for2010 ; defor.1014[values(defor.1014)==1] <- 0 ; defor.1014[values(for2010)==1 & is.na(values(for2014))] <- 1
+defor.1014.S3 <- for2010 ; defor.1014.S3[values(defor.1014.S3)==1] <- 0 ; defor.1014.S3[values(for2010)==1 & is.na(values(for2014.S3))] <- 1
+n00 <- sum(values(defor.1014.S3)==0 & values(defor.1014)==0 , na.rm=TRUE)
+n10 <- sum(values(defor.1014.S3)==1 & values(defor.1014)==0 , na.rm=TRUE)
+n01 <- sum(values(defor.1014.S3)==0 & values(defor.1014)==1 , na.rm=TRUE)
+n11 <- sum(values(defor.1014.S3)==1 & values(defor.1014)==1 , na.rm=TRUE)
+## Performance indices
+OA_KMNP <- (n11+n00)/(n11+n10+n00+n01)
+FOM_KMNP <- n11/(n11+n10+n01)
+Sensitivity_KMNP <- n11/(n11+n01)
+Specificity_KMNP <- n00/(n00+n10)
+TSS <- Sensitivity_KMNP + Specificity_KMNP -1
+N <- n11+n10+n00+n01
+Observed.accuracy <- (n11+n00)/N
+Expected.accuracy <- ((n11+n10)*((n11+n01)/N) + (n00+n01)*((n00+n10)/N)) / N
+Kappa_KMNP <- (Observed.accuracy-Expected.accuracy)/(1-Expected.accuracy)
+##==
+## Percentage of 2010-2014 deforestation included in 2010-2050 deforestation
+defor.1050.S1 <- for2010 ; defor.1050.S1[values(defor.1050.S1)==1] <- 0 ; defor.1050.S1[values(for2010)==1 & is.na(values(for2050.S1))] <- 1
+defor.1050.S2 <- for2010 ; defor.1050.S2[values(defor.1050.S2)==1] <- 0 ; defor.1050.S2[values(for2010)==1 & is.na(values(for2050.S2))] <- 1
+perc_KMNP.S1 <- 100*(sum(values(defor.1014)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1014)==1,na.rm=TRUE))
+perc_KMNP.S2 <- 100*(sum(values(defor.1014)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1014)==1,na.rm=TRUE))
+
+##== Synthesis of model performance in data-frames
+## Data-frame for indices
+mod.perf <- data.frame(model=c("MANAP","KMNP"),OA=NA,Sens=NA,Spec=NA,FOM=NA,K=NA)
+mod.perf[1,c(2:6)] <- c(OA_MANAP,Sensitivity_MANAP,Specificity_MANAP,FOM_MANAP,Kappa_MANAP)
+mod.perf[2,c(2:6)] <- c(OA_KMNP,Sensitivity_KMNP,Specificity_KMNP,FOM_KMNP,Kappa_KMNP)
+## Data-frame for percentage
+perc <- data.frame(model=c("MANAP","KMNP"),S1=NA,S2=NA)
+perc[1,c(2:3)] <- c(perc_MANAP.S1,perc_MANAP.S2)
+perc[2,c(2:3)] <- c(perc_KMNP.S1,perc_KMNP.S2)
 
 ##=================================================================================
 ## Import maps (shapefiles) and convert to data-frame for ggplot with bloom::tiny()
@@ -402,7 +463,8 @@ forest.cover$d1050.S2.p <- round(theta(forest.cover$f2050.S2,forest.cover$f2010,
 forest.cover[,c(2:13)] <- round(forest.cover[,c(2:13)]*30*30/10000)
 
 ## Save objects
-save(forest.cover,e.KMNP.latlong,e.MANAP.latlong,file="menabe.rda")
+# load("menabe.rda")
+save(forest.cover,e.KMNP.latlong,e.MANAP.latlong,mod.perf,perc,file="menabe.rda")
 
 ##========================
 ## Knit the document
