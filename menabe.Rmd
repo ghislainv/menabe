@@ -1,5 +1,5 @@
 ---
-title: "Reducing poverty might not fix the deforestation problem in Madagascar dry tropical forests"
+title: "Reducing poverty might not fix the inceasing deforestation problem in Madagascar dry tropical forests"
 bibliography: bib/biblio.bib
 csl: bib/elsevier-harvard.csl
 output: 
@@ -48,7 +48,7 @@ Tropical forests provide important ecosystem services at the global scale, such 
 
 #### Madagascar and international aid for the environment
 
-Since the mid-1980s, much effort has been done to fight poverty and curb deforestation through implementing large rural development and biodiversity conservation programs. The donor community, led by the World Bank and the USAID has committed a tremendous investment into Malagasy conservation efforts. At $18 million per annum the environment program of USAID Madagascar is the second largest American program in Madagascar, and one of the largest programs of its kind in the world. The World Bank further supported this environmental effort with an additional $180 million. Other bilateral donors including France (through the AFD, _"Agence Française de Développement"_ and the FFEM, _"Fond Français pour l'Environnement Mondial"_), Germany (through KFW, _"Kreditanstalt für Wiederaufbau"_) and others have funded specific project initiatives in coordination with the World Bank and the USAID. 
+Since the mid-1980s, much effort has been done to fight poverty and curb deforestation through implementing large rural development and biodiversity conservation programs. The donor community, led by the World Bank and the USAID has committed a tremendous investment into Malagasy conservation efforts. At $18 million per annum, the environment program of USAID Madagascar is the second largest American program in Madagascar, and one of the largest programs of its kind in the world. The World Bank further supported this environmental effort with an additional $180 million. Other bilateral donors including France (through the AFD, _"Agence Française de Développement"_ and the FFEM, _"Fond Français pour l'Environnement Mondial"_), Germany (through KFW, _"Kreditanstalt für Wiederaufbau"_) and others have funded specific project initiatives in coordination with the World Bank and the USAID. 
 
 The USAID and the World Bank worked together with the Malagasy government in the late 1980s to try to find a way to reconcile these two difficult and seemingly mutually-exacerbating problems. The result of these discussions was the creation of the Malagasy Office of the Environment and the signing of a National Environmental Action Plan with three phases (PE-I, PE-II, PE-III). The 
 
