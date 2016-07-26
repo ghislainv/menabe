@@ -52,17 +52,13 @@ To curb anthropogenic deforestation, several conservation and rural development 
 
 Ajouter le Fond pour les Aires Protégées.
 
-All these actions were funded by the donor community [@Freudenberger2010], led by the World Bank and the USAID (United States Agency for International Development). The total funding of the NEAP (from 1990 to 2010) has been estimated at approximately $450
-million for environment activities with another 50% for related programs that were not formally part of the NEAP process but in some way contributed to it (e.g., agriculture and health interventions). The USAID contributed about $120 million to Madagascar's environment program over this period [@Freudenberger2010]. Other bilateral donors, mainly the European Union (through the EDF, European Development Fund), France (through the AFD, _"Agence Française de Développement"_ and the FFEM, _"Fond Français pour l'Environnement Mondial"_) and Germany (through KFW, _"Kreditanstalt für Wiederaufbau"_), have funded specific socio-environmental project initiatives. On the period 2005-2011,  
-Voir rapport Ecosystem Partnership.
-
-
+Most of these actions were funded by the donor community, led by the USAID (United States Agency for International Development) and the World Bank[@Freudenberger2010]. The total funding of the NEAP (from 1990 to 2010) has been estimated at approximately $450
+million for environment activities with another 50% for related programs that were not formally part of the NEAP process but in some way contributed to it (e.g., agriculture and health interventions). The USAID contributed about $120 million to Madagascar's environment program over this period [@Freudenberger2010]. Other bilateral donors, mainly the European Union (through the EDF, European Development Fund), France (through the AFD, _"Agence Française de Développement"_ and the FFEM, _"Fond Français pour l'Environnement Mondial"_) and Germany (through KFW, _"Kreditanstalt für Wiederaufbau"_), have funded specific socio-environmental project initiatives. As an indication, on the period 2005-2011, bilateral cooperations (except USA) have invested $115 million in projects having presumably significant impacts on biodiversity in Madagascar  ($44 million from European Union, $44 million from Germany and $14 milion from France respectively) [@CEPF2014]. The main international NGOs (WWF, CI, WCS to cite a few) and international research centers (such as Cirad and IRD French research center) present in Madagascar also contributed significantly to the financial effort by providing their own resources to support conservation and development programs [@CEPF2014]. Regarding REDD+ activities, the private sector also provided important funding. As an example, Air France supported the first phase of the PHCF REDD+ project (2008-2012) with $5 million. Annually, this represent a rough estimate of about $60 million per year, compared to the $13-18 million provided by the Malagasy government for the annual budget (period 2008-2013) of the Ministry of Environment and Forestry [@CEPF2014].
 
 ### 1.2 Knowledge gap
 
-Deforestation is still high nowadays with around 1'500'000 ha (a rate of around ) of the forest which has disappeared on the period 1990-2010 [@Harper2007, @Hansen2013].
- 
-- Nonetheless, deforestation seems to remain very high in Madagascar and has recently increase in intensity despite all the conservation and development measures.
+- Despite all the efforts and money involved in the past 30 years in conservation and development programs deforestation is still high nowadays. Around 1'500'000 ha (a rate of around X) of the forest has disappeared on the period 1990-2010 [@Harper2007, @Hansen2013].
+- Nonetheless, deforestation seems to remain very high in Madagascar and has recently increase in intensity 
 - Why such initiatives are failing and what could be the solution to stop deforestation?
 - Is the recent deforestation attributable to external causes, independant of anthropogenic activities, such as climate change?
 - Is it really possible to stop deforestation in Madagascar?
