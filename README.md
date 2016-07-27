@@ -1,6 +1,6 @@
 # menabe
 
-# Study of the deforestation process (causes, extent and modelling) around Kirindy-Mitea national park and Menabe-Antimena new protected area, western Madagascar
+# Deforestation process in central Menabe, western Madagascar
 
 ## Data
 
