@@ -46,6 +46,9 @@ photos/biodiversity/selected/dir_mogr
 menabe.Rproj
 .Rproj.user/
 
+# logs
+menabe.log
+
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
