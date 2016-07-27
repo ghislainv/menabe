@@ -470,7 +470,7 @@ save(forest.cover,e.KMNP.latlong,e.MANAP.latlong,mod.perf,perc,file="menabe.rda"
 ## Knit the document
 
 ## Assemble photos (ImageMagick need to be installed, see at www.imagemagick.org)
-system("sh menabe.sh")
+system("sh scripts/photo.sh")
 
 ## Set knitr chunk default options
 opts_chunk$set(echo=FALSE, cache=FALSE,
@@ -480,8 +480,9 @@ opts_chunk$set(echo=FALSE, cache=FALSE,
                tidy=FALSE)
 
 ## Knit and translate to html and pdf
-render("menabe.Rmd") # html output
-#render("menabe.Rmd",output_format=c("html_document","pdf_document"))
+dir.create("report")
+render("menabe.Rmd",output_dir="report") # html output
+#render("menabe.Rmd",output_format=c("html_document","pdf_document","word_document"),output_dir="report")
 
 ##===========================================================================
 ## End of script

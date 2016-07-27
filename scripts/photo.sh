@@ -1,12 +1,11 @@
 #!/bin/bash
 
-## ImageMagick bash script to prepare figures
+## Bash script with ImageMagick commands to modify and combine photos for illustration
 ## Ghislain Vieilledent <ghislain.vieilledent@cirad.fr>
-## July, 12th 2016
 
 ##=============
 ## Biodiversity
-dir="figs/photos/biodiversity/selected"
+dir="photos/biodiversity/selected"
 mkdir -p "$dir/dir_mogr"
 mogrify -path "$dir/dir_mogr" -resize 450x300^ -gravity center -extent 450x300 "$dir/*.jpg"
 montage "$dir/dir_mogr/*.jpg" -tile 4x4 -geometry +0+0 "figs/biodiversity.jpg"
@@ -20,28 +19,28 @@ init_figsize=800
 ts=$(($init_pointsize*600/$init_figsize))
 
 ## Slash-and-burn agriculture: arachide
-dir="figs/photos/arachide/selected"
+dir="photos/arachide/selected"
 fsmall="537_Menabe.jpg"
 fbig="610_Menabe.jpg"
 convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
 convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
 
 ## Slash-and-burn agriculture: mais
-dir="figs/photos/mais/selected"
+dir="photos/mais/selected"
 fsmall="177_Menabe.jpg"
 fbig="311_Menabe.jpg"
 convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
 convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
 
 ## Cyclone, grasslands and uncontrolled fires
-dir="figs/photos/bosake_cyclone/selected"
+dir="photos/bosake_cyclone/selected"
 fsmall="52_Menabe.jpg"
 fbig="491_Menabe.jpg"
 convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
 convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig.jpg"
 
 ## Illegal logging
-dir="figs/photos/illegal_logging/selected"
+dir="photos/illegal_logging/selected"
 fsmall="37_Menabe.jpg"
 fbig="337_Menabe.jpg"
 convert "$dir/$fsmall" -resize 300x200^ -gravity center -extent 300x200 "$dir/fsmall.jpg"
@@ -49,15 +48,15 @@ convert "$dir/$fbig" -resize 600x400^ -gravity center -extent 600x400 "$dir/fbig
 
 ## Montage
 # small
-fsmall_1="figs/photos/arachide/selected/fsmall.jpg"
-fsmall_2="figs/photos/mais/selected/fsmall.jpg"
-fsmall_3="figs/photos/bosake_cyclone/selected/fsmall.jpg"
-fsmall_4="figs/photos/illegal_logging/selected/fsmall.jpg"
+fsmall_1="photos/arachide/selected/fsmall.jpg"
+fsmall_2="photos/mais/selected/fsmall.jpg"
+fsmall_3="photos/bosake_cyclone/selected/fsmall.jpg"
+fsmall_4="photos/illegal_logging/selected/fsmall.jpg"
 # big
-fbig_1="figs/photos/arachide/selected/fbig.jpg"
-fbig_2="figs/photos/mais/selected/fbig.jpg"
-fbig_3="figs/photos/bosake_cyclone/selected/fbig.jpg"
-fbig_4="figs/photos/illegal_logging/selected/fbig.jpg"
+fbig_1="photos/arachide/selected/fbig.jpg"
+fbig_2="photos/mais/selected/fbig.jpg"
+fbig_3="photos/bosake_cyclone/selected/fbig.jpg"
+fbig_4="photos/illegal_logging/selected/fbig.jpg"
 # montage small
 montage -tile 4x1 -geometry +0+0 "$fsmall_1" "$fsmall_2" "$fsmall_3" "$fsmall_4" "figs/small.jpg"
 rm "$fsmall_1" "$fsmall_2" "$fsmall_3" "$fsmall_4"
@@ -92,7 +91,7 @@ init_figsize=800
 ts=$(($init_pointsize*600/$init_figsize))
 
 ## Surveys
-dir="figs/photos/surveys/selected"
+dir="photos/surveys/selected"
 f1="410_Menabe.jpg"
 f2="581_Menabe.jpg"
 f3="406_Menabe.jpg"
