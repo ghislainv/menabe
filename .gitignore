@@ -4,6 +4,9 @@ report/menabe.pdf
 report/menabe.tex
 report/menabe.docx
 
+# biblio bak
+bib/biblio.bib.bak
+
 # Photos
 photos/*
 !photos/biodiversity
