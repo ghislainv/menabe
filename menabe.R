@@ -31,7 +31,7 @@ household.income.mga <- m.rate*household.income.usd
 dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
 
 ## Download forest cover
-f <- c("for1990","for2000","for2010","for2014","forest2050")
+f <- c("for1990","for2000","for2010","for2014")
 for (i in 1:length(f)) {
   d <- paste0("http://bioscenemada.net/FileTransfer/",f[i],".tif")
   download.file(url=d,destfile=paste0("gisdata/rast_raw/",f[i],".tif"),method="wget",quiet=TRUE)
@@ -102,8 +102,9 @@ thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S1 <- for2010
 for2050.S1[values(theta_MANAP)>thres] <- NA 
+writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_MANAP.tif")
 ##===
-## Worst-case scenario: S1=2000-2014
+## Worst-case scenario: S2=2000-2014
 defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
 defor.nha <- defor.npix*30*30/10000
 ## Number of pixels to be deforested on the period 2010-2050
@@ -114,6 +115,7 @@ thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S2 <- for2010
 for2050.S2[values(theta_MANAP)>thres] <- NA 
+writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_MANAP.tif")
 ##====
 ## One raster for projections
 proj_MANAP <- for2010
@@ -181,8 +183,9 @@ thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S1 <- for2010
 for2050.S1[values(theta_KMNP)>thres] <- NA 
+writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_KMNP.tif")
 ##===
-## Worst-case scenario: S1=2000-2014
+## Worst-case scenario: S2=2000-2014
 defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
 defor.nha <- defor.npix*30*30/10000
 ## Number of pixels to be deforested on the period 2010-2050
@@ -193,6 +196,7 @@ thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S2 <- for2010
 for2050.S2[values(theta_KMNP)>thres] <- NA 
+writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_KMNP.tif")
 ##====
 ## One raster for projections
 proj_KMNP <- for2010
