@@ -14,7 +14,7 @@ output:
 load("menabe.rda")
 ```
 
-#### Ghislain Vieilledent<sup>*,1,2</sup>, Clovis Grinand<sup>3</sup>, Miguel Pedrono<sup>2</sup>, Tsiky Rabetrano<sup>4</sup>, Jean-Roger Rakotoarijaona<sup>5</sup>, Bruno Rakotoarivelo<sup>5</sup>, Fety A. Rakotomalala<sup>3</sup>, Andriamandimbisoa Razafimpahanana<sup>4</sup> and Frédéric Achard<sup>1</sup>
+#### Ghislain Vieilledent<sup>*,1,2</sup>, Clovis Grinand<sup>3</sup>, Miguel Pedrono<sup>2</sup>, Tsiky Rabetrano<sup>4</sup>, Jean-Roger Rakotoarijaona<sup>5</sup>, Bruno Rakotoarivelo<sup>5</sup>, Fety A. Rakotomalala<sup>3</sup>, Linjanantenaina Rakotomalala<sup>6</sup>, Andriamandimbisoa Razafimpahanana<sup>4</sup> and Frédéric Achard<sup>1</sup>
 
 (*) /Email: ghislain.vieilledent@cirad.fr, /Phone: +39.329.457.2273
 
@@ -23,6 +23,7 @@ load("menabe.rda")
 3. ETC Terra, F-75016 Paris, FRANCE
 4. Wildlife Conservation Society, 101 Antananarivo, MADAGASCAR
 5. Office National de l'Environnement, 101 Antananarivo, MADAGASCAR
+6. ESSA-Forêts, 101 Antananarivo, MADAGASCAR
 
 ## Summary
 
