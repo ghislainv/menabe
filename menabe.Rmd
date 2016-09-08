@@ -18,7 +18,7 @@ load("menabe.rda")
 
 (*) /Email: ghislain.vieilledent@cirad.fr, /Phone: +39.329.457.2273
 
-1. Joint Research Center of the European Commission, Directorate D Sustainable Resources, I-21027 Ispra (VA), ITALY
+1. Joint Research Center of the European Commission, Bio-economy Unit (JRC.D.1), I-21027 Ispra (VA), ITALY
 2. Cirad, UPR Forêts et Sociétés, F-34398 Montpellier, FRANCE
 3. ETC Terra, F-75016 Paris, FRANCE
 4. Wildlife Conservation Society, 101 Antananarivo, MADAGASCAR
