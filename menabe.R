@@ -5,21 +5,23 @@
 ##=====================================================
 
 ##= Libraries
-library(sp)
-library(rgdal)
-library(raster)
-library(ggplot2)
-library(broom) ## to convert map into data-frame with tiny()
-library(gridExtra) ## to combine several ggplots
-library(rasterVis) ## for gplot()
-library(knitr)
-library(rmarkdown) 
-library(rgeos) ## for crop()
+pkg <- c("sp","rgdal","raster","ggplot2","broom","gridExtra",
+         "rasterVis","knitr","rmarkdown","rgeos")
+## broom: to convert map into data-frame with tiny()
+## gridExtra: to combine several ggplots
+## rasterVis: for gplot()
+## rgeos: for crop()
+for (i in pkg) {
+  if (!require(i,character.only=TRUE)) {
+    install.packages(i,dependencies=TRUE)
+    require(i,character.only=TRUE)
+  }
+}
 
 ##======================================================================
 ## Download data (277 Mo): will have to be done from a Zenodo repository
 d <- "http://bioscenemada.cirad.fr/githubdata/menabe/menabe_data.zip"
-download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
+# download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
 unzip("menabe_data.zip")
 
 ##===========================================================
