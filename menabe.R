@@ -19,8 +19,13 @@ library(rgeos) ## for crop()
 ##======================================================================
 ## Download data (277 Mo): will have to be done from a Zenodo repository
 d <- "http://bioscenemada.cirad.fr/githubdata/menabe/menabe_data.zip"
-# download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
+download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
 unzip("menabe_data.zip")
+
+##===========================================================
+## Create new directories to save figures and new raster data
+dir.create("figs")
+dir.create("rast")
 
 ##================================================
 ## Household income in MGA on the period 2006-2012
@@ -34,9 +39,6 @@ household.income.mga <- m.rate*household.income.usd
 
 ##========================================
 ## Prepare rasters for the two study areas
-
-## Create directory to save new raster data
-dir.create("gisdata/rast")
 
 ## Set region for Kirindy-Mitea National Park (KMNP)
 xmin.KMNP <- 365000; xmax.KMNP <- 430010
@@ -63,26 +65,26 @@ for (i in 1:length(f)) {
           -r near -tr 30 30 -te ",Extent.KMNP," -of GTiff \\
           -co 'compress=lzw' -co 'predictor=2' \\
           gisdata/rasters/",f[i],".tif \\
-          gisdata/rast/",f[i],"_KMNP.tif"))
+          rast/",f[i],"_KMNP.tif"))
 }
 for (i in 1:length(f)) {
   system(paste0("gdalwarp -overwrite -dstnodata 0 \\
           -r near -tr 30 30 -te ",Extent.MANAP," -of GTiff \\
           -co 'compress=lzw' -co 'predictor=2' \\
           gisdata/rasters/",f[i],".tif \\
-          gisdata/rast/",f[i],"_MANAP.tif"))
+          rast/",f[i],"_MANAP.tif"))
 }
 
 
 ##=======================
 ## MANAP
 ## Import rasters
-for1990 <- raster("gisdata/rast/for1990_MANAP.tif")
+for1990 <- raster("rast/for1990_MANAP.tif")
 for1990_MANAP <- for1990
-for2000 <- raster("gisdata/rast/for2000_MANAP.tif")
-for2010 <- raster("gisdata/rast/for2010_MANAP.tif")
-for2014 <- raster("gisdata/rast/for2014_MANAP.tif")
-theta_MANAP <- raster("gisdata/rast/prob2010_MANAP.tif")
+for2000 <- raster("rast/for2000_MANAP.tif")
+for2010 <- raster("rast/for2010_MANAP.tif")
+for2014 <- raster("rast/for2014_MANAP.tif")
+theta_MANAP <- raster("rast/prob2010_MANAP.tif")
 ## One raster for deforestation
 defor_MANAP <- for2000
 defor_MANAP[values(defor_MANAP)==1 & is.na(values(for2010))] <- 2
@@ -101,7 +103,7 @@ thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S1 <- for2010
 for2050.S1[values(theta_MANAP)>thres] <- NA 
-writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_MANAP.tif",overwrite=TRUE)
+writeRaster(for2050.S1,filename="rast/for2050_S1_MANAP.tif",overwrite=TRUE)
 ##===
 ## Worst-case scenario: S2=2000-2014
 defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
@@ -114,7 +116,7 @@ thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S2 <- for2010
 for2050.S2[values(theta_MANAP)>thres] <- NA 
-writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_MANAP.tif",overwrite=TRUE)
+writeRaster(for2050.S2,filename="rast/for2050_S2_MANAP.tif",overwrite=TRUE)
 ##====
 ## One raster for projections
 proj_MANAP <- for2010
@@ -158,12 +160,12 @@ perc_MANAP.S2 <- 100*(sum(values(defor.1014)==1 & values(defor.1050.S2)==1,na.rm
 ##=======================
 ## KMNP
 ## Import rasters
-for1990 <- raster("gisdata/rast/for1990_KMNP.tif")
+for1990 <- raster("rast/for1990_KMNP.tif")
 for1990_KMNP <- for1990
-for2000 <- raster("gisdata/rast/for2000_KMNP.tif")
-for2010 <- raster("gisdata/rast/for2010_KMNP.tif")
-for2014 <- raster("gisdata/rast/for2014_KMNP.tif")
-theta_KMNP <- raster("gisdata/rast/prob2010_KMNP.tif")
+for2000 <- raster("rast/for2000_KMNP.tif")
+for2010 <- raster("rast/for2010_KMNP.tif")
+for2014 <- raster("rast/for2014_KMNP.tif")
+theta_KMNP <- raster("rast/prob2010_KMNP.tif")
 ## One raster for deforestation
 defor_KMNP <- for2000
 defor_KMNP[values(defor_KMNP)==1 & is.na(values(for2010))] <- 2
@@ -182,7 +184,7 @@ thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S1 <- for2010
 for2050.S1[values(theta_KMNP)>thres] <- NA 
-writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_KMNP.tif",overwrite=TRUE)
+writeRaster(for2050.S1,filename="rast/for2050_S1_KMNP.tif",overwrite=TRUE)
 ##===
 ## Worst-case scenario: S2=2000-2014
 defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
@@ -195,7 +197,7 @@ thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S2 <- for2010
 for2050.S2[values(theta_KMNP)>thres] <- NA 
-writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_KMNP.tif",overwrite=TRUE)
+writeRaster(for2050.S2,filename="rast/for2050_S2_KMNP.tif",overwrite=TRUE)
 ##====
 ## One raster for projections
 proj_KMNP <- for2010

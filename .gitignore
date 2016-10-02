@@ -1,11 +1,6 @@
-# zip file
+# Raw data which is downloaded
 menabe_data.zip
-
-# gisdata
 gisdata
-!gisdata/rast/
-
-# photos
 photos
 
 # Markdown files
