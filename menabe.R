@@ -16,6 +16,12 @@ library(knitr)
 library(rmarkdown) 
 library(rgeos) ## for crop()
 
+##==============================================================
+## Download data (will have to be done from a Zenodo repository)
+d <- "http://bioscenemada.cirad.net/githubdata/menabe/menabe_data.zip"
+# download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
+unzip("menabe_data.zip")
+
 ##================================================
 ## Household income in MGA on the period 2006-2012
 ## Sources: The Gallup Organization and The World Bank
@@ -26,20 +32,11 @@ year <- c(2006,2007,2008,2009,2010,2011,2012)
 m.rate <- round(mean(rate))
 household.income.mga <- m.rate*household.income.usd
 
-##===============================================================================
-## Download forest cover (for) and deforestation probability map (prob)
-f <- c("for1990","for2000","for2010","for2014","prob2010")
-# dir.create("gisdata/rast_raw",recursive=TRUE)
-# for (i in 1:length(f)) {
-#   d <- paste0("http://bioscenemada.net/FileTransfer/",f[i],".tif")
-#   download.file(url=d,destfile=paste0("gisdata/rast_raw/",f[i],".tif"),method="wget",quiet=TRUE)
-# }
-
 ##========================================
 ## Prepare rasters for the two study areas
 
 ## Create directory to save new raster data
-dir.create("gisdata/rast",recursive=TRUE)
+dir.create("gisdata/rast")
 
 ## Set region for Kirindy-Mitea National Park (KMNP)
 xmin.KMNP <- 365000; xmax.KMNP <- 430010
@@ -60,18 +57,19 @@ r.MANAP.latlong <- projectRaster(r.MANAP,crs="+init=epsg:4326")
 e.MANAP.latlong <- extent(r.MANAP.latlong)
 
 ## gdalwrap
+f <- c("for1990","for2000","for2010","for2014","prob2010")
 for (i in 1:length(f)) {
   system(paste0("gdalwarp -overwrite -dstnodata 0 \\
           -r near -tr 30 30 -te ",Extent.KMNP," -of GTiff \\
           -co 'compress=lzw' -co 'predictor=2' \\
-          gisdata/rast_raw/",f[i],".tif \\
+          gisdata/rasters/",f[i],".tif \\
           gisdata/rast/",f[i],"_KMNP.tif"))
 }
 for (i in 1:length(f)) {
   system(paste0("gdalwarp -overwrite -dstnodata 0 \\
           -r near -tr 30 30 -te ",Extent.MANAP," -of GTiff \\
           -co 'compress=lzw' -co 'predictor=2' \\
-          gisdata/rast_raw/",f[i],".tif \\
+          gisdata/rasters/",f[i],".tif \\
           gisdata/rast/",f[i],"_MANAP.tif"))
 }
 
