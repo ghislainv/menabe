@@ -32,6 +32,7 @@ photos/biodiversity/selected/dir_mogr
 # History files
 .Rhistory
 .Rapp.history
+Rplots.pdf
 
 # Session Data files
 .RData

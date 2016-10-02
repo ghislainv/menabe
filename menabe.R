@@ -26,19 +26,20 @@ year <- c(2006,2007,2008,2009,2010,2011,2012)
 m.rate <- round(mean(rate))
 household.income.mga <- m.rate*household.income.usd
 
-##========================
-## Create some directories
-dir.create("gisdata/rast",recursive=TRUE) ## To save new raster data
-
-## Download forest cover
-f <- c("for1990","for2000","for2010","for2014")
-for (i in 1:length(f)) {
-  d <- paste0("http://bioscenemada.net/FileTransfer/",f[i],".tif")
-  download.file(url=d,destfile=paste0("gisdata/rast_raw/",f[i],".tif"),method="wget",quiet=TRUE)
-}
+##===============================================================================
+## Download forest cover (for) and deforestation probability map (prob)
+f <- c("for1990","for2000","for2010","for2014","prob2010")
+# dir.create("gisdata/rast_raw",recursive=TRUE)
+# for (i in 1:length(f)) {
+#   d <- paste0("http://bioscenemada.net/FileTransfer/",f[i],".tif")
+#   download.file(url=d,destfile=paste0("gisdata/rast_raw/",f[i],".tif"),method="wget",quiet=TRUE)
+# }
 
 ##========================================
 ## Prepare rasters for the two study areas
+
+## Create directory to save new raster data
+dir.create("gisdata/rast",recursive=TRUE)
 
 ## Set region for Kirindy-Mitea National Park (KMNP)
 xmin.KMNP <- 365000; xmax.KMNP <- 430010
@@ -60,14 +61,14 @@ e.MANAP.latlong <- extent(r.MANAP.latlong)
 
 ## gdalwrap
 for (i in 1:length(f)) {
-  system(paste0("gdalwarp -overwrite -ot Byte \\
+  system(paste0("gdalwarp -overwrite -dstnodata 0 \\
           -r near -tr 30 30 -te ",Extent.KMNP," -of GTiff \\
           -co 'compress=lzw' -co 'predictor=2' \\
           gisdata/rast_raw/",f[i],".tif \\
           gisdata/rast/",f[i],"_KMNP.tif"))
 }
 for (i in 1:length(f)) {
-  system(paste0("gdalwarp -overwrite -ot Byte \\
+  system(paste0("gdalwarp -overwrite -dstnodata 0 \\
           -r near -tr 30 30 -te ",Extent.MANAP," -of GTiff \\
           -co 'compress=lzw' -co 'predictor=2' \\
           gisdata/rast_raw/",f[i],".tif \\
@@ -83,11 +84,11 @@ for1990_MANAP <- for1990
 for2000 <- raster("gisdata/rast/for2000_MANAP.tif")
 for2010 <- raster("gisdata/rast/for2010_MANAP.tif")
 for2014 <- raster("gisdata/rast/for2014_MANAP.tif")
-theta_MANAP <- raster("gisdata/rast_raw/theta_MANAP.tif")
+theta_MANAP <- raster("gisdata/rast/prob2010_MANAP.tif")
 ## One raster for deforestation
 defor_MANAP <- for2000
-defor_MANAP[defor_MANAP==1 & is.na(for2010)] <- 2
-defor_MANAP[defor_MANAP==1 & is.na(for2014)] <- 3
+defor_MANAP[values(defor_MANAP)==1 & is.na(values(for2010))] <- 2
+defor_MANAP[values(defor_MANAP)==1 & is.na(values(for2014))] <- 3
 ## Mean annual deforestation on the period 1990-2010
 ## Two scenarios: S1=1990-2010 or S2=1990-2010-2014
 ##===
@@ -102,7 +103,7 @@ thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S1 <- for2010
 for2050.S1[values(theta_MANAP)>thres] <- NA 
-writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_MANAP.tif")
+writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_MANAP.tif",overwrite=TRUE)
 ##===
 ## Worst-case scenario: S2=2000-2014
 defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
@@ -115,12 +116,12 @@ thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S2 <- for2010
 for2050.S2[values(theta_MANAP)>thres] <- NA 
-writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_MANAP.tif")
+writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_MANAP.tif",overwrite=TRUE)
 ##====
 ## One raster for projections
 proj_MANAP <- for2010
-proj_MANAP[proj_MANAP==1 & is.na(for2050.S1)] <- 2
-proj_MANAP[proj_MANAP==1 & is.na(for2050.S2)] <- 3
+proj_MANAP[values(proj_MANAP)==1 & is.na(values(for2050.S1))] <- 2
+proj_MANAP[values(proj_MANAP)==1 & is.na(values(for2050.S2))] <- 3
 ##===
 ## Validation with S3: S3=2010-2014
 defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/4
@@ -164,11 +165,11 @@ for1990_KMNP <- for1990
 for2000 <- raster("gisdata/rast/for2000_KMNP.tif")
 for2010 <- raster("gisdata/rast/for2010_KMNP.tif")
 for2014 <- raster("gisdata/rast/for2014_KMNP.tif")
-theta_KMNP <- raster("gisdata/rast_raw/theta_KMNP.tif")
+theta_KMNP <- raster("gisdata/rast/prob2010_KMNP.tif")
 ## One raster for deforestation
 defor_KMNP <- for2000
-defor_KMNP[defor_KMNP==1 & is.na(for2010)] <- 2
-defor_KMNP[defor_KMNP==1 & is.na(for2014)] <- 3
+defor_KMNP[values(defor_KMNP)==1 & is.na(values(for2010))] <- 2
+defor_KMNP[values(defor_KMNP)==1 & is.na(values(for2014))] <- 3
 ## Mean annual deforestation on the period 1990-2010
 ## Two scenarios: S1=1990-2010 or S2=1990-2010-2014
 ##===
@@ -183,7 +184,7 @@ thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S1 <- for2010
 for2050.S1[values(theta_KMNP)>thres] <- NA 
-writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_KMNP.tif")
+writeRaster(for2050.S1,filename="gisdata/rast/for2050_S1_KMNP.tif",overwrite=TRUE)
 ##===
 ## Worst-case scenario: S2=2000-2014
 defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/14
@@ -196,12 +197,12 @@ thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
 ## Forest in 2050
 for2050.S2 <- for2010
 for2050.S2[values(theta_KMNP)>thres] <- NA 
-writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_KMNP.tif")
+writeRaster(for2050.S2,filename="gisdata/rast/for2050_S2_KMNP.tif",overwrite=TRUE)
 ##====
 ## One raster for projections
 proj_KMNP <- for2010
-proj_KMNP[proj_KMNP==1 & is.na(for2050.S1)] <- 2
-proj_KMNP[proj_KMNP==1 & is.na(for2050.S2)] <- 3
+proj_KMNP[values(proj_KMNP)==1 & is.na(values(for2050.S1))] <- 2
+proj_KMNP[values(proj_KMNP)==1 & is.na(values(for2050.S2))] <- 3
 ##===
 ## Validation with S3: S3=2010-2014
 defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2014)==1,na.rm=TRUE))/4
@@ -262,10 +263,10 @@ mada.df <- tidy(mada)
 ## Compute land area
 # KMNP
 land.KMNP <- crop(mada,e.KMNP)
-land_KMNP <- rasterize(land.KMNP,defor_KMNP,field=1)
+area.land.KMNP <- round(sum(sapply(slot(land.KMNP, "polygons"), slot, "area"))/10000)
 # MANAP
 land.MANAP <- crop(mada,e.MANAP)
-land_MANAP <- rasterize(land.MANAP,defor_MANAP,field=1)
+area.land.MANAP <- round(sum(sapply(slot(land.MANAP, "polygons"), slot, "area"))/10000)
 
 ## Roads
 roads.latlong <- readOGR(dsn="gisdata/vectors/roads",layer="tr_route_polyline")
@@ -392,14 +393,28 @@ ggsave(filename="figs/deforestation.png",plot=plot.defor,width=14,height=20,unit
 ##========================================
 ## Spatial probability of deforestation
 
+## Rescale function for legend
+rescale <- function(x,from.min,from.max,to.min,to.max) {
+  a <- from.min; b <- from.max; c <- to.min; d <- to.max
+  int <- (b*c-a*d)/(b-a) ; slope <- (d-c)/(b-a)
+  return(int+slope*x)
+}
+
 ## Colors
 col.proba <- colorRampPalette(c("forestgreen","orange","red"))
-v <- quantile(c(values(theta_MANAP),values(theta_KMNP)),c(0.75,0.90),na.rm=TRUE)
+theta_val <- c(values(theta_MANAP),values(theta_KMNP))
+v <- quantile(theta_val,c(0.75,0.90),na.rm=TRUE) # 17689, 25371
+mi <- 1
+ma <- 65535
+vr <- rescale(v,mi,ma,0,1)
+bin <- (ma-mi)/4
 
 ## MANAP
 plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) + 
   geom_raster(aes(fill=value)) +
-  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),values=c(0,v,1),limits=c(0,1)) +
+  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="white",
+                       values=c(0,vr,1),limits=c(mi,ma),
+                       breaks=c(mi,mi+(1:3)*bin,ma),labels=c("0.00","0.25","0.50","0.75","1.00")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
@@ -417,7 +432,9 @@ plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) +
 ## KMNP
 plot.proba.KMNP <- gplot(theta_KMNP,maxpixels=res.rast) + 
   geom_raster(aes(fill=value)) +
-  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),values=c(0,v,1),limits=c(0,1)) +
+  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="white",
+                       values=c(0,vr,1),limits=c(mi,ma),
+                       breaks=c(mi,mi+(1:3)*bin,ma),labels=c("0.00","0.25","0.50","0.75","1.00")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
@@ -445,7 +462,7 @@ theta <- function(f2,f1,Y) {
 }
 ## Table of results
 forest.cover <- data.frame(site=c("KMNP","MANAP"))
-forest.cover$area <- c(sum(values(land_KMNP)==1,na.rm=TRUE),sum(values(land_MANAP)==1,na.rm=TRUE))
+forest.cover$area <- c(area.land.KMNP,area.land.MANAP)
 forest.cover$f1990 <- c(sum(values(for1990_KMNP),na.rm=TRUE),sum(values(for1990_MANAP),na.rm=TRUE))
 forest.cover$f2000 <- c(sum(values(defor_KMNP) %in% c(1:3),na.rm=TRUE),sum(values(defor_MANAP) %in% c(1:3),na.rm=TRUE))
 forest.cover$f2010 <- c(sum(values(defor_KMNP) %in% c(1,2),na.rm=TRUE),sum(values(defor_MANAP) %in% c(1,2),na.rm=TRUE))
@@ -464,7 +481,7 @@ forest.cover$d1014.p <- round(theta(forest.cover$f2014,forest.cover$f2010,4)*100
 forest.cover$d1050.S1.p <- round(theta(forest.cover$f2050.S1,forest.cover$f2010,40)*100,2)
 forest.cover$d1050.S2.p <- round(theta(forest.cover$f2050.S2,forest.cover$f2010,40)*100,2)
 ## Transform pixels in ha
-forest.cover[,c(2:13)] <- round(forest.cover[,c(2:13)]*30*30/10000)
+forest.cover[,c(3:13)] <- round(forest.cover[,c(3:13)]*30*30/10000)
 
 ## Save objects
 # load("menabe.rda")
