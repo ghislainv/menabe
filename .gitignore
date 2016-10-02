@@ -1,6 +1,12 @@
 # zip file
 menabe_data.zip
 
+# gisdata
+gisdata
+
+# photos
+photos
+
 # Markdown files
 report/menabe.html
 report/menabe.pdf
@@ -9,28 +15,6 @@ report/menabe.docx
 
 # biblio bak
 bib/biblio.bib.bak
-
-# Photos
-photos/*
-!photos/biodiversity
-!photos/arachide
-!photos/mais
-!photos/bosake_cyclone
-!photos/illegal_logging
-!photos/surveys
-photos/biodiversity/*
-photos/arachide/*
-photos/mais/*
-photos/bosake_cyclone/*
-photos/illegal_logging/*
-photos/surveys/*
-!photos/biodiversity/selected
-!photos/arachide/selected
-!photos/mais/selected
-!photos/bosake_cyclone/selected
-!photos/illegal_logging/selected
-!photos/surveys/selected
-photos/biodiversity/selected/dir_mogr
 
 # History files
 .Rhistory
