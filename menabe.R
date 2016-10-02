@@ -22,7 +22,7 @@ for (i in pkg) {
 ## Download data (277 Mo): will have to be done from a Zenodo repository
 d <- "http://bioscenemada.cirad.fr/githubdata/menabe/menabe_data.zip"
 # download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
-unzip("menabe_data.zip")
+# unzip("menabe_data.zip")
 
 ##===========================================================
 ## Create new directories to save figures and new raster data
