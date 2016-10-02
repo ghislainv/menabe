@@ -396,27 +396,25 @@ ggsave(filename="figs/deforestation.png",plot=plot.defor,width=14,height=20,unit
 ## Spatial probability of deforestation
 
 ## Rescale function for legend
-rescale <- function(x,from.min,from.max,to.min,to.max) {
+rescale <- function(x,from.min,from.max,to.min=0,to.max=1) {
   a <- from.min; b <- from.max; c <- to.min; d <- to.max
   int <- (b*c-a*d)/(b-a) ; slope <- (d-c)/(b-a)
   return(int+slope*x)
 }
 
 ## Colors
-col.proba <- colorRampPalette(c("forestgreen","orange","red"))
 theta_val <- c(values(theta_MANAP),values(theta_KMNP))
 v <- quantile(theta_val,c(0.75,0.90),na.rm=TRUE) # 17689, 25371
 mi <- 1
 ma <- 65535
-vr <- rescale(v,mi,ma,0,1)
-bin <- (ma-mi)/4
+vr <- rescale(v,mi,ma)
 
 ## MANAP
 plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) + 
   geom_raster(aes(fill=value)) +
   scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="white",
-                       values=c(0,vr,1),limits=c(mi,ma),
-                       breaks=c(mi,mi+(1:3)*bin,ma),labels=c("0.00","0.25","0.50","0.75","1.00")) +
+                       values=c(0,vr,1), limits=c(0,ma),
+                       breaks=seq(mi,ma,length.out=5),labels=c("0.00","0.25","0.50","0.75","1.00")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
@@ -435,8 +433,8 @@ plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) +
 plot.proba.KMNP <- gplot(theta_KMNP,maxpixels=res.rast) + 
   geom_raster(aes(fill=value)) +
   scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="white",
-                       values=c(0,vr,1),limits=c(mi,ma),
-                       breaks=c(mi,mi+(1:3)*bin,ma),labels=c("0.00","0.25","0.50","0.75","1.00")) +
+                       values=c(0,vr,1),limits=c(0,ma),
+                       breaks=seq(mi,ma,length.out=5),labels=c("0.00","0.25","0.50","0.75","1.00")) +
   geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
