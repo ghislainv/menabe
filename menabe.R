@@ -21,8 +21,8 @@ for (i in pkg) {
 ##======================================================================
 ## Download data (277 Mo): will have to be done from a Zenodo repository
 d <- "http://bioscenemada.cirad.fr/githubdata/menabe/menabe_data.zip"
-# download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
-# unzip("menabe_data.zip")
+download.file(url=d,destfile="menabe_data.zip",method="wget",quiet=TRUE)
+unzip("menabe_data.zip")
 
 ##===========================================================
 ## Create new directories to save figures and new raster data
@@ -310,7 +310,8 @@ plot.Mada <- ggplot(data=mada.df,aes(x=long,y=lat,group=id)) +
             fill="transparent",colour="black",size=0.2) +
   geom_rect(aes(xmin=xmin.MANAP,xmax=xmax.MANAP,ymin=ymin.MANAP,ymax=ymax.MANAP),
             fill="transparent",colour="black",size=0.2) +
-  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,-6,-6),"mm")) +
+  theme_bw() + theme_base + theme(plot.margin=unit(c(-0.25,-0.25,-0.5,-0.5),"line"),
+                                  panel.background=element_rect(fill="azure")) +
   coord_equal()
 ## Grob
 grob.Mada <- ggplotGrob(plot.Mada)
@@ -321,14 +322,13 @@ res.rast <- ifelse(high.res,10e5,10e3)
 
 ## MANAP
 # Build deforestation plot
-plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a",hjust=0,vjust=1,size=4,fontface="bold") +
+plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
+  annotation_custom(grob=grob.Mada,xmin=xmin.MANAP+3000,
+                    xmax=xmin.MANAP+3000+12500,
+                    ymin=ymin.MANAP+23000,ymax=ymin.MANAP+23000+36000) +
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="white", size=0.3) +
   geom_raster(aes(fill=factor(value))) +
-  scale_fill_manual(values = c("forestgreen","orange","red")) +
-  annotation_custom(grob=grob.Mada,xmin=xmin.MANAP+4000,
-                    xmax=xmin.MANAP+4000+12500,
-                    ymin=ymin.MANAP+25000,ymax=ymin.MANAP+25000+36000) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
+  scale_fill_manual(values=c("forestgreen","orange","red"),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morondava_BeloTsi.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
@@ -338,13 +338,13 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a",hjust=0,vjust=1,size=4,fontface="bold") +
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"), panel.background=element_rect(fill="azure"))
 # Build projection plot
 plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="c",hjust=0,vjust=1,size=4,fontface="bold") +
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="white", size=0.3) +
   geom_raster(aes(fill=factor(value))) +
-  scale_fill_manual(values = c("forestgreen",grey(0.5),grey(0.3))) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
+  scale_fill_manual(values=c("forestgreen",grey(0.5),grey(0.3)),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morondava_BeloTsi.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
@@ -354,15 +354,15 @@ plot.proj.MANAP <- gplot(proj_MANAP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="c",hjust=0,vjust=1,size=4,fontface="bold") +
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,0,0.2),"cm"), panel.background=element_rect(fill="azure"))
 
 ## KMNP
 # Build deforestation plot
 plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b",hjust=0,vjust=1,size=4,fontface="bold") +
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="white", size=0.3) +
   geom_raster(aes(fill=factor(value))) +
-  scale_fill_manual(values = c("forestgreen","orange","red")) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
+  scale_fill_manual(values=c("forestgreen","orange","red"),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
@@ -372,13 +372,13 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b",hjust=0,vjust=1,size=4,fontface="bold") +
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"), panel.background=element_rect(fill="azure"))
 # Build projection plot
 plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) + 
-  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="d",hjust=0,vjust=1,size=4,fontface="bold") +
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="white", size=0.3) +
   geom_raster(aes(fill=factor(value))) +
-  scale_fill_manual(values = c("forestgreen",grey(0.5),grey(0.3))) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
+  scale_fill_manual(values=c("forestgreen",grey(0.5),grey(0.3)),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
@@ -386,7 +386,8 @@ plot.proj.KMNP <- gplot(proj_KMNP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.KMNP,xmax.KMNP),ylim=c(ymin.KMNP,ymax.KMNP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="d",hjust=0,vjust=1,size=4,fontface="bold") +
+  theme_bw() + theme_base + theme(plot.margin=unit(c(0,0,0,0.2),"cm"), panel.background=element_rect(fill="azure"))
 
 ## Combine plots
 plot.defor <- grid.arrange(plot.defor.MANAP, plot.proj.MANAP, plot.defor.KMNP, plot.proj.KMNP, ncol=2)
@@ -411,11 +412,11 @@ vr <- rescale(v,mi,ma)
 
 ## MANAP
 plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) + 
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="white", size=0.3) +
   geom_raster(aes(fill=value)) +
-  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="white",
+  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="transparent",
                        values=c(0,vr,1), limits=c(0,ma),
                        breaks=seq(mi,ma,length.out=5),labels=c("0.00","0.25","0.50","0.75","1.00")) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morondava_BeloTsi.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
@@ -425,17 +426,19 @@ plot.proba.MANAP <- gplot(theta_MANAP,maxpixels=res.rast) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
-  theme_bw() + theme_base + theme(legend.justification="left",legend.position=c(0,0.5)) +
-  theme(legend.key.width=unit(0.35,"cm"), legend.title=element_blank()) +
+  theme_bw() + theme_base + theme(legend.justification="left",legend.position=c(0,0.525)) +
+  theme(legend.key.width=unit(0.35,"cm"), legend.title=element_blank(),
+        legend.background=element_rect(fill="azure")) +
   annotate("text",x=xmin.MANAP,y=ymax.MANAP,label="a",hjust=0,vjust=1,size=4,fontface="bold") +
-  theme(plot.margin=unit(c(0,0.2,0,0),"cm"))
+  theme(plot.margin=unit(c(0,0.2,0,0),"cm"),
+        panel.background=element_rect(fill="azure"))
 ## KMNP
 plot.proba.KMNP <- gplot(theta_KMNP,maxpixels=res.rast) + 
+  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="white", size=0.3) +
   geom_raster(aes(fill=value)) +
-  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="white",
+  scale_fill_gradientn(colours=c("forestgreen","orange","red","black"),na.value="transparent",
                        values=c(0,vr,1),limits=c(0,ma),
                        breaks=seq(mi,ma,length.out=5),labels=c("0.00","0.25","0.50","0.75","1.00")) +
-  geom_polygon(data=mada.df, aes(x=long, y=lat, group=id), colour=grey(0.5), fill="transparent", size=0.3) +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
@@ -447,7 +450,8 @@ plot.proba.KMNP <- gplot(theta_KMNP,maxpixels=res.rast) +
   scale_y_continuous(expand=c(0,0)) +
   theme_bw() + theme_base + 
   annotate("text",x=xmin.KMNP,y=ymax.KMNP,label="b",hjust=0,vjust=1,size=4,fontface="bold") +
-  theme(plot.margin=unit(c(0,0,0,0.2),"cm"))
+  theme(plot.margin=unit(c(0,0,0,0.2),"cm"),
+        panel.background=element_rect(fill="azure"))
 
 ## Combine plots
 plot.proba <- grid.arrange(plot.proba.MANAP, plot.proba.KMNP, ncol=2)

@@ -1,5 +1,5 @@
 ---
-title: "Global trade and bad governance are responsible for the unceasing deforestation in western Madagascar, not poverty"
+title: "Unceasing deforestation in western Madagascar is due to uncontrolled global trade and bad governance, not poverty"
 bibliography: bib/biblio.bib
 csl: bib/elsevier-harvard.csl
 output: 

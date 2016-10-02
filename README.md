@@ -6,7 +6,7 @@
 
 The R script `menabe.R` can be run to reproduce the results of the following study:
 
-**Vieilledent G., C. Grinand, M. Pedrono, T. Rabetrano, J.-R. Rakotoarijaona, B. Rakotoarivelo, F. A. Rakotomalala, D. Razafimpahanana and F. Achard.** 2016. Increasing development aid and reducing poverty might not fix the inceasing deforestation problem in Madagascar dry tropical forests. _Conservation Letters_. Submitted.
+**Vieilledent G., C. Grinand, M. Pedrono, T. Rabetrano, J.-R. Rakotoarijaona, B. Rakotoarivelo, F. A. Rakotomalala, L. Rakotomalala, A. Razafimpahanana and F. Achard.** 2016. Unceasing deforestation in western Madagascar is due to uncontrolled global trade and bad governance, not poverty. _Conservation Letters_. Submitted.
 
 To run the script, you can either execute the `menabe.sh` file or run the R script under a R GUI such as [RStudio](https://www.rstudio.com/).
 
