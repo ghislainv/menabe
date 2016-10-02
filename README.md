@@ -30,7 +30,7 @@ The R Markdown file `menabe.Rmd` includes all the source code to combine text an
 
 ## Results
 
-All results are saved in the `figs` and `report` folders.
+All results are saved in the `figs`, `rast` and `report` folders.
 
 ![Figure S1: **Spatial probability of deforestation for the year 2010.**](figs/probability.png)
 
