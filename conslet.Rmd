@@ -1,5 +1,5 @@
 ---
-title: "Unceasing deforestation in western Madagascar is due to uncontrolled global trade and bad governance, not poverty"
+title: "Global trade and bad governance, not poverty, are responsible for the unceasing deforestation in western Madagascar"
 bibliography: bib/biblio.bib
 csl: bib/elsevier-harvard.csl
 output: 
@@ -27,17 +27,17 @@ load("menabe.rda")
 
 ## Summary
 
-1. Madagascar is recognized for both its unparalleled biodiversity, concentrated mainly in tropical forests, and its high level of threat which is associated in particular to deforestation. Madagascar population, which is rapidly increasing, is one of the poorest in the world and people rely strongly on forests for their livelihood. Since the end of the colonization (in 1960), much effort has been done to fight poverty and curb deforestation through implementing large development and conservation programs. Despite this, Madagascar remains in the top countries with the highest deforestation rates and the forest cover, particularly in the western dry ecoregion, is rapidly decreasing. 
-
-3. To try to explain why it is so difficult to stop deforestation in Madagascar, we analysed further the deforestation process in two dry forest areas in the central Menabe (western Madagascar) around two protected areas with high biodiversity, the Kirindy-Mitea national park and the Menabe-Antimena new protected area. We derived historical deforestation maps for these two areas from Landsat satellite images on the periods 1990-2000-2010-2014. We validated these maps and identified the main causes of deforestation with field verification points and through household and stakeholder surveys. We then established a map of the future deforestation on the period 2010-2050 assuming a business-as-usual scenario.
-
-4. We showed that deforestation had recently increased in the two study areas, with a deforestation rate of about 2.35%.yr<sup>-1</sup> on the period 2010-2014 compared to 0.85%.yr<sup>-1</sup> on the period 2000-2010. We identified two major causes of deforestation, the first one being illegal slash-and-burn agriculture for the cultivation of peanut and maize as cash crops, the second one being uncontrolled forest fires after cyclonic events. These fires are set by farmers in nearby grasslands to obtain flush of green pasture for livestock. Agents from institutions in charge of the management of the protected areas do not have the means to enforce law against deforestation. Slash-and-burn agriculture intensified recently due to the settlement or migrants following climate-induced famines in southern Madagascar. Money earned by farmers from peanut and maize productions is used to invest into zebu cows. Peanut production is exported outside Madagascar and a large part of the maize production is used to brew the national beers. These activities benefit to several intermediaries, some of who having political responsibilities, which underlies a conflict of interest in the application of the law against deforestation. 
-
-5. _Conclusions:_ In the absence of an efficient strategy to stop deforestation, we predict that half of the forest present in 2000 will have disappeared in 2050. Forest loss, apart from biodiversity loss and climate-change global issues, will be at the expense of local population. Contrary to what is commonly accepted, deforestation in western Madagascar is not associated to agriculture for auto-consumption. International pressure should be put on the Malagasy government to enforce the environmental law and on international companies to not used deforestation-derived agricultural commodities. Of course, these measures must be accompanied by incentive measures towards population to stop deforestation (through agricultural development programs for example) but a large part of the environmental aid should aim at improving governance and controlling trade.
+Madagascar is recognized for both its unparalleled biodiversity and its high level of threat, associated in particular to anthropogenic deforestation. Despite the efforts to fight poverty and curb deforestation, forest cover in Madagascar is rapidly decreasing. To try to explain why it is so difficult to stop deforestation in Madagascar, we analysed further the recent deforestation process in western Madagascar through satellite image analysis and field surveys. We showed that deforestation increased from 0.85%.yr<sup>-1</sup> on 2000-2010 to 2.35%.yr<sup>-1</sup> on 2010-2014. We identified two major causes of deforestation, which were not associated to agriculture for auto-consumption: slash-and-burn agriculture for the cultivation of cash crops (maize and peanut) and uncontrolled fires to open pastures. Crop production is mainly exported outside Madagascar and the money earned by farmers is invested into zebu cows. Export of agricultural commodities benefit to several intermediaries, some of who having political responsibilities. On the other hand, agents from institutions in charge of the management of the protected areas have no means to enforce law against deforestation. In the absence of an efficient strategy to stop deforestation, we predicted that half of the forest present in 2000 will have disappeared in 2050. Forest loss, apart from biodiversity loss and climate-change global issues, will be at the expense of local population. In order to stop deforestation, international aid should be used at improving local governance to enforce the environmental law and pressure should be put on international companies to buy certified agricultural commodities not derived from deforestation. 
 
 **Keywords**: biodiversity conservation, protected areas, Madagascar, deforestation causes, illegal logging, slash-and-burn agriculture, cyclones, fires, demographic growth.
 
-**Potential journals** (2015 IF): Conservation Letters (7.126), Conservation Biology (4.257), Environmental Research Letters (4.134), Biological Conservation (3.985), Landscape Ecology (3.657), Ambio (2.555), Environmental Conservation (2.235), Biotropica (1.944), Tropical Conservation Science (1.55).
+**Article statistics**:
+```{r artstats, results="asis"}
+Type <- c("Abstract (# words)","Main text (# words)","References","Tables","Figures")
+Number <- c(265,3000,40,3,3)
+artstats <- data.frame(cbind(Type,Number))
+kable(artstats, align=c("r","r"))
+```
 
 ## 1. Introduction
 
@@ -174,7 +174,7 @@ This study took form during a field trip in the central Menabe (4-12th of June 2
 
 ## Data availability statement
 
-All the data and codes used for this study are made available publicly in the `menabe` repository on the GitHub platform at the follow web address: https://github.com/ghislainv/menabe.git. The results and the manuscript are fully reproducible running the R script `menabe.R` from the `menabe` git repository.
+All the data and codes used for this study are made available publicly in the `menabe` repository on the GitHub platform at the following web address: https://github.com/ghislainv/menabe.git. The results and the manuscript are fully reproducible running the R script `menabe.R` from the `menabe` git repository.
 
 ## Supplementary materials
 
