@@ -405,7 +405,7 @@ rescale <- function(x,from.min,from.max,to.min=0,to.max=1) {
 
 ## Colors
 theta_val <- c(values(theta_MANAP),values(theta_KMNP))
-v <- quantile(theta_val,c(0.75,0.90),na.rm=TRUE) # 17689, 25371
+v <- quantile(theta_val,c(0.75,0.90),na.rm=TRUE)
 mi <- 1
 ma <- 65535
 vr <- rescale(v,mi,ma)
