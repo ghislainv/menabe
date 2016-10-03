@@ -11,12 +11,15 @@ pkg <- c("sp","rgdal","raster","ggplot2","broom","gridExtra",
 ## gridExtra: to combine several ggplots
 ## rasterVis: for gplot()
 ## rgeos: for crop()
-for (i in pkg) {
-  if (!require(i,character.only=TRUE)) {
-    install.packages(i,dependencies=TRUE)
-    require(i,character.only=TRUE)
+load.pkg <- function(x) {
+  if(!require(x, character.only = T)) {
+    install.packages(x)
+    require(x, character.only = T)
   }
 }
+loaded <- lapply(pkg,load.pkg)
+## Remove useless objects
+rm(pkg,load.pkg,loaded)
 
 ##======================================================================
 ## Download data (263.6 Mo): will have to be done from a Zenodo repository
@@ -507,6 +510,7 @@ opts_chunk$set(echo=FALSE, cache=FALSE,
 ## Knit and translate to html and pdf
 dir.create("report")
 render("menabe.Rmd",output_dir="report") # html output
+render("conslet.Rmd",output_dir="report") # html output
 #render("menabe.Rmd",output_format=c("html_document","pdf_document","word_document"),output_dir="report")
 
 ##===========================================================================

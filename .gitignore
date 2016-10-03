@@ -4,10 +4,7 @@ gisdata
 photos
 
 # Markdown files
-report/menabe.html
-report/menabe.pdf
-report/menabe.tex
-report/menabe.docx
+report
 
 # biblio bak
 bib/biblio.bib.bak
