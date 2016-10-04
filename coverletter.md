@@ -50,6 +50,14 @@ All the data and codes used to generate the results of this study are made avail
 As a consequence, we think our study fits well into the scope of Conservation Letters which offers the publication of trandisciplinary studies 
 producing recommendations for conservation policy. We hope you will find our study interesting and suitable for publication in your journal.
 
+#### Referees
+
+Ivan Scales
+
+Charly Gardner
+
+Rebecca Lewis
+
 #### References
 
 
