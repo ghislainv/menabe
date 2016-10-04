@@ -52,11 +52,35 @@ producing recommendations for conservation policy. We hope you will find our stu
 
 #### Referees
 
-Ivan Scales
+As potential referees, we suggest the following names:
 
-Charly Gardner
+- Prof. William J. Laurance, <bill.laurance@jcu.edu.au>. Prof. Laurance is Distinguished Research Professor and an Australian Laureate at James Cook University, in Cairns, Australia. Prof. Laurance's research focuses on the impacts of intensive land-uses, such as habitat fragmentation, logging, and wildfires, on tropical forests and species, as well as climate change and conservation policy. His research spans the tropical world, and he has spent over a quarter century working in the Amazon, Africa, Southeast Asia, and tropical Australia. He published the following book and article on the topics of our study:
 
-Rebecca Lewis
+    - Laurance, William F. and Koh, 2010. Improving the performance of the roundtable on sustainable palm oil for nature conservation. Conservation Biology 24, 377–381. doi:10.1111/j.1523-1739.2010.01448.x
+    - Laurance, W. F. Reflections on the tropical deforestation crisis Biological Conservation , 1999, 91, 109 - 117
+
+More information on his webpage: http://laurancelab.org/prof-william-laurance
+
+- Dr. Ivan Scales, <irs28@cam.ac.uk>. Dr. Scales is a lecturer in Human Geography and Fellow at St Catharine's College. He is a political ecologist and his research emphasises the role of political, cultural and economic factors in shaping the way natural resources are used and contested. He is specialised in the tropics - with a particular focus on sub-Saharan Africa - and have carried out research in Cameroon, French Guiana, The Gambia, Madagascar and Senegal. He published the following book and article on the topics of our study:
+
+    - Scales, I.R., 2014. Conservation and Environmental Management in Madagascar, Routledge. 398pp.
+    - Scales, I.R., 2011. Farming at the Forest Frontier: Land Use and Landscape Change in Western Madagascar, 1896-2005. Environment and History, v. 17, p.499-524. doi:10.3197/096734011X13150366551481.
+
+More information on his webpage: http://www.geog.cam.ac.uk/people/scales/.
+
+- Dr. Charlie Gardner, <c.gardner-399@kent.ac.uk>. Dr. Gardner is an Honorary Research Fellow at the University of Kent. He is an interdisciplinary conservationist and conservation scientist. He has been based in Madagascar since 2005. He carries out a range of research, both traditional conservation biology and conservation social science, that advances the practice and theory of protected area governance and management and community-based natural resource management. He published the following articles in relation with our study:
+
+    - Gardner, C. J.; Nicoll, M. E.; Mbohoahy, T.; Oleson, K. L. L.; Ratsifandrihamanana, A. N.; Ratsirarson, J.; René de Roland, L.-A.; Virah-Sawmy, M.; Zafindrasilivonona, B. & Davies, Z. G. Protected areas for conservation and poverty alleviation: experiences from Madagascar Journal of Applied Ecology, 2013, 50, 1289-1294
+    - Gardner, C. J.; Gabriel, F. U.; John, F. A. S. & Davies, Z. G. Changing livelihoods and protected area management: a case study of charcoal production in south-west Madagascar Oryx, Cambridge Univ Press, 2014, 1-11
+
+More information on his webpage: https://www.kent.ac.uk/sac/staff-profiles/profiles/conservation-biology/honorary_staff/gardner_charlie.html
+
+- Prof. Rebecca J. Lewis, <rjlewis@austin.utexas.edu>. Prof. Lewis is an Associate Professor in the Department of Anthropology at University of Texas at Austin. She is a primatologist with specialization in socioecology, fire ecology and cyclone ecology. She is currently leading research activities in western Madagascar. She published the following article in link with our study:
+
+    - Lewis RJ, Bannar-Martin KH (2012) The Impact of Cyclone Fanele on a Tropical Dry Forest in Madagascar. Biotropica 44(2):135-140.
+
+More information on her webpage: https://liberalarts.utexas.edu/anthropology/faculty/rl2273.
+
 
 #### References
 
