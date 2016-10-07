@@ -31,7 +31,7 @@ In this article, using satellite image analysis, we first show that deforestatio
 
 #### Importance and originality of the research
 
-Madagascar is recognized for both its unparalleled biodiversity, concentrated mainly in tropical forests, and its high level of threat which is associated in particular to deforestation [@Allnutt2008]. The disappearance of the tropical forest in Madagascar would be a terrible scenario for both local villagers in term of livelihoods [] and at the global scale for biodiversity [@Goodman2005] and carbon emissions [@Vieilledent2016].
+Madagascar is recognized for both its unparalleled biodiversity, concentrated mainly in tropical forests, and its high level of threat which is associated in particular to deforestation [@Allnutt2008]. The disappearance of the tropical forest in Madagascar would be a terrible scenario for both local villagers in term of livelihoods [@Gardner2014] and at the global scale for biodiversity [@Goodman2005] and carbon emissions [@Vieilledent2016].
 
 Our article is original as we express a different opinion regarding the main causes of deforestation in Madagascar. We demonstrate that the deforestation problem in western Madagascar is more a governance problem in a context of unregulated global economy than an economic development problem. We think that our study, despite it is focused on Madagascar, could be valuable for many countries in the tropical world, especially in Africa, where deforestation is usually associated to small scale family farming for subsistence.
 
