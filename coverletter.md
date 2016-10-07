@@ -1,7 +1,7 @@
 ---
 title: "**Cover Letter**"
 bibliography: bib/biblio.bib
-csl: bib/elsevier-harvard.csl
+csl: bib/conservation-letters.csl
 output: pdf_document
 ---
 
@@ -73,6 +73,6 @@ As potential referees, we suggest the following names:
 
     - Lewis RJ, Bannar-Martin KH (2012) The Impact of Cyclone Fanele on a Tropical Dry Forest in Madagascar. Biotropica 44(2):135-140.
 
-#### References
+# References
 
 
