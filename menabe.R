@@ -5,7 +5,7 @@
 ##=====================================================
 
 ##= Libraries
-pkg <- c("sp","rgdal","raster","ggplot2","broom","gridExtra",
+pkg <- c("broom","sp","rgdal","raster","ggplot2","gridExtra",
          "rasterVis","knitr","rmarkdown","rgeos")
 ## broom: to convert map into data-frame with tiny()
 ## gridExtra: to combine several ggplots
