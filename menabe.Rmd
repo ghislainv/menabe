@@ -1,13 +1,15 @@
 ---
-title: "It's not only poverty: uncontrolled global trade and bad governance are responsible for unceasing deforestation in Western Madagascar"
-bibliography: bib/biblio.bib
+title: "It's not only poverty: uncontrolled global trade and bad governance are responsible
+  for unceasing deforestation in Western Madagascar"
 csl: bib/conservation-letters.csl
-output: 
+output:
+  word_document: default
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
   html_document:
     fig_caption: yes
-  pdf_document:
-    fig_caption: true
-    keep_tex: true
+bibliography: bib/biblio.bib
 ---
 
 ```{r load_data}

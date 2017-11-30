@@ -510,9 +510,9 @@ opts_chunk$set(echo=FALSE, cache=FALSE,
 ## Knit and translate to html and pdf
 dir.create("report")
 ## Main document
-render("menabe.Rmd", output_dir="report") # html output
+render("menabe.Rmd", output_format=c("html_document"), output_dir="report") # html output
 ## Conservation Letters manuscript
-render("conslet.Rmd", output_format=c("html_document", "pdf_document"), output_dir="report") # html output
+render("conslet.Rmd", output_format=c("html_document", "pdf_document", "word_document"), output_dir="report")
 ## Cover letter
 render("coverletter.md", output_format=c("pdf_document"), output_dir="report") # pdf output
 #render("menabe.Rmd",output_format=c("html_document","pdf_document","word_document"),output_dir="report")
