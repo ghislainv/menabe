@@ -1,0 +1,9 @@
+# Ackowledgements
+
+This study took form in the framework of the BioSceneMada project (https://bioscenemada.cirad.fr) and the Roadless forests project (http://roadlessforests.org). The BioSceneMada project is funded by FRB (Fondation pour la Recherche sur la Biodiversité) and the FFEM (Fond Français pour l'Environnement Mondial) under the project agreement AAP-SCEN-2013 I. The Roadless forests project is funded by the European Commission. We thank all the people who welcomed us and kindly provided us with useful information during our field trip, both institutional people (from DREF, MNP, WWF and Fanamby) and villagers. The authors declare no conflict of interest.
+
+# Data availability statement
+
+All the data and codes used for this study are made available publicly in the `menabe` repository on the GitHub platform at the following web address: https://github.com/ghislainv/menabe.git. The results and the manuscript are fully reproducible running the R script `menabe.R` from the `menabe` git repository.
+
+\newpage

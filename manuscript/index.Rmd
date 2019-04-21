@@ -1,0 +1,82 @@
+---
+title: "`r params$title`"
+author: "`r params$author`"
+date: "`r params$date`"
+fontsize: 12pt
+output:
+  bookdown::gitbook:
+    number_sections: yes
+    split_by: chapter  
+    config:
+      toc:
+        collapse: section
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit: null
+      download: ["pdf"]
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        linkedin: no
+        weibo: no
+        instapper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']  
+  bookdown::pdf_document2:
+    citation_package: natbib
+    fig_caption: yes
+    keep_tex: no
+    latex_engine: pdflatex
+    number_sections: yes
+    toc: no
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+bibliography: bib/biblio.bib
+biblio-style: bib/jae.bst
+link-citations: yes
+csl: bib/journal-of-applied-ecology.csl
+---
+
+```{r options, echo=FALSE, results="hide"}
+library(bookdown)
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=FALSE, cache=FALSE,
+               # results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               # fig.show="hide",
+			         size="small",
+               fig.align="center",
+               fig.pos="H",
+               tidy=FALSE)
+load("menabe.rda")
+```
+
+# Abstract {-}
+
+Madagascar is recognized for both its unparalleled biodiversity and its high level of threat, associated in particular to anthropogenic deforestation. Despite the efforts to fight poverty and curb deforestation, forest cover in Madagascar is rapidly decreasing. To try to explain why it is so difficult to stop deforestation in Madagascar, we analysed further the recent deforestation process in western Madagascar through satellite image analysis and field surveys. We showed that average deforestation increased from 0.85%.yr$-1$ on 2000-2010 to 2.35%.yr$-1$ on 2010-2017. We identified two major causes of deforestation, which were not associated to agriculture for auto-consumption: slash-and-burn agriculture for the cultivation of cash crops (maize and peanut) and uncontrolled fires to open pastures. Crop production is mainly exported outside Madagascar and the money earned by farmers is invested into zebu herd acquisition. Export of agricultural commodities benefit to several intermediaries, some of who having political responsibilities. On the other hand, agents from institutions in charge of the management of the protected areas have no means to enforce law against deforestation. In the absence of an efficient strategy to stop deforestation, we predicted that half of the forest present in 2000 will have disappeared in 2050. Forest loss, apart from biodiversity loss and climate-change global issues, will be at the expense of local population. In order to stop deforestation, international aid should be used at improving local governance to enforce the environmental law and pressure should be put on international companies to buy certified agricultural commodities not derived from deforestation.
+
+**Keywords**: biodiversity, conservation, conflict of interest, cyclones, dry deciduous forest, fires, illegal logging, Madagascar, protected areas, slash-and-burn agriculture, tropical deforestation.
+
+**Article statistics**:
+```{r artstats, results="asis"}
+Type <- c("Abstract (# words)","Main text (# words)","References","Tables","Figures")
+Number <- c(265,3000,40,3,3)
+artstats <- data.frame(cbind(Type,Number))
+kable(artstats, align=c("r","r"))
+```
+
+**Target journals (selection)**: _People and Nature_, _Ambio_.
+
+\newpage

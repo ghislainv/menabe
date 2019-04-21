@@ -1,0 +1,12 @@
+# Appendices
+
+## Appendix 1: Spatial probability of deforestation
+
+(ref:cap-probability) **Spatial probability of deforestation for the year 2010**.
+
+```{r probability, out.width="\\textwidth", fig.cap="(ref:cap-probability)"}
+knitr::include_graphics("figures/probability.png")
+```
+
+
+\newpage

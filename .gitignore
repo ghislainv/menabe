@@ -1,10 +1,8 @@
-# Raw data which is downloaded
-menabe_data.zip
+# Data and outputs
 gisdata
 photos
-
-# Markdown files
-report
+rast
+docs
 
 # biblio bak
 bib/biblio.bib.bak
