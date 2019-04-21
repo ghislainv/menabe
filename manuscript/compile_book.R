@@ -29,7 +29,7 @@ bookdown::render_book("index.Rmd", output_format=pdf_format)
 options(knitr.table.format="html")
 # Dynamic YAML options
 title_html <- "It's not just poverty: unregulated domestic market and weak law enforcement explain unceasing deforestation in Western Madagascar"
-author_html <- "Ghislain~Vieilledent$^{*,1,2,3}$, Clovis~Grinand$^4$, Miguel~Pedrono$^5$, Tsiky~Rabetrano$^6$, Jean-Roger~Rakotoarijaona$^7$, Bruno~Rakotoarivelo$^7$, Fety~A.~Rakotomalala$^4$, Linjanantenaina~Rakotomalala$^8$, Andriamandimbisoa~Razafimpahanana$^6$, José~Ralison$^9$, and Marie~Nourtier$^4$"
+author_html <- "Ghislain Vieilledent$^{*,1,2,3}$, Clovis Grinand$^4$, Miguel Pedrono$^5$, Tsiky Rabetrano$^6$, Jean-Roger Rakotoarijaona$^7$, Bruno Rakotoarivelo$^7$, Fety A. Rakotomalala$^4$, Linjanantenaina Rakotomalala$^8$, Andriamandimbisoa Razafimpahanana$^6$, José Ralison$^9$, and Marie Nourtier$^4$"
 date_html <- format(Sys.time(), "%d %B, %Y")
 params <- list(title=title_html,author=author_html ,date=date_html)
 bookdown::render_book("index.Rmd")

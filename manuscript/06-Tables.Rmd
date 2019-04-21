@@ -9,17 +9,17 @@ knitr::kable(df_surveys[-c(7)], caption="(ref:cap-tab-surveys)", booktabs=TRUE,
 			       align=vect.align, linesep="") %>%
   column_spec(2:4, width="3cm") %>%
 	column_spec(5, width="4cm") %>%
-	column_spec(6, width="1.5cm") %>%
-  kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center")
+	column_spec(6, width="1.3cm") %>%
+  kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center", font_size=10)
 ```
 
-(ref:cap-tab-deforestation) **Change in annual deforestation with time in the Kirindy-Mite National Park (KMNP) and the Menabe-Antimena New Protected Area (MANPA).** _D90-00_, _D00-10_, _D10-17_ and _D10-50_: annual deforestation (in ha.yr$-1$) for the periods 1990-2000, 2000-2010, 2010-2017 and 2010-2050 respectively, followed by the annual deforestation rate in parenthesis  (in %.yr$-1$). The annual deforestation has more than doubled on the period 2010-2017 compared to the period 2000-2010. The two last columns of the table indicate the mean annual deforestation on the period 2010-2050 resulting from the projection of the forest cover in 2050 following the two deforestation intensity scenarios S1 (conservative scenario: 1990-2010 mean annual deforestation) and S2 (worst-case scenario: 2000-2017 mean annual deforestation).\vspace{0.5cm} 
+(ref:cap-tab-deforestation) **Change in annual deforestation with time in the Kirindy-Mite National Park (KMNP) and the Menabe-Antimena New Protected Area (MANAP).** _D90-00_, _D00-10_, _D10-17_ and _D10-50_: annual deforestation (in ha.yr$-1$) for the periods 1990-2000, 2000-2010, 2010-2017 and 2010-2050 respectively, followed by the annual deforestation rate in parenthesis  (in %.yr$-1$). The annual deforestation has more than doubled on the period 2010-2017 compared to the period 2000-2010. The two last columns of the table indicate the mean annual deforestation on the period 2010-2050 resulting from the projection of the forest cover in 2050 following the two deforestation intensity scenarios S1 (conservative scenario: 1990-2010 mean annual deforestation) and S2 (worst-case scenario: 2000-2017 mean annual deforestation).\vspace{0.5cm} 
 
 ```{r tab-deforestation, results="asis"}
 defor <- forest.cover[,c(1,9:13)]
 defor.1 <- c(as.matrix(forest.cover[,c(9:13)]))
 defor.2 <- sprintf("%.2f", c(as.matrix(forest.cover[,c(14:18)])))
-defor[,c(2:6)] <- paste0(defor.1," (",defor.2,"%)")
+defor[,c(2:6)] <- paste0(format(defor.1,big.mark=",")," (",defor.2,"%)")
 col.names <- c("Site","D90-00","D00-10","D10-17","D10-50,S1","D10-50,S2")
 vect.align <- c("l", rep("r",5))
 knitr::kable(defor, caption="(ref:cap-tab-deforestation)", booktabs=TRUE,
@@ -37,7 +37,7 @@ loss.S1.2050 <- round(mean((forest$F2000-forest[,"F2050,S1"])/forest$F2000*100))
 loss.S2.2050 <- round(mean((forest$F2000-forest[,"F2050,S2"])/forest$F2000*100))
 ```
 
-(ref:cap-tab-forest-cover) **Evolution of the forest cover with time in the Kirindy-Mite National Park (KMNP) and the Menabe-Antimena New Protected Area (MANPA).** _Area_: land area (in ha). _F2000_, _F2010_ and _F2017_: forest area (in ha) for the years 2000, 2010 and 2017, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2017`% of the forest have disappeared on the period 2000-2017 in the two sites and we predict the loss of around `r loss.S1.2050`% and `r loss.S2.2050`% of the forest on the period 2000-2050 for the two sites assuming a conservative (projecting the 1990-2010 annual deforestation) or a worst-case scenario (projecting the 2000-2017 annual deforestation), respectively.\vspace{0.5cm}   
+(ref:cap-tab-forest-cover) **Evolution of the forest cover with time in the Kirindy-Mite National Park (KMNP) and the Menabe-Antimena New Protected Area (MANAP).** _Area_: land area (in ha). _F2000_, _F2010_ and _F2017_: forest area (in ha) for the years 2000, 2010 and 2017, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2017`% of the forest have disappeared on the period 2000-2017 in the two sites and we predict the loss of around `r loss.S1.2050`% and `r loss.S2.2050`% of the forest on the period 2000-2050 for the two sites assuming a conservative (projecting the 1990-2010 annual deforestation) or a worst-case scenario (projecting the 2000-2017 annual deforestation), respectively.\vspace{0.5cm}   
 
 ```{r tab-forest-cover, results="asis"}
 vect.align <- c("l", rep("r",7))
