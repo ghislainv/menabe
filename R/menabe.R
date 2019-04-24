@@ -1,8 +1,11 @@
-##=====================================================
-## Deforestation in central Menabe, Madagascar
-## Ghislain Vieilledent <ghislain.vieilledent@cirad.fr>
-## June 2016
-##=====================================================
+#!/usr/bin/Rscript
+
+# ==============================================================================
+# author          :Ghislain Vieilledent
+# email           :ghislain.vieilledent@cirad.fr, ghislainv@gmail.com
+# web             :https://ghislainv.github.io
+# license         :CC-BY-SA 4.0
+# ==============================================================================
 
 ##= Libraries
 pkg <- c("broom","sp","rgdal","raster","ggplot2","gridExtra",
@@ -75,7 +78,7 @@ r.MIKEA.latlong <- projectRaster(r.MIKEA,crs="+init=epsg:4326")
 e.MIKEA.latlong <- extent(r.MIKEA.latlong)
 
 ## gdalwrap
-f <- c("for1990","for2000","for2010","for2017","prob2010")
+f <- c("for1990","for2000","for2010","for2015","prob2010")
 for (i in 1:length(f)) {
   system(paste0("gdalwarp -overwrite -dstnodata 0 \\
           -r near -tr 30 30 -te ",Extent.MANAP," -of GTiff \\
@@ -105,15 +108,15 @@ for1990 <- raster("rast/for1990_KMNP.tif")
 for1990_KMNP <- for1990
 for2000 <- raster("rast/for2000_KMNP.tif")
 for2010 <- raster("rast/for2010_KMNP.tif")
-for2017 <- raster("rast/for2017_KMNP.tif")
+for2015 <- raster("rast/for2015_KMNP.tif")
 theta_KMNP <- raster("rast/prob2010_KMNP.tif")
 ## One raster for deforestation
 defor_KMNP <- for2000
 defor_KMNP[values(defor_KMNP)==1 & is.na(values(for2010))] <- 2
-defor_KMNP[values(defor_KMNP)==1 & is.na(values(for2017))] <- 3
+defor_KMNP[values(defor_KMNP)==1 & is.na(values(for2015))] <- 3
 writeRaster(defor_KMNP,filename="rast/defor_KMNP.tif",overwrite=TRUE)
 ## Mean annual deforestation on the period 1990-2010
-## Two scenarios: S1=1990-2010 or S2=1990-2010-2017
+## Two scenarios: S1=1990-2010 or S2=1990-2010-2015
 ##===
 ## Conservative scenario: S1=1990-2010
 defor.npix <- (sum(values(for1990)==1,na.rm=TRUE)-sum(values(for2010)==1,na.rm=TRUE))/20
@@ -128,8 +131,8 @@ for2050.S1 <- for2010
 for2050.S1[values(theta_KMNP)>thres] <- NA 
 writeRaster(for2050.S1,filename="rast/for2050_S1_KMNP.tif",overwrite=TRUE)
 ##===
-## Worst-case scenario: S2=2000-2017
-defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2017)==1,na.rm=TRUE))/17
+## Worst-case scenario: S2=2000-2015
+defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2015)==1,na.rm=TRUE))/15
 defor.nha <- defor.npix*30*30/10000
 ## Number of pixels to be deforested on the period 2010-2050
 pred.npix <- 40*defor.npix
@@ -146,23 +149,23 @@ proj_KMNP <- for2010
 proj_KMNP[values(proj_KMNP)==1 & is.na(values(for2050.S1))] <- 2
 proj_KMNP[values(proj_KMNP)==1 & is.na(values(for2050.S2))] <- 3
 ##===
-## Validation with S3: S3=2010-2017
-defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2017)==1,na.rm=TRUE))/7
-## Number of pixels to be deforested on the period 2010-2017
-pred.npix <- defor.npix*7
+## Validation with S3: S3=2010-2015
+defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2015)==1,na.rm=TRUE))/5
+## Number of pixels to be deforested on the period 2010-2015
+pred.npix <- defor.npix*5
 pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
 ## Probability threshold
 thres <- quantile(values(theta_KMNP),1-pred.prop,na.rm=TRUE)
-## Forest in 2017
-for2017.S3 <- for2010
-for2017.S3[values(theta_KMNP)>thres] <- NA 
+## Forest in 2015
+for2015.S3 <- for2010
+for2015.S3[values(theta_KMNP)>thres] <- NA 
 ## Comparing observations and predictions (n_pred_obs)
-defor.1017 <- for2010 ; defor.1017[values(defor.1017)==1] <- 0 ; defor.1017[values(for2010)==1 & is.na(values(for2017))] <- 1
-defor.1017.S3 <- for2010 ; defor.1017.S3[values(defor.1017.S3)==1] <- 0 ; defor.1017.S3[values(for2010)==1 & is.na(values(for2017.S3))] <- 1
-n00 <- sum(values(defor.1017.S3)==0 & values(defor.1017)==0 , na.rm=TRUE)
-n10 <- sum(values(defor.1017.S3)==1 & values(defor.1017)==0 , na.rm=TRUE)
-n01 <- sum(values(defor.1017.S3)==0 & values(defor.1017)==1 , na.rm=TRUE)
-n11 <- sum(values(defor.1017.S3)==1 & values(defor.1017)==1 , na.rm=TRUE)
+defor.1015 <- for2010 ; defor.1015[values(defor.1015)==1] <- 0 ; defor.1015[values(for2010)==1 & is.na(values(for2015))] <- 1
+defor.1015.S3 <- for2010 ; defor.1015.S3[values(defor.1015.S3)==1] <- 0 ; defor.1015.S3[values(for2010)==1 & is.na(values(for2015.S3))] <- 1
+n00 <- sum(values(defor.1015.S3)==0 & values(defor.1015)==0 , na.rm=TRUE)
+n10 <- sum(values(defor.1015.S3)==1 & values(defor.1015)==0 , na.rm=TRUE)
+n01 <- sum(values(defor.1015.S3)==0 & values(defor.1015)==1 , na.rm=TRUE)
+n11 <- sum(values(defor.1015.S3)==1 & values(defor.1015)==1 , na.rm=TRUE)
 ## Performance indices
 OA_KMNP <- (n11+n00)/(n11+n10+n00+n01)
 FOM_KMNP <- n11/(n11+n10+n01)
@@ -175,11 +178,11 @@ Prob_0and0 <- ((n00 + n01) / N) * ((n00 + n10) / N)
 Expected_accuracy <- Prob_1and1 + Prob_0and0
 Kappa_KMNP <- (Observed_accuracy-Expected_accuracy)/(1-Expected_accuracy)
 ##==
-## Percentage of 2010-2017 deforestation included in 2010-2050 deforestation
+## Percentage of 2010-2015 deforestation included in 2010-2050 deforestation
 defor.1050.S1 <- for2010 ; defor.1050.S1[values(defor.1050.S1)==1] <- 0 ; defor.1050.S1[values(for2010)==1 & is.na(values(for2050.S1))] <- 1
 defor.1050.S2 <- for2010 ; defor.1050.S2[values(defor.1050.S2)==1] <- 0 ; defor.1050.S2[values(for2010)==1 & is.na(values(for2050.S2))] <- 1
-perc_KMNP.S1 <- 100*(sum(values(defor.1017)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1017)==1,na.rm=TRUE))
-perc_KMNP.S2 <- 100*(sum(values(defor.1017)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1017)==1,na.rm=TRUE))
+perc_KMNP.S1 <- 100*(sum(values(defor.1015)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1015)==1,na.rm=TRUE))
+perc_KMNP.S2 <- 100*(sum(values(defor.1015)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1015)==1,na.rm=TRUE))
 
 ##=======================
 ## MANAP
@@ -188,15 +191,15 @@ for1990 <- raster("rast/for1990_MANAP.tif")
 for1990_MANAP <- for1990
 for2000 <- raster("rast/for2000_MANAP.tif")
 for2010 <- raster("rast/for2010_MANAP.tif")
-for2017 <- raster("rast/for2017_MANAP.tif")
+for2015 <- raster("rast/for2015_MANAP.tif")
 theta_MANAP <- raster("rast/prob2010_MANAP.tif")
 ## One raster for deforestation
 defor_MANAP <- for2000
 defor_MANAP[values(defor_MANAP)==1 & is.na(values(for2010))] <- 2
-defor_MANAP[values(defor_MANAP)==1 & is.na(values(for2017))] <- 3
+defor_MANAP[values(defor_MANAP)==1 & is.na(values(for2015))] <- 3
 writeRaster(defor_MANAP,filename="rast/defor_MANAP.tif",overwrite=TRUE)
 ## Mean annual deforestation on the period 1990-2010
-## Two scenarios: S1=1990-2010 or S2=1990-2010-2017
+## Two scenarios: S1=1990-2010 or S2=1990-2010-2015
 ##===
 ## Conservative scenario: S1=1990-2010
 defor.npix <- (sum(values(for1990)==1,na.rm=TRUE)-sum(values(for2010)==1,na.rm=TRUE))/20
@@ -211,8 +214,8 @@ for2050.S1 <- for2010
 for2050.S1[values(theta_MANAP)>thres] <- NA 
 writeRaster(for2050.S1,filename="rast/for2050_S1_MANAP.tif",overwrite=TRUE)
 ##===
-## Worst-case scenario: S2=2000-2017
-defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2017)==1,na.rm=TRUE))/17
+## Worst-case scenario: S2=2000-2015
+defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2015)==1,na.rm=TRUE))/15
 defor.nha <- defor.npix*30*30/10000
 ## Number of pixels to be deforested on the period 2010-2050
 pred.npix <- 40*defor.npix
@@ -229,23 +232,23 @@ proj_MANAP <- for2010
 proj_MANAP[values(proj_MANAP)==1 & is.na(values(for2050.S1))] <- 2
 proj_MANAP[values(proj_MANAP)==1 & is.na(values(for2050.S2))] <- 3
 ##===
-## Validation with S3: S3=2010-2017
-defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2017)==1,na.rm=TRUE))/7
-## Number of pixels to be deforested on the period 2010-2017
-pred.npix <- defor.npix*7
+## Validation with S3: S3=2010-2015
+defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2015)==1,na.rm=TRUE))/5
+## Number of pixels to be deforested on the period 2010-2015
+pred.npix <- defor.npix*5
 pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
 ## Probability threshold
 thres <- quantile(values(theta_MANAP),1-pred.prop,na.rm=TRUE)
-## Forest in 2017
-for2017.S3 <- for2010
-for2017.S3[values(theta_MANAP)>thres] <- NA 
+## Forest in 2015
+for2015.S3 <- for2010
+for2015.S3[values(theta_MANAP)>thres] <- NA 
 ## Comparing observations and predictions (n_pred_obs)
-defor.1017 <- for2010 ; defor.1017[values(defor.1017)==1] <- 0 ; defor.1017[values(for2010)==1 & is.na(values(for2017))] <- 1
-defor.1017.S3 <- for2010 ; defor.1017.S3[values(defor.1017.S3)==1] <- 0 ; defor.1017.S3[values(for2010)==1 & is.na(values(for2017.S3))] <- 1
-n00 <- sum(values(defor.1017.S3)==0 & values(defor.1017)==0 , na.rm=TRUE)
-n10 <- sum(values(defor.1017.S3)==1 & values(defor.1017)==0 , na.rm=TRUE)
-n01 <- sum(values(defor.1017.S3)==0 & values(defor.1017)==1 , na.rm=TRUE)
-n11 <- sum(values(defor.1017.S3)==1 & values(defor.1017)==1 , na.rm=TRUE)
+defor.1015 <- for2010 ; defor.1015[values(defor.1015)==1] <- 0 ; defor.1015[values(for2010)==1 & is.na(values(for2015))] <- 1
+defor.1015.S3 <- for2010 ; defor.1015.S3[values(defor.1015.S3)==1] <- 0 ; defor.1015.S3[values(for2010)==1 & is.na(values(for2015.S3))] <- 1
+n00 <- sum(values(defor.1015.S3)==0 & values(defor.1015)==0 , na.rm=TRUE)
+n10 <- sum(values(defor.1015.S3)==1 & values(defor.1015)==0 , na.rm=TRUE)
+n01 <- sum(values(defor.1015.S3)==0 & values(defor.1015)==1 , na.rm=TRUE)
+n11 <- sum(values(defor.1015.S3)==1 & values(defor.1015)==1 , na.rm=TRUE)
 ## Performance indices
 OA_MANAP <- (n11+n00)/(n11+n10+n00+n01)
 FOM_MANAP <- n11/(n11+n10+n01)
@@ -259,11 +262,11 @@ Prob_0and0 <- ((n00 + n01) / N) * ((n00 + n10) / N)
 Expected_accuracy <- Prob_1and1 + Prob_0and0
 Kappa_MANAP <- (Observed_accuracy-Expected_accuracy)/(1-Expected_accuracy)
 ##==
-## Percentage of 2010-2017 deforestation included in 2010-2050 deforestation
+## Percentage of 2010-2015 deforestation included in 2010-2050 deforestation
 defor.1050.S1 <- for2010 ; defor.1050.S1[values(defor.1050.S1)==1] <- 0 ; defor.1050.S1[values(for2010)==1 & is.na(values(for2050.S1))] <- 1
 defor.1050.S2 <- for2010 ; defor.1050.S2[values(defor.1050.S2)==1] <- 0 ; defor.1050.S2[values(for2010)==1 & is.na(values(for2050.S2))] <- 1
-perc_MANAP.S1 <- 100*(sum(values(defor.1017)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1017)==1,na.rm=TRUE))
-perc_MANAP.S2 <- 100*(sum(values(defor.1017)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1017)==1,na.rm=TRUE))
+perc_MANAP.S1 <- 100*(sum(values(defor.1015)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1015)==1,na.rm=TRUE))
+perc_MANAP.S2 <- 100*(sum(values(defor.1015)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1015)==1,na.rm=TRUE))
 
 ##=======================
 ## MIKEA
@@ -272,15 +275,15 @@ for1990 <- raster("rast/for1990_MIKEA.tif")
 for1990_MIKEA <- for1990
 for2000 <- raster("rast/for2000_MIKEA.tif")
 for2010 <- raster("rast/for2010_MIKEA.tif")
-for2017 <- raster("rast/for2017_MIKEA.tif")
+for2015 <- raster("rast/for2015_MIKEA.tif")
 theta_MIKEA <- raster("rast/prob2010_MIKEA.tif")
 ## One raster for deforestation
 defor_MIKEA <- for2000
 defor_MIKEA[values(defor_MIKEA)==1 & is.na(values(for2010))] <- 2
-defor_MIKEA[values(defor_MIKEA)==1 & is.na(values(for2017))] <- 3
+defor_MIKEA[values(defor_MIKEA)==1 & is.na(values(for2015))] <- 3
 writeRaster(defor_MIKEA,filename="rast/defor_MIKEA.tif",overwrite=TRUE)
 ## Mean annual deforestation on the period 1990-2010
-## Two scenarios: S1=1990-2010 or S2=1990-2010-2017
+## Two scenarios: S1=1990-2010 or S2=1990-2010-2015
 ##===
 ## Conservative scenario: S1=1990-2010
 defor.npix <- (sum(values(for1990)==1,na.rm=TRUE)-sum(values(for2010)==1,na.rm=TRUE))/20
@@ -295,8 +298,8 @@ for2050.S1 <- for2010
 for2050.S1[values(theta_MIKEA)>thres] <- NA 
 writeRaster(for2050.S1,filename="rast/for2050_S1_MIKEA.tif",overwrite=TRUE)
 ##===
-## Worst-case scenario: S2=2000-2017
-defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2017)==1,na.rm=TRUE))/17
+## Worst-case scenario: S2=2000-2015
+defor.npix <- (sum(values(for2000)==1,na.rm=TRUE)-sum(values(for2015)==1,na.rm=TRUE))/15
 defor.nha <- defor.npix*30*30/10000
 ## Number of pixels to be deforested on the period 2010-2050
 pred.npix <- 40*defor.npix
@@ -313,23 +316,23 @@ proj_MIKEA <- for2010
 proj_MIKEA[values(proj_MIKEA)==1 & is.na(values(for2050.S1))] <- 2
 proj_MIKEA[values(proj_MIKEA)==1 & is.na(values(for2050.S2))] <- 3
 ##===
-## Validation with S3: S3=2010-2017
-defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2017)==1,na.rm=TRUE))/7
-## Number of pixels to be deforested on the period 2010-2017
-pred.npix <- defor.npix*7
+## Validation with S3: S3=2010-2015
+defor.npix <- (sum(values(for2010)==1,na.rm=TRUE)-sum(values(for2015)==1,na.rm=TRUE))/5
+## Number of pixels to be deforested on the period 2010-2015
+pred.npix <- defor.npix*5
 pred.prop <- pred.npix/sum(values(for2010)==1,na.rm=TRUE)
 ## Probability threshold
 thres <- quantile(values(theta_MIKEA),1-pred.prop,na.rm=TRUE)
-## Forest in 2017
-for2017.S3 <- for2010
-for2017.S3[values(theta_MIKEA)>thres] <- NA 
+## Forest in 2015
+for2015.S3 <- for2010
+for2015.S3[values(theta_MIKEA)>thres] <- NA 
 ## Comparing observations and predictions (n_pred_obs)
-defor.1017 <- for2010 ; defor.1017[values(defor.1017)==1] <- 0 ; defor.1017[values(for2010)==1 & is.na(values(for2017))] <- 1
-defor.1017.S3 <- for2010 ; defor.1017.S3[values(defor.1017.S3)==1] <- 0 ; defor.1017.S3[values(for2010)==1 & is.na(values(for2017.S3))] <- 1
-n00 <- sum(values(defor.1017.S3)==0 & values(defor.1017)==0 , na.rm=TRUE)
-n10 <- sum(values(defor.1017.S3)==1 & values(defor.1017)==0 , na.rm=TRUE)
-n01 <- sum(values(defor.1017.S3)==0 & values(defor.1017)==1 , na.rm=TRUE)
-n11 <- sum(values(defor.1017.S3)==1 & values(defor.1017)==1 , na.rm=TRUE)
+defor.1015 <- for2010 ; defor.1015[values(defor.1015)==1] <- 0 ; defor.1015[values(for2010)==1 & is.na(values(for2015))] <- 1
+defor.1015.S3 <- for2010 ; defor.1015.S3[values(defor.1015.S3)==1] <- 0 ; defor.1015.S3[values(for2010)==1 & is.na(values(for2015.S3))] <- 1
+n00 <- sum(values(defor.1015.S3)==0 & values(defor.1015)==0 , na.rm=TRUE)
+n10 <- sum(values(defor.1015.S3)==1 & values(defor.1015)==0 , na.rm=TRUE)
+n01 <- sum(values(defor.1015.S3)==0 & values(defor.1015)==1 , na.rm=TRUE)
+n11 <- sum(values(defor.1015.S3)==1 & values(defor.1015)==1 , na.rm=TRUE)
 ## Performance indices
 OA_MIKEA <- (n11+n00)/(n11+n10+n00+n01)
 FOM_MIKEA <- n11/(n11+n10+n01)
@@ -343,11 +346,11 @@ Prob_0and0 <- ((n00 + n01) / N) * ((n00 + n10) / N)
 Expected_accuracy <- Prob_1and1 + Prob_0and0
 Kappa_MIKEA <- (Observed_accuracy-Expected_accuracy)/(1-Expected_accuracy)
 ##==
-## Percentage of 2010-2017 deforestation included in 2010-2050 deforestation
+## Percentage of 2010-2015 deforestation included in 2010-2050 deforestation
 defor.1050.S1 <- for2010 ; defor.1050.S1[values(defor.1050.S1)==1] <- 0 ; defor.1050.S1[values(for2010)==1 & is.na(values(for2050.S1))] <- 1
 defor.1050.S2 <- for2010 ; defor.1050.S2[values(defor.1050.S2)==1] <- 0 ; defor.1050.S2[values(for2010)==1 & is.na(values(for2050.S2))] <- 1
-perc_MIKEA.S1 <- 100*(sum(values(defor.1017)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1017)==1,na.rm=TRUE))
-perc_MIKEA.S2 <- 100*(sum(values(defor.1017)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1017)==1,na.rm=TRUE))
+perc_MIKEA.S1 <- 100*(sum(values(defor.1015)==1 & values(defor.1050.S1)==1,na.rm=TRUE)/sum(values(defor.1015)==1,na.rm=TRUE))
+perc_MIKEA.S2 <- 100*(sum(values(defor.1015)==1 & values(defor.1050.S2)==1,na.rm=TRUE)/sum(values(defor.1015)==1,na.rm=TRUE))
 
 ##== Synthesis of model performance in data-frames
 ## Data-frame for indices
@@ -404,6 +407,14 @@ Lambokely_Kirindy.df <- as.data.frame(Lambokely_Kirindy); names(Lambokely_Kirind
 Morondava_BeloTsi.df <- as.data.frame(Morondava_BeloTsi); names(Morondava_BeloTsi.df)[12:13] <- c("x","y")
 Morondava_BeloTsi.df$TOPONYME <- as.factor(c("Belo sur Tsiribihina","Morondava"))
 
+## Cyclones
+Fanele.latlong <- readOGR(dsn="gisdata/vectors/cyclones",layer="Fanele")
+Fanele <- spTransform(Fanele.latlong,CRSobj=CRS("+init=epsg:32738"))
+Fanele.df <- tidy(Fanele)
+Haruna.latlong <- readOGR(dsn="gisdata/vectors/cyclones",layer="Haruna")
+Haruna <- spTransform(Haruna.latlong,CRSobj=CRS("+init=epsg:32738"))
+Haruna.df <- tidy(Haruna)
+
 ##========================================
 ## Plot raster with gplot() from rasterVis
 
@@ -454,6 +465,8 @@ plot.defor.MANAP <- gplot(defor_MANAP,maxpixels=res.rast) +
   geom_text(data=Morondava_BeloTsi.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1500, hjust=0.5, nudge_x=3500) +
   geom_point(data=Lambokely_Kirindy.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Lambokely_Kirindy.df, aes(label=Name), size=3, vjust=0, nudge_y=1000, hjust=0.5) +
+  geom_point(data=Obs.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
+  geom_text(data=Obs.df, aes(label=Obs), size=3, hjust=1, nudge_x=-1000) +
   coord_equal(xlim=c(xmin.MANAP,xmax.MANAP),ylim=c(ymin.MANAP,ymax.MANAP)) +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_continuous(expand=c(0,0)) +
@@ -466,6 +479,7 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values=c("forestgreen","orange","red"),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
+  geom_path(data=Fanele.df, aes(x=long, y=lat, group=group), linetype="dashed", colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
@@ -483,6 +497,7 @@ plot.defor.MIKEA <- gplot(defor_MIKEA,maxpixels=res.rast) +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values=c("forestgreen","orange","red"),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
+  geom_path(data=Haruna.df, aes(x=long, y=lat, group=group), linetype="dashed", colour="black", size=0.2) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morombe.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Morombe.df, aes(label=Name), size=3, vjust=0, nudge_y=2000, hjust=0.5, nudge_x=-3500) +
@@ -546,11 +561,9 @@ plot.proj.MIKEA <- gplot(proj_MIKEA,maxpixels=res.rast) +
   theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"), panel.background=element_rect(fill="azure"))
 
 ## Combine plots
-plot.defor <- grid.arrange(plot.defor.MANAP, plot.defor.KMNP, plot.defor.MIKEA,
-                           ncol=3)
-plot.scenarios <- grid.arrange(plot.proj.MANAP, plot.proj.KMNP, plot.proj.MIKEA,
-                           ncol=3)
+plot.defor <- grid.arrange(plot.defor.MANAP, plot.defor.KMNP, plot.defor.MIKEA, ncol=3)
 ggsave(filename="manuscript/figures/deforestation.png",plot=plot.defor,width=21,height=10,unit=c("cm"))
+plot.scenarios <- grid.arrange(plot.proj.MANAP, plot.proj.KMNP, plot.proj.MIKEA, ncol=3)
 ggsave(filename="manuscript/figures/scenarios.png",plot=plot.scenarios,width=21,height=10,unit=c("cm"))
 
 ##========================================
@@ -652,7 +665,7 @@ forest.cover$f2000 <- c(sum(values(defor_MANAP) %in% c(1,2,3),na.rm=TRUE),
 forest.cover$f2010 <- c(sum(values(defor_MANAP) %in% c(1,3),na.rm=TRUE),
                         sum(values(defor_KMNP) %in% c(1,3),na.rm=TRUE),
                         sum(values(defor_MIKEA) %in% c(1,3),na.rm=TRUE))
-forest.cover$f2017 <- c(sum(values(defor_MANAP)==1,na.rm=TRUE),
+forest.cover$f2015 <- c(sum(values(defor_MANAP)==1,na.rm=TRUE),
                         sum(values(defor_KMNP)==1,na.rm=TRUE),
                         sum(values(defor_MIKEA)==1,na.rm=TRUE))
 forest.cover$f2050.S1 <- c(sum(values(proj_MANAP) %in% c(1,3),na.rm=TRUE),
@@ -663,13 +676,13 @@ forest.cover$f2050.S2 <- c(sum(values(proj_MANAP)==1,na.rm=TRUE),
                            sum(values(proj_MIKEA)==1,na.rm=TRUE))
 forest.cover$d9000.ha <- c(forest.cover$f1990-forest.cover$f2000)/10
 forest.cover$d0010.ha <- c(forest.cover$f2000-forest.cover$f2010)/10
-forest.cover$d1017.ha <- c(forest.cover$f2010-forest.cover$f2017)/7
+forest.cover$d1015.ha <- c(forest.cover$f2010-forest.cover$f2015)/5
 forest.cover$d1050.S1.ha <- c(forest.cover$f2010-forest.cover$f2050.S1)/40
 forest.cover$d1050.S2.ha <- c(forest.cover$f2010-forest.cover$f2050.S2)/40
 ## Deforestation rates in %
 forest.cover$d9000.p <- round(theta(forest.cover$f2000,forest.cover$f1990,10)*100,2)
 forest.cover$d0010.p <- round(theta(forest.cover$f2010,forest.cover$f2000,10)*100,2)
-forest.cover$d1017.p <- round(theta(forest.cover$f2017,forest.cover$f2010,7)*100,2)
+forest.cover$d1015.p <- round(theta(forest.cover$f2015,forest.cover$f2010,5)*100,2)
 forest.cover$d1050.S1.p <- round(theta(forest.cover$f2050.S1,forest.cover$f2010,40)*100,2)
 forest.cover$d1050.S2.p <- round(theta(forest.cover$f2050.S2,forest.cover$f2010,40)*100,2)
 ## Transform pixels in ha
