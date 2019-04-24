@@ -130,8 +130,8 @@ f4="Haruna_track_crop.jpg"
 montage -tile 2x2 -geometry +0+0 "$dir/$f1" "$dir/$f2" "$dir/$f3" "$dir/$f4" "figs/m1.jpg"
 # Annotate
 convert -gravity NorthWest -annotate +5+5 "a" -pointsize $ts "figs/m1.jpg" "figs/m2.jpg"
-convert -gravity NorthWest -annotate +405+5 "b" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
+convert -fill white -gravity NorthWest -annotate +405+5 "b" -pointsize $ts "figs/m2.jpg" "figs/m3.jpg"
 convert -gravity NorthWest -annotate +5+405 "a'" -pointsize $ts "figs/m3.jpg" "figs/m4.jpg"
-convert -gravity NorthWest -annotate +405+405 "b'" -pointsize $ts "figs/m4.jpg" "figs/cyclones.jpg"
+convert -fill white -gravity NorthWest -annotate +405+405 "b'" -pointsize $ts "figs/m4.jpg" "figs/cyclones.jpg"
 # Clean
 rm figs/m[1-4].jpg
