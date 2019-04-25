@@ -9,7 +9,7 @@
 
 ##= Libraries
 pkg <- c("broom","sp","rgdal","raster","ggplot2","gridExtra",
-         "rasterVis","rgeos")
+         "rasterVis","rgeos","dplyr")
 ## broom: to convert map into data-frame with tiny()
 ## gridExtra: to combine several ggplots
 ## rasterVis: for gplot()
@@ -479,7 +479,7 @@ plot.defor.KMNP <- gplot(defor_KMNP,maxpixels=res.rast) +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values=c("forestgreen","orange","red"),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
-  geom_path(data=Fanele.df, aes(x=long, y=lat, group=group), linetype="dashed", colour="black", size=0.2) +
+  geom_path(data=Fanele.df, aes(x=long, y=lat, group=group), linetype="dashed", colour="black", size=0.4) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Belo.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Belo.df, aes(label=TOPONYME), size=3, vjust=0, nudge_y=1000, hjust=0.5, nudge_x=-3250) +
@@ -497,7 +497,7 @@ plot.defor.MIKEA <- gplot(defor_MIKEA,maxpixels=res.rast) +
   geom_raster(aes(fill=factor(value))) +
   scale_fill_manual(values=c("forestgreen","orange","red"),na.value="transparent") +
   geom_path(data=roads.df, aes(x=long, y=lat, group=group), colour="black", size=0.2) +
-  geom_path(data=Haruna.df, aes(x=long, y=lat, group=group), linetype="dashed", colour="black", size=0.2) +
+  geom_path(data=Haruna.df, aes(x=long, y=lat, group=group), linetype="dashed", colour="black", size=0.4) +
   geom_polygon(data=sapm.df, aes(x=long, y=lat, group=group), colour="black", fill="transparent", size=0.6) +
   geom_point(data=Morombe.df, aes(x=x, y=y), color="black", size=1.5, shape=16) +
   geom_text(data=Morombe.df, aes(label=Name), size=3, vjust=0, nudge_y=2000, hjust=0.5, nudge_x=-3500) +
@@ -508,6 +508,9 @@ plot.defor.MIKEA <- gplot(defor_MIKEA,maxpixels=res.rast) +
   scale_y_continuous(expand=c(0,0)) +
   annotate("text",x=xmin.MIKEA,y=ymax.MIKEA,label="c",hjust=0,vjust=1,size=4,fontface="bold") +
   theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"), panel.background=element_rect(fill="azure"))
+## Combine plots
+plot.defor <- grid.arrange(plot.defor.MANAP, plot.defor.KMNP, plot.defor.MIKEA, ncol=3)
+ggsave(filename="manuscript/figures/deforestation.png",plot=plot.defor,width=21,height=10,unit=c("cm"))
 
 ## MANAP
 # Build projection plot
@@ -559,10 +562,7 @@ plot.proj.MIKEA <- gplot(proj_MIKEA,maxpixels=res.rast) +
   scale_y_continuous(expand=c(0,0)) +
   annotate("text",x=xmin.MIKEA,y=ymax.MIKEA,label="c",hjust=0,vjust=1,size=4,fontface="bold") +
   theme_bw() + theme_base + theme(plot.margin=unit(c(0,0.2,0,0),"cm"), panel.background=element_rect(fill="azure"))
-
 ## Combine plots
-plot.defor <- grid.arrange(plot.defor.MANAP, plot.defor.KMNP, plot.defor.MIKEA, ncol=3)
-ggsave(filename="manuscript/figures/deforestation.png",plot=plot.defor,width=21,height=10,unit=c("cm"))
 plot.scenarios <- grid.arrange(plot.proj.MANAP, plot.proj.KMNP, plot.proj.MIKEA, ncol=3)
 ggsave(filename="manuscript/figures/scenarios.png",plot=plot.scenarios,width=21,height=10,unit=c("cm"))
 
@@ -696,6 +696,23 @@ save(forest.cover,e.MANAP.latlong,e.KMNP.latlong,e.MIKEA.latlong,
 ##========================
 ## Assemble photos (ImageMagick need to be installed, see at www.imagemagick.org)
 system("sh scripts/photo.sh")
+
+##=========================
+## FAO and UN Comtrade stat
+fao_df <- read.table("data/FAOSTAT_data_4-25-2019.csv", header=TRUE, sep=",")
+fao_res <- fao_df %>% 
+  dplyr::mutate(Item=ifelse(Item=="Groundnuts, with shell",
+                            "Peanut", "Maize")) %>%
+  dplyr::filter(Year %in% c(2005:2015)) %>%
+  dplyr::group_by(Item, Element) %>%
+  dplyr::summarize(Mean=mean(Value)) %>%
+  tidyr::spread(key=Element, value=Mean) %>%
+  dplyr::rename(Crop=Item, Area=2) %>%
+  dplyr::mutate(Yield=round(Yield/10000,1),
+                Production=round(Production),
+                Area=round(Area)) %>%
+  dplyr::select(1,2,4,3) %>%
+  as.data.frame()
 
 ##===========================================================================
 ## End of script

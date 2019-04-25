@@ -135,3 +135,5 @@ convert -gravity NorthWest -annotate +5+405 "a'" -pointsize $ts "figs/m3.jpg" "f
 convert -fill white -gravity NorthWest -annotate +405+405 "b'" -pointsize $ts "figs/m4.jpg" "figs/cyclones.jpg"
 # Clean
 rm figs/m[1-4].jpg
+
+# End
