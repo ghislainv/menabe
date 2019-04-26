@@ -1,6 +1,6 @@
 # Tables
 
-(ref:cap-surveys) **List of surveys conducted among local farmers and environmental stakeholders**. Surveys were conducted around the Kirindy-Mite National Park and the Menabe-Antimena New Protected Area. The _"Fokontany"_ is a Malagasy term defining an administrative territory under the level of the township. In Madagascar, the management of the protected areas is under the responsibility of Madagascar National Parks (MNP) or delegated to another environmental Non-Governmental Organisation (such as Fanamby for Menabe-Antimena New Protected Area).\vspace{0.5cm} 
+(ref:cap-surveys) **List of surveys conducted among local farmers and environmental stakeholders**. Surveys were conducted around the Menabe-Antimena New Protected Area, the Kirindy-Mite National Park, and the Mikea National Park. The _"Fokontany"_ is a Malagasy term defining an administrative territory under the level of the township. In Madagascar, the management of the protected areas is under the responsibility of Madagascar National Parks (MNP) or delegated to another environmental Non-Governmental Organisation (such as Fanamby for Menabe-Antimena New Protected Area).\vspace{0.5cm} 
 
 ```{r surveys, results="asis"}
 df_surveys <- read.table("tables/surveys.csv", header=TRUE, sep=",")
@@ -13,7 +13,7 @@ knitr::kable(df_surveys[-c(7)], caption="(ref:cap-surveys)", booktabs=TRUE,
   kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center", font_size=10)
 ```
 
-(ref:cap-defor-rate) **Change in annual deforestation with time in the Kirindy-Mite National Park (KMNP) and the Menabe-Antimena New Protected Area (MANAP).** _D90-00_, _D00-10_, _D10-17_ and _D10-50_: annual deforestation (in ha/yr) for the periods 1990--2000, 2000--2010, 2010--2015 and 2010--2050 respectively, followed by the annual deforestation rate in parenthesis (in %/yr). The annual deforestation has more than doubled on the period 2010--2015 compared to the period 2000--2010. The two last columns of the table indicate the mean annual deforestation on the period 2010--2050 resulting from the projection of the forest cover in 2050 following the two deforestation intensity scenarios S1 (conservative scenario: 1990--2010 mean annual deforestation) and S2 (worst-case scenario: 2000--2015 mean annual deforestation).\vspace{0.5cm} 
+(ref:cap-defor-rate) **Change in annual deforestation with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _D90-00_, _D00-10_, _D10-15_, and _D10-50_: annual deforestation (in ha/yr) for the periods 1990--2000, 2000--2010, 2010--2015 and 2010--2050 respectively, followed by the annual deforestation rate in parenthesis (in %/yr). The annual deforestation has more than doubled on the period 2010--2015 compared to the period 2000--2010. The two last columns of the table indicate the mean annual deforestation on the period 2010--2050 resulting from the projection of the forest cover in 2050 following the two deforestation intensity scenarios S1 (conservative scenario: 1990--2010 mean annual deforestation) and S2 (worst-case scenario: 2000--2015 mean annual deforestation).\vspace{0.5cm} 
 
 ```{r defor-rate, results="asis"}
 defor <- forest.cover[,c(1,9:13)]
@@ -50,7 +50,7 @@ loss.S1.2050 <- round(mean((forest$F2000-forest[,"F2050,S1"])/forest$F2000*100))
 loss.S2.2050 <- round(mean((forest$F2000-forest[,"F2050,S2"])/forest$F2000*100))
 ```
 
-(ref:cap-forest-cover) **Evolution of the forest cover with time in the Kirindy-Mite National Park (KMNP) and the Menabe-Antimena New Protected Area (MANAP).** _Area_: land area (in ha). _F2000_, _F2010_ and _F2015_: forest area (in ha) for the years 2000, 2010 and 2015, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2015`% of the forest have disappeared on the period 2000--2015 in the two sites and we predict the loss of around `r loss.S1.2050`% and `r loss.S2.2050`% of the forest on the period 2000--2050 for the two sites assuming a conservative (projecting the 1990--2010 annual deforestation) or a worst-case scenario (projecting the 2000--2015 annual deforestation), respectively.\vspace{0.5cm}   
+(ref:cap-forest-cover) **Evolution of the forest cover with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _Area_: land area (in ha). _F2000_, _F2010_ and _F2015_: forest area (in ha) for the years 2000, 2010 and 2015, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2015`% of the forest have disappeared on the period 2000--2015 in the two sites and we predict the loss of `r loss.S1.2050`-`r loss.S2.2050`% of the forest on the period 2000--2050 for the three sites assuming a conservative scenario S1 (projecting the 1990--2010 annual deforestation) or a worst-case scenario S2 (projecting the 2000--2015 annual deforestation), respectively.\vspace{0.5cm}   
 
 ```{r forest-cover, results="asis"}
 vect.align <- c("l", rep("r",7))
