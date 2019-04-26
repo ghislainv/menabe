@@ -1,4 +1,4 @@
-# Ackowledgements
+# Acknowledgements
 
 This study took form in the framework of the BioSceneMada project (https://bioscenemada.cirad.fr) and the Roadless forests project (https://forobs.jrc.ec.europa.eu/roadless). The BioSceneMada project is funded by FRB (Fondation pour la Recherche sur la Biodiversité) and the FFEM (Fond Français pour l'Environnement Mondial) under the project agreement AAP-SCEN-2013 I. The Roadless forests project is funded by the European Commission. We thank all the people who welcomed us and kindly provided us with useful information during our field trip, both institutional people (from DREF, MNP, WWF and Fanamby) and villagers. The authors declare no conflict of interest.
 
