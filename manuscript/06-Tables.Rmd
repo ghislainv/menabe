@@ -13,15 +13,15 @@ knitr::kable(df_surveys[-c(7)], caption="(ref:cap-surveys)", booktabs=TRUE,
   kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center", font_size=10)
 ```
 
-(ref:cap-defor-rate) **Change in annual deforestation with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _D90-00_, _D00-10_, _D10-15_, and _D10-50_: annual deforestation (in ha/yr) for the periods 1990--2000, 2000--2010, 2010--2015 and 2010--2050 respectively, followed by the annual deforestation rate in parenthesis (in %/yr). The annual deforestation has more than doubled on the period 2010--2015 compared to the period 2000--2010. The two last columns of the table indicate the mean annual deforestation on the period 2010--2050 resulting from the projection of the forest cover in 2050 following the two deforestation intensity scenarios S1 (conservative scenario: 1990--2010 mean annual deforestation) and S2 (worst-case scenario: 2000--2015 mean annual deforestation).\vspace{0.5cm} 
+(ref:cap-defor-rate) **Change in annual deforestation with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _D90-00_, _D00-10_, _D10-15_, and _D10-50_: annual deforestation (in ha/yr) for the periods 1990--2000, 2000--2010, 2010--2017 and 2010--2050 respectively, followed by the annual deforestation rate in parenthesis (in %/yr). The annual deforestation has more than doubled on the period 2010--2017 compared to the period 2000--2010.\vspace{0.5cm} 
 
 ```{r defor-rate, results="asis"}
-defor <- forest.cover[,c(1,9:13)]
-defor.1 <- c(as.matrix(forest.cover[,c(9:13)]))
-defor.2 <- sprintf("%.2f", c(as.matrix(forest.cover[,c(14:18)])))
-defor[,c(2:6)] <- paste0(format(defor.1,big.mark=",")," (",defor.2,"%)")
-col.names <- c("Site","D90-00","D00-10","D10-15","D10-50,S1","D10-50,S2")
-vect.align <- c("l", rep("r",5))
+defor <- forest.cover[,c(1,9:11)]
+defor.1 <- c(as.matrix(forest.cover[,c(9:11)]))
+defor.2 <- sprintf("%.2f", c(as.matrix(forest.cover[,c(12:14)])))
+defor[,c(2:4)] <- paste0(format(defor.1,big.mark=",")," (",defor.2,"%)")
+col.names <- c("Site","D90-00","D00-10","D10-17")
+vect.align <- c("l", rep("r",3))
 knitr::kable(defor, caption="(ref:cap-defor-rate)", booktabs=TRUE,
              format.args=list(big.mark=","),
              col.names=col.names,
@@ -29,7 +29,7 @@ knitr::kable(defor, caption="(ref:cap-defor-rate)", booktabs=TRUE,
   kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center")
 ```
 
-(ref:cap-faostat) **National statistics for maize and peanut production and exportation**. Annual data have been averaged for the period 2010--2015. The area harvested is in hectare (ha), the yield is in tonne per ha per year (T/ha/yr), the total production and the exportation are in tonne per year (T/yr). Sources: FAOSTAT (<http://www.fao.org/faostat>) for production and UN Comtrade (<https://comtrade.un.org>) for exportation.\vspace{0.5cm}   
+(ref:cap-faostat) **National statistics for maize and peanut production and exportation**. Annual data have been averaged for the period 2010--2017. The area harvested is in hectares (ha), the yield is in tonne per ha per year (T/ha/yr), the total production and the exportation are in tonnes per year (T/yr). Sources: FAOSTAT (<http://www.fao.org/faostat>) for production and UN Comtrade (<https://comtrade.un.org>) for exportation.\vspace{0.5cm}   
 
 ```{r faostat, results="asis"}
 df_faostat <- read.table("tables/faostat.csv", header=TRUE, sep=",")
@@ -44,13 +44,13 @@ knitr::kable(df_faostat, caption="(ref:cap-faostat)", booktabs=TRUE,
 
 ```{r loss, results="hide"}
 forest <- forest.cover[,c(1:8)]
-names(forest) <- c("Site","Area","F1990","F2000","F2010","F2015","F2050,S1","F2050,S2")
-loss.2015 <- round(mean((forest$F2000-forest$F2015)/forest$F2000*100))
+names(forest) <- c("Site","Area","F1990","F2000","F2010","F2017","F2050,S1","F2050,S2")
+loss.2017 <- round(mean((forest$F2000-forest$F2017)/forest$F2000*100))
 loss.S1.2050 <- round(mean((forest$F2000-forest[,"F2050,S1"])/forest$F2000*100))
 loss.S2.2050 <- round(mean((forest$F2000-forest[,"F2050,S2"])/forest$F2000*100))
 ```
 
-(ref:cap-forest-cover) **Evolution of the forest cover with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _Area_: land area (in ha). _F2000_, _F2010_ and _F2015_: forest area (in ha) for the years 2000, 2010 and 2015, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2015`% of the forest have disappeared on the period 2000--2015 in the two sites and we predict the loss of `r loss.S1.2050`-`r loss.S2.2050`% of the forest on the period 2000--2050 for the three sites assuming a conservative scenario S1 (projecting the 1990--2010 annual deforestation) or a worst-case scenario S2 (projecting the 2000--2015 annual deforestation), respectively.\vspace{0.5cm}   
+(ref:cap-forest-cover) **Change in forest cover with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _Area_: land area (in ha). _F2000_, _F2010_ and _F2017_: forest area (in ha) for the years 2000, 2010 and 2017, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2017`% of the forest have disappeared on the period 2000--2017 in the three sites and we predict the loss of `r loss.S1.2050`-`r loss.S2.2050`% of the forest on the period 2000--2050 for the three sites assuming a conservative scenario S1 (projecting the 2000--2010 annual deforestation) or a worst-case scenario S2 (projecting the 2010--2017 annual deforestation), respectively.\vspace{0.5cm}   
 
 ```{r forest-cover, results="asis"}
 vect.align <- c("l", rep("r",7))
