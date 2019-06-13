@@ -30,21 +30,11 @@ knitr::include_graphics("figures/deforestation.png")
 knitr::include_graphics("figures/causes.jpg")
 ```
 
-<!-- ======================== -->
-<!-- Exports -->
-<!-- ======================== -->
-
-(ref:cap-exports) **Change in maize and peanut exports.** blbablal
-
-```{r exports, out.width="\\textwidth", fig.cap="(ref:cap-exports)"}
-knitr::include_graphics("figures/exports.png")
-```
-
 <!-- ======================= -->
 <!-- Deforestation scenarios -->
 <!-- ======================= -->
 
-(ref:cap-scenarios) **Projected deforestation on the period 2010--2050**. Green: projected forest cover in 2050, light brown: 2010--2050 deforestation following conservative scenario S1 (projecting 1990--2010 mean annual deforestation), dark brown: 2010--2050 additional deforestation following scenario S2 (projecting 2000--2017 mean annual deforestation). Most of the 2010--2017 deforestation observed on Fig. 2 is included in the 2010--2050 projections. We predicted a loss of `r loss.S1.2050`-`r loss.S2.2050`% of the forest cover in 2050 compared to 2000 following scenario S1 and S2, respectively. Remaining forest will be concentrated inside protected areas. We predicted a complete loss of the forest for the MANAP study area following scenario S2.
+(ref:cap-scenarios) **Projected deforestation on the period 2010--2050**. Green: projected forest cover in 2050, light brown: 2010--2050 deforestation following conservative scenario S1 (projecting 2000--2010 mean annual deforestation), dark brown: 2010--2050 additional deforestation following scenario S2 (projecting 2010--2017 mean annual deforestation). Most of the 2010--2017 deforestation observed on Fig. 2 is included in the 2010--2050 projections. We predicted a loss of `r loss.S1.2050`-`r loss.S2.2050`% of the forest cover in 2050 compared to 2000 following scenario S1 and S2, respectively. Remaining forest in 2050 under scenario S1 should be concentrated inside protected areas. We predicted a complete loss of the forest for the MANAP study area following scenario S2.
 
 ```{r scenarios, out.width="\\textwidth", fig.cap="(ref:cap-scenarios)"}
 knitr::include_graphics("figures/scenarios.png")

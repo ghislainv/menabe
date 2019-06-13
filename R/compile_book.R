@@ -29,7 +29,7 @@ bookdown::render_book("index.Rmd", output_format=pdf_format, clean=FALSE)
 options(knitr.table.format="html")
 # Dynamic YAML options
 title_html <- "It's not just poverty: unregulated global market and bad governance explain unceasing deforestation in Western Madagascar"
-author_html <- "Ghislain Vieilledent, Marie Nourtier, Clovis Grinand, Miguel Pedrono, Tsiky Rabetrano, Jean-Roger Rakotoarijaona, Bruno Rakotoarivelo, Fety A. Rakotomalala, Linjanantenaina Rakotomalala, Andriamandimbisoa Razafimpahanana, José M. Ralison, and Frédéric Achard"
+author_html <- "Ghislain Vieilledent, Marie Nourtier, Clovis Grinand, Miguel Pedrono, Alison Clausen, Tsiky Rabetrano, Jean-Roger Rakotoarijaona, Bruno Rakotoarivelo, Fety A. Rakotomalala, Linjanantenaina Rakotomalala, Andriamandimbisoa Razafimpahanana, José M. Ralison, and Frédéric Achard"
 date_html <- format(Sys.time(), "%d %B, %Y")
 params <- list(title=title_html,author=author_html, date=date_html)
 bookdown::render_book("index.Rmd")

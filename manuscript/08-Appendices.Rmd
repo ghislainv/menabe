@@ -20,12 +20,22 @@ Figure A2: **Satellite images and trajectories of cyclones _Fanele_ and _Haruna
 
 \newpage
 
-## Appendix 3: Maize and beer consumption in Madagascar.
+## Appendix 3: Change in maize and peanut exports.
+
+```{r exports, out.width="\\textwidth"}
+knitr::include_graphics("figures/exports.png")
+```
+
+Figure A3: **Annual exports in the period 2000--2017 for maize and peanut crops**. Exports are reported at the national level for Madagascar in KT/yr. While maize exports are stable around 5 KT/yr in the period 2000--2017, peanut exports have boomed since 2011, with about 2.5 KT exported in 2011 to about 27,500 KT in 2017. Sources: UN Comtrade (<https://comtrade.un.org>).
+
+\newpage
+
+## Appendix 4: Maize and beer consumption in Madagascar.
 
 Three Horses Beer (better known locally as THB) has been brewed by Star Breweries of Madagascar since 1958. It is the highest selling beer in Madagascar and has been described as emblematic of the country. THB is sold nationwide and since 2005 has been exported to such markets as France, Reunion Island, Comoros and Mayotte. THB Pilsener, the most common variant of THB, is produced from mostly local barley, corn and hops. The mash is a blend of malt (sprouted barley) and corn in an 80/20 ratio to which water and hops are added. In 2006, the Star Brewery was producing 700,000 hectoliters (hL) of beer annually. Star Breweries invested over four million euros into improving its factories in the 2009--2011 period, resulting in a 20% increase in production capacity (source: Wikipedia, <https://en.wikipedia.org/wiki/Three_Horses_Beer>). As a consequence, we can assume that about 840,000 hL of THB Pilsener have been produced each year since 2011.
 
 We assumed that about 1.25 kg of grain is needed to produce 1 kg of malt, and about 20 kg of malt are needed to produce 1 hL of beer [@Kreisz2009]. For a total of 840,000 hL of beer, 1.25 $\times$ 20 $\times$ 840,000 $/$ 1000 $=$ 21,000 tonnes (T) of grain are needed. Because the mash for the THB Pilsener is a blend of malt and corn in an 80/20 ratio, about 4,200 T of maize grain are necessary to produce the annual 840,000 hL of beer.
 
-Given the 2010--2017 average yield of 1.7 T/ha for maize crop in Madagascar (Tab. \@ref(tab:faostat)), about 2,471 ha of maize crop are necessary to produce the local beer. This number is very small compared to the 225,084 ha of maize harvested at the national level (Tab. \@ref(tab:faostat)). 
+Given the 2010--2017 average yield of 1.7 T/ha for maize crop in Madagascar (Tab. \@ref(tab:cropstats)), about 2,471 ha of maize crop are necessary to produce the local beer. This number is very small compared to the 225,084 ha of maize harvested at the national level (Tab. \@ref(tab:cropstats)). 
 
 \newpage

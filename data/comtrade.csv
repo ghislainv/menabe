@@ -1,120 +1,204 @@
-Classification,Year,Period,Period Desc.,Aggregate Level,Is Leaf Code,Trade Flow Code,Trade Flow,Reporter Code,Reporter,Reporter ISO,Partner Code,Partner,Partner ISO,2nd Partner Code,2nd Partner,2nd Partner ISO,Customs Proc. Code,Customs,Mode of Transport Code,Mode of Transport,Commodity Code,Commodity,Qty Unit Code,Qty Unit,Qty,Alt Qty Unit Code,Alt Qty Unit,Alt Qty,Netweight (kg),Gross weight (kg),Trade Value (US$),CIF Trade Value (US$),FOB Trade Value (US$),Flag
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,59400,,59400,,9230,,,0
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,551700,,551700,,164279,,,0
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,214002,,214002,,43702,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,1058350,,1058350,,272720,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,513613,,513613,,110792,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,1427250,,1427250,,431481,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,1236690,,1236690,,339853,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,784,United Arab Emirates,ARE,,,,,,,,1005,Maize (corn).,8,Weight in kilograms,,,37200,,37200,,8165,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,1415622,,1415622,,454320,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,1487945,,1487945,,173566,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,136000,,136000,,61458,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,26325,,26325,,6093,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,1620989,,1620989,,214744,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,113800,,113800,,40289,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,757,Switzerland,CHE,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,10,,10,,9,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,26325,,26325,,6093,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,1620989,,1620989,,214744,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,113800,,113800,,40289,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,757,Switzerland,CHE,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,10,,10,,9,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,4000,,4000,,550,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,2862266,,2862266,,385313,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,19100,,19100,,3806,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,205500,,205500,,18097,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,4027554,,4027554,,410463,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,17450,,17450,,4701,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,690,Seychelles,SYC,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,207900,,207900,,47786,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,2683312,,2683312,,257253,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,18500,,18500,,6230,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,690,Seychelles,SYC,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,46000,,46000,,10809,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,637684,,637684,,80726,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1005,Maize (corn),8,Weight in kilograms,,,13900,,13900,,7080,,,0
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,169323,,169323,,35077,,,0
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,52700,,52700,,12476,,,0
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,47731,,47731,,24331,,,0
-H3,2009,2009,2009,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,407014,,407014,,274025,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,316439,,316439,,48052,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,70250,,70250,,10187,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,42508,,42508,,16898,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,360,Indonesia,IDN,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,40000,,40000,,36015,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,759027,,759027,,519575,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,200,,200,,1,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,757,Switzerland,CHE,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,5,,5,,32,,,0
-H3,2010,2010,2010,4,0,2,Export,450,Madagascar,MDG,807,North Macedonia,MKD,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,5000,,5000,,854,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,269970,,269970,,40832,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,128610,,128610,,21003,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,88584,,88584,,15902,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,404,Kenya,KEN,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,69000,,69000,,94955,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,964721,,964721,,734593,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,150535,,150535,,39895,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,363000,,363000,,159132,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,710,South Africa,ZAF,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,54000,,54000,,103320,,,0
-H3,2011,2011,2011,4,0,2,Export,450,Madagascar,MDG,792,Turkey,TUR,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,Weight in kilograms,,,42000,,42000,,25429,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,156,China,CHN,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,18200,,18200,,7510,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,282900,,282900,,37393,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,68865,,68865,,10307,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,98795,,98795,,62522,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,344,"China, Hong Kong SAR",HKG,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,100100,,100100,,41088,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,360,Indonesia,IDN,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,180000,,180000,,196750,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,544364,,544364,,298703,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,528,Netherlands,NLD,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,228000,,228000,,338532,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,105520,,105520,,61860,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,608,Philippines,PHL,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,54000,,54000,,59881,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,8473030,,8473030,,4219178,,,0
-H4,2012,2012,2012,4,0,2,Export,450,Madagascar,MDG,710,South Africa,ZAF,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,132500,,132500,,134686,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,56,Belgium,BEL,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,57000,,57000,,68943,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,285200,,285200,,44916,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,86821,,86821,,17003,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,116904,,116904,,53608,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,360,Indonesia,IDN,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,114000,,114000,,100952,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,652050,,652050,,509307,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,528,Netherlands,NLD,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,1121000,,1121000,,1248082,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,21000,,21000,,9200,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,8699174,,8699174,,2898484,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,710,South Africa,ZAF,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,200000,,200000,,184788,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,757,Switzerland,CHE,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,19,,19,,129,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,56,Belgium,BEL,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,57000,,57000,,68943,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,285200,,285200,,44916,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,175,Mayotte,MYT,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,86821,,86821,,17003,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,116904,,116904,,53608,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,360,Indonesia,IDN,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,114000,,114000,,100952,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,652050,,652050,,509307,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,528,Netherlands,NLD,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,1121000,,1121000,,1248082,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,21000,,21000,,9200,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,8699174,,8699174,,2898484,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,710,South Africa,ZAF,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,200000,,200000,,184788,,,0
-H4,2013,2013,2013,4,0,2,Export,450,Madagascar,MDG,757,Switzerland,CHE,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,19,,19,,129,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,56,Belgium,BEL,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,188500,,188500,,172215,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,402850,,402850,,68542,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,234473,,234473,,66245,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,649798,,649798,,284617,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,528,Netherlands,NLD,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,881250,,881250,,768439,,,0
-H4,2014,2014,2014,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,12575400,,12575400,,4598201,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,56,Belgium,BEL,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,152000,,152000,,134410,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,100,Bulgaria,BGR,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,19000,,19000,,23816,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,457980,,457980,,65411,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,190118,,190118,,38097,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,238200,,238200,,162800,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,528,Netherlands,NLD,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,95000,,95000,,68144,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,2000,,2000,,1394,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,699,India,IND,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,16560,,16560,,15075,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,702,Singapore,SGP,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,720,,720,,672,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,16525805,,16525805,,4475271,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,757,Switzerland,CHE,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,50,,50,,57,,,0
-H4,2015,2015,2015,4,0,2,Export,450,Madagascar,MDG,784,United Arab Emirates,ARE,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,19000,,19000,,11904,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,56,Belgium,BEL,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,95000,,95000,,68054,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,156,China,CHN,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,190000,,190000,,100675,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,434725,,434725,,53883,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,251,France,FRA,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,124690,,124690,,23256,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,577880,,577880,,354573,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,528,Netherlands,NLD,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,38000,,38000,,29067,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,40000,,40000,,11633,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,25238380,,25238380,,8723225,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,724,Spain,ESP,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,60000,,60000,,76812,,,0
-H4,2016,2016,2016,4,0,2,Export,450,Madagascar,MDG,784,United Arab Emirates,ARE,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,42000,,42000,,46699,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,174,Comoros,COM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,443640,,443640,,66451,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,368,Iraq,IRQ,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,84000,,84000,,15849,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,480,Mauritius,MUS,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,177725,,177725,,189147,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,586,Pakistan,PAK,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,380000,,380000,,129932,,,0
-H5,2017,2017,2017,4,0,2,Export,450,Madagascar,MDG,704,Viet Nam,VNM,,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,Weight in kilograms,,,26284350,,26284350,,6308538,,,0
+"Classification","Year","Period","Period Desc.","Aggregate Level","Is Leaf Code","Trade Flow Code","Trade Flow","Reporter Code","Reporter","Reporter ISO","Partner Code","Partner","Partner ISO","2nd Partner Code","2nd Partner","2nd Partner ISO","Customs Proc. Code","Customs","Mode of Transport Code","Mode of Transport","Commodity Code","Commodity","Qty Unit Code","Qty Unit","Qty","Alt Qty Unit Code","Alt Qty Unit","Alt Qty","Netweight (kg)","Gross weight (kg)","Trade Value (US$)","CIF Trade Value (US$)","FOB Trade Value (US$)","Flag"
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,2728805,,2728805,,267840,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,391,,391,,861,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1206414,,1206414,,140976,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",690,"Seychelles","SYC",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1000000,,1000000,,75198,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,500000,,500000,,48568,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",899,"Areas, nes",,,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,22000,,22000,,2238,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,4507301,,4507301,,448882,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1811,,1811,,260,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,502250,,502250,,75312,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,3240,,3240,,551,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",690,"Seychelles","SYC",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,4000000,,4000000,,372759,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,4965698,,4965698,,487010,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,394898,,394898,,59384,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,210000,,210000,,17548,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,100800,,100800,,9443,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",690,"Seychelles","SYC",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,4260000,,4260000,,400636,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,925194,,925194,,140106,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,462706,,462706,,92872,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,462488,,462488,,47234,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,593161,,593161,,133135,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,310160,,310160,,99744,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,283001,,283001,,33391,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,6730,,6730,,2183,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,5730,,5730,,2092,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1000,,1000,,91,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,425720,,425720,,88293,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,422880,,422880,,87863,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,2840,,2840,,430,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1614785,,1614785,,470587,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,26000,,26000,,7063,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1002300,,1002300,,286657,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,562985,,562985,,170734,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,23500,,23500,,6133,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,3211870,,3211870,,989030,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,17100,,17100,,2815,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1207000,,1207000,,378516,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1987770,,1987770,,607699,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,59400,,59400,,9230,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,551700,,551700,,164279,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,214002,,214002,,43702,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1058350,,1058350,,272720,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,513613,,513613,,110792,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1427250,,1427250,,431481,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,1236690,,1236690,,339853,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",784,"United Arab Emirates","ARE",,,,,,,,1005,"Maize (corn).",8,"Weight in kilograms",,,37200,,37200,,8165,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1415622,,1415622,,454320,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1487945,,1487945,,173566,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,136000,,136000,,61458,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,26325,,26325,,6093,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1620989,,1620989,,214744,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,113800,,113800,,40289,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,10,,10,,9,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,26325,,26325,,6093,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,1620989,,1620989,,214744,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,113800,,113800,,40289,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,10,,10,,9,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,4000,,4000,,550,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,2862266,,2862266,,385313,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,19100,,19100,,3806,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,205500,,205500,,18097,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,4027554,,4027554,,410463,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,17450,,17450,,4701,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",690,"Seychelles","SYC",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,207900,,207900,,47786,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,2683312,,2683312,,257253,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,18500,,18500,,6230,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",690,"Seychelles","SYC",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,46000,,46000,,10809,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,637684,,637684,,80726,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1005,"Maize (corn)",8,"Weight in kilograms",,,13900,,13900,,7080,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,538409,,538409,,189437,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,1561,,1561,,297,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,112458,,112458,,47395,,,0
+"H1",2000,2000,2000,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,424390,,424390,,141745,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,1020116,,1020116,,355026,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,75424,,75424,,11774,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,178901,,178901,,65190,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",418,"Lao People's Dem. Rep.","LAO",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,18000,,18000,,8755,,,0
+"H1",2001,2001,2001,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,747791,,747791,,269308,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,478637,,478637,,164471,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,94207,,94207,,25616,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,33200,,33200,,7970,,,0
+"H2",2002,2002,2002,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,351230,,351230,,130885,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,705973,,705973,,367097,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,161404,,161404,,82665,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,63014,,63014,,38685,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,453555,,453555,,236925,,,0
+"H2",2003,2003,2003,4,0,2,"Export",450,"Madagascar","MDG",899,"Areas, nes",,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,28000,,28000,,8823,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,979521,,979521,,522719,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",100,"Bulgaria","BGR",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,1000,,1000,,128,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,264430,,264430,,123860,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,39117,,39117,,24158,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",360,"Indonesia","IDN",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,119952,,119952,,65797,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,535022,,535022,,295089,,,0
+"H2",2004,2004,2004,4,0,2,"Export",450,"Madagascar","MDG",899,"Areas, nes",,,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,20000,,20000,,13688,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,329663,,329663,,167923,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,232695,,232695,,128461,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,23047,,23047,,7103,,,0
+"H2",2005,2005,2005,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,73921,,73921,,32359,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,909375,,909375,,473389,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",124,"Canada","CAN",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,1650,,1650,,483,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,297590,,297590,,133129,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,47100,,47100,,15908,,,0
+"H2",2006,2006,2006,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked",8,"Weight in kilograms",,,563035,,563035,,323869,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,1077711,,1077711,,648107,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",56,"Belgium","BEL",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,200,,200,,109,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,251840,,251840,,109321,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,72977,,72977,,22737,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,13438,,13438,,3122,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,736256,,736256,,512235,,,0
+"H3",2007,2007,2007,4,0,2,"Export",450,"Madagascar","MDG",710,"South Africa","ZAF",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,3000,,3000,,582,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",0,"World","WLD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,1166706,,1166706,,879757,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,214297,,214297,,74883,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,69998,,69998,,17615,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,16187,,16187,,7572,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,866212,,866212,,779685,,,0
+"H3",2008,2008,2008,4,0,2,"Export",450,"Madagascar","MDG",724,"Spain","ESP",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,12,,12,,1,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,169323,,169323,,35077,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,52700,,52700,,12476,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,47731,,47731,,24331,,,0
+"H3",2009,2009,2009,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,407014,,407014,,274025,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,316439,,316439,,48052,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,70250,,70250,,10187,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,42508,,42508,,16898,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",360,"Indonesia","IDN",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,40000,,40000,,36015,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,759027,,759027,,519575,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,200,,200,,1,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,5,,5,,32,,,0
+"H3",2010,2010,2010,4,0,2,"Export",450,"Madagascar","MDG",807,"North Macedonia","MKD",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,5000,,5000,,854,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,269970,,269970,,40832,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,128610,,128610,,21003,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,88584,,88584,,15902,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",404,"Kenya","KEN",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,69000,,69000,,94955,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,964721,,964721,,734593,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,150535,,150535,,39895,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,363000,,363000,,159132,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",710,"South Africa","ZAF",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,54000,,54000,,103320,,,0
+"H3",2011,2011,2011,4,0,2,"Export",450,"Madagascar","MDG",792,"Turkey","TUR",,,,,,,,1202,"Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken.",8,"Weight in kilograms",,,42000,,42000,,25429,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",156,"China","CHN",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,18200,,18200,,7510,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,282900,,282900,,37393,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,68865,,68865,,10307,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,98795,,98795,,62522,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",344,"China, Hong Kong SAR","HKG",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,100100,,100100,,41088,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",360,"Indonesia","IDN",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,180000,,180000,,196750,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,544364,,544364,,298703,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",528,"Netherlands","NLD",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,228000,,228000,,338532,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,105520,,105520,,61860,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",608,"Philippines","PHL",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,54000,,54000,,59881,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,8473030,,8473030,,4219178,,,0
+"H4",2012,2012,2012,4,0,2,"Export",450,"Madagascar","MDG",710,"South Africa","ZAF",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,132500,,132500,,134686,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",56,"Belgium","BEL",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,57000,,57000,,68943,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,285200,,285200,,44916,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,86821,,86821,,17003,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,116904,,116904,,53608,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",360,"Indonesia","IDN",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,114000,,114000,,100952,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,652050,,652050,,509307,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",528,"Netherlands","NLD",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,1121000,,1121000,,1248082,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,21000,,21000,,9200,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,8699174,,8699174,,2898484,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",710,"South Africa","ZAF",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,200000,,200000,,184788,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,19,,19,,129,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",56,"Belgium","BEL",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,57000,,57000,,68943,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,285200,,285200,,44916,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",175,"Mayotte","MYT",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,86821,,86821,,17003,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,116904,,116904,,53608,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",360,"Indonesia","IDN",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,114000,,114000,,100952,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,652050,,652050,,509307,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",528,"Netherlands","NLD",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,1121000,,1121000,,1248082,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,21000,,21000,,9200,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,8699174,,8699174,,2898484,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",710,"South Africa","ZAF",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,200000,,200000,,184788,,,0
+"H4",2013,2013,2013,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,19,,19,,129,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",56,"Belgium","BEL",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,188500,,188500,,172215,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,402850,,402850,,68542,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,234473,,234473,,66245,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,649798,,649798,,284617,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",528,"Netherlands","NLD",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,881250,,881250,,768439,,,0
+"H4",2014,2014,2014,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,12575400,,12575400,,4598201,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",56,"Belgium","BEL",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,152000,,152000,,134410,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",100,"Bulgaria","BGR",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,19000,,19000,,23816,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,457980,,457980,,65411,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,190118,,190118,,38097,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,238200,,238200,,162800,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",528,"Netherlands","NLD",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,95000,,95000,,68144,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,2000,,2000,,1394,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",699,"India","IND",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,16560,,16560,,15075,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",702,"Singapore","SGP",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,720,,720,,672,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,16525805,,16525805,,4475271,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",757,"Switzerland","CHE",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,50,,50,,57,,,0
+"H4",2015,2015,2015,4,0,2,"Export",450,"Madagascar","MDG",784,"United Arab Emirates","ARE",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,19000,,19000,,11904,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",56,"Belgium","BEL",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,95000,,95000,,68054,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",156,"China","CHN",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,190000,,190000,,100675,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,434725,,434725,,53883,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",251,"France","FRA",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,124690,,124690,,23256,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,577880,,577880,,354573,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",528,"Netherlands","NLD",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,38000,,38000,,29067,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,40000,,40000,,11633,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,25238380,,25238380,,8723225,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",724,"Spain","ESP",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,60000,,60000,,76812,,,0
+"H4",2016,2016,2016,4,0,2,"Export",450,"Madagascar","MDG",784,"United Arab Emirates","ARE",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,42000,,42000,,46699,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",174,"Comoros","COM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,443640,,443640,,66451,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",368,"Iraq","IRQ",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,84000,,84000,,15849,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",480,"Mauritius","MUS",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,177725,,177725,,189147,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",586,"Pakistan","PAK",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,380000,,380000,,129932,,,0
+"H5",2017,2017,2017,4,0,2,"Export",450,"Madagascar","MDG",704,"Viet Nam","VNM",,,,,,,,1202,"Ground-nuts; not roasted or otherwise cooked, whether or not shelled or broken",8,"Weight in kilograms",,,26284350,,26284350,,6308538,,,0
