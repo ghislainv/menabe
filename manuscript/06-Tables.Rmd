@@ -1,5 +1,9 @@
 # Tables
 
+<!-- ======================== -->
+<!-- Surveys -->
+<!-- ======================== -->
+
 (ref:cap-surveys) **List of surveys conducted among local farmers and environmental stakeholders**. Surveys were conducted around the Menabe-Antimena New Protected Area, the Kirindy-Mite National Park, and the Mikea National Park. The _"Fokontany"_ is a Malagasy term defining an administrative territory under the level of the township. In Madagascar, the management of the protected areas is under the responsibility of Madagascar National Parks (MNP) or delegated to another environmental Non-Governmental Organisation (such as Fanamby for Menabe-Antimena New Protected Area).\vspace{0.5cm} 
 
 ```{r surveys, results="asis"}
@@ -12,6 +16,10 @@ knitr::kable(df_surveys[-c(7)], caption="(ref:cap-surveys)", booktabs=TRUE,
 	column_spec(6, width="1.3cm") %>%
   kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center", font_size=10)
 ```
+
+<!-- ======================== -->
+<!-- Deforestation rates -->
+<!-- ======================== -->
 
 (ref:cap-defor-rate) **Change in annual deforestation with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _D90-00_, _D00-10_, and _D10-17_: annual deforestation (in ha/yr) for the periods 1990--2000, 2000--2010, and 2010--2017 respectively, followed by the annual deforestation rate in parenthesis (in %/yr). The annual deforestation has more than doubled on the period 2010--2017 compared to the period 2000--2010.\vspace{0.5cm} 
 
@@ -29,13 +37,17 @@ knitr::kable(defor, caption="(ref:cap-defor-rate)", booktabs=TRUE,
   kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center")
 ```
 
-(ref:cap-cropstats) **National statistics for maize and peanut production and exports**. The area harvested is in hectares (ha), the yield is in tonne per ha per year (T/ha/yr), the total production and the exportation are in tonnes per year (T/yr). Sources: FAOSTAT (<http://www.fao.org/faostat>) for production and UN Comtrade (<https://comtrade.un.org>) for exportation.\vspace{0.5cm}   
+<!-- =========================== -->
+<!-- Crop production and exports -->
+<!-- =========================== -->
+
+(ref:cap-cropstats) **National statistics for maize and peanut production and exports**. The area harvested is in hectares (ha), the yield is in tonne per ha per year (T/ha/yr), the total production and the exportation are in tonnes per year (T/yr). Sources: FAOSTAT (<http://www.fao.org/faostat>) for production and UN Comtrade (<https://comtrade.un.org>) for exports.\vspace{0.5cm}   
 
 ```{r cropstats, results="asis"}
 cropstats <- read.table("tables/cropstats.csv", header=TRUE, sep=",")
 cropstats <- cropstats %>% 
-  mutate(Year=as.character(Year)) %>%
-  mutate(Crop=c("Maize", rep("",4), "Peanut", rep("",4)))
+  dplyr::mutate(Year=as.character(Year)) %>%
+  dplyr::mutate(Crop=c("Maize", rep("",4), "Peanut", rep("",4)))
 col.names <- c("Crop","Year","Area","Yield","Production","Exports")
 vect.align <- c("l", rep("r",5))
 line_sep <- c(rep("",4), "\\addlinespace")
@@ -45,6 +57,10 @@ knitr::kable(cropstats, caption="(ref:cap-cropstats)", booktabs=TRUE,
 			       align=vect.align, linesep=line_sep) %>%
   kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE, position="center")
 ```
+
+<!-- ======================== -->
+<!-- Forest cover change -->
+<!-- ======================== -->
 
 (ref:cap-forest-cover) **Change in forest cover with time**. MANAP: Menabe-Antimena New Protected Area, KMNP: Kirindy-Mite National Park, MIKEA: Mikea National Park. _Area_: land area (in ha). _F2000_, _F2010_ and _F2017_: forest area (in ha) for the years 2000, 2010 and 2017, respectively. _F2050_: projected forest area (in ha) for the year 2050. About `r loss.2017`% of the forest have disappeared on the period 2000--2017 in the three sites and we predict the loss of `r loss.S1.2050`-`r loss.S2.2050`% of the forest on the period 2000--2050 for the three sites assuming a conservative scenario S1 (projecting the 2000--2010 annual deforestation) or a worst-case scenario S2 (projecting the 2010--2017 annual deforestation), respectively.\vspace{0.5cm}   
 
