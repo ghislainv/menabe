@@ -22,7 +22,7 @@ pdf_format <- bookdown::pdf_document2(citation_package="natbib", fig_caption=TRU
                                       latex_engine="pdflatex", number_sections=TRUE, toc=FALSE,
                                       includes=list(in_header="header.tex", before_body="doc_prefix.tex"))
 params <- list(title="",author="",date="")
-bookdown::render_book("index.Rmd", output_format=pdf_format, clean=FALSE)
+bookdown::render_book("index.Rmd", output_format=pdf_format, clean=TRUE)
 
 # html
 # Don't indicate output_format to take into account YAML options
